@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="video.css">
+<style>
+  #c1 { background: var(--creme); }
+  #h1 { left:70px; right:70px; top: 300px; font-size: 150px; color: var(--verde); }
+  #h1b { left:70px; right:70px; top: 640px; font-size: 52px; font-weight: 800; color: var(--vermelho); }
+  #pg1 { left: 170px; top: 800px; width: 740px; }
+  #c2 { background: var(--creme); }
+  #tit2 { left:70px; top: 240px; font-size: 30px; color: var(--vermelho); }
+  #trilho { left: 70px; right: 70px; top: 320px; height: 1170px; overflow: hidden; }
+  #lista { position:absolute; left:0; right:0; top:0; }
+  .it { display:flex; gap: 28px; align-items:flex-start; padding: 26px 30px; margin-bottom: 18px; border-radius: 24px; background: #fff; box-shadow: 0 10px 28px rgba(27,56,32,.10); }
+  .it .h { flex: 0 0 170px; font-family:'Serif'; font-size: 64px; color: var(--vermelho); line-height: 1; }
+  .it .t { font-size: 40px; font-weight: 800; line-height: 1.22; color: var(--tinta); padding-top: 6px; }
+  .it.star { background: var(--verde); }
+  .it.star .h { color: var(--dourado); }
+  .it.star .t { color: #fff; }
+  .it.fim { background: var(--vermelho); }
+  .it.fim .h, .it.fim .t { color: #fff; }
+  #nota { left: 70px; right: 70px; top: 1420px; font-size: 30px; font-weight: 700; color: var(--tinta-2); text-align:center; }
+</style></head>
+<body>
+  <div class="cena" id="c1">
+    <div class="gancho abs" id="h1">Dia 24,<br>hora a hora.</div>
+    <div class="abs" id="h1b">Do café da manhã à ceia servida.</div>
+    <div class="pagina abs" id="pg1"><img src="../../assets/site/guia-p022.webp"></div>
+  </div>
+  <div class="cena" id="c2">
+    <div class="eyebrow abs" id="tit2">Trecho real do guia · ceia às 22h</div>
+    <div class="abs" id="trilho"><div id="lista">
+      <div class="it"><div class="h">09h</div><div class="t">Café da manhã tranquilo. Releia o cardápio.</div></div>
+      <div class="it"><div class="h">10h</div><div class="t">Compras de última hora: pão, gelo e frutas.</div></div>
+      <div class="it"><div class="h">12h</div><div class="t">Almoço leve. Cozinhar com fome não dá certo!</div></div>
+      <div class="it"><div class="h">14h</div><div class="t">Montar a mesa e gelar as bebidas.</div></div>
+      <div class="it"><div class="h">17h30</div><div class="t">Peru (ou chester) no forno, coberto com papel-alumínio.</div></div>
+      <div class="it star"><div class="h">18h30</div><div class="t">Seu momento: banho e arrumação, enquanto o peru assa.</div></div>
+      <div class="it"><div class="h">20h</div><div class="t">Tirar o papel-alumínio do peru para dourar.</div></div>
+      <div class="it"><div class="h">21h40</div><div class="t">Fatiar as carnes, levar as travessas, acender as velas.</div></div>
+      <div class="it fim"><div class="h">22h</div><div class="t">Ceia servida!</div></div>
+    </div></div>
+  </div>
+<script src="motor.js"></script>
+<script>
+  window.DURACAO = 22;
+  montaFinal('O dia 24 completo está no guia, do café às 23h30', ['Cronograma do dia 17 ao dia 25', '3 cardápios para 8 a 10 pessoas', 'Lista de compras e 30 receitas']);
+  const itens = [...document.querySelectorAll('.it')];
+  window.render = function (t) {
+    // Cena 1: gancho (0 a 3,4 s)
+    cena('#c1', t, 0, 3.4, 0.01);
+    entra('#h1', t, 0.0, 1e9, { dy: 60, dur: 0.6 });
+    entra('#h1b', t, 0.5, 1e9, { dy: 30 });
+    entra('#pg1', t, 0.8, 1e9, { dy: 300, dur: 0.9, rot: -3 });
+    kb('#pg1', t, 0.8, 3.4, 1, 1.08, 0, 0, 0, -40);
+    $('#pg1').style.transform += ' rotate(-3deg)';
+    // Cena 2: linha do tempo (3,4 a 18 s)
+    cena('#c2', t, 3.4, 18, 0.25);
+    entra('#tit2', t, 3.5, 1e9, { dy: 20 });
+    const t0 = 3.6, passo = 1.45;
+    itens.forEach((el, i) => entra(el, t, t0 + i * passo, 1e9, { dy: 60, dx: -30, dur: 0.45 }));
+    // rolagem para manter o item atual visível
+    const idx = clamp((t - t0) / passo, 0, itens.length - 1);
+    const alturaItem = 170;
+    const rolagem = Math.max(0, idx - 4.2) * alturaItem;
+    $('#lista').style.transform = `translateY(${-rolagem}px)`;
+    // Final (18 a 22 s)
+    animaFinal(t, 18);
+  };
+  window.render(0);
+</script>
+</body></html>

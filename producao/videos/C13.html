@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="video.css">
+<style>
+  #c1 { background:#000; }
+  #bg1 { background-image: url('../../assets/site/cozinha-baguncada.webp'); }
+  #h1 { left:70px; right:70px; top: 420px; font-size: 128px; color: #fff; }
+  #h1 em { font-style: italic; color: #ffd48a; }
+  .passo { background: var(--creme); }
+  .passo .n { position:absolute; left: 70px; top: 250px; font-family:'Serif'; font-size: 300px; line-height: .8; color: var(--vermelho); }
+  .passo .t { position:absolute; left: 70px; right: 70px; top: 540px; font-family:'Serif'; font-size: 92px; line-height: 1; color: var(--verde); }
+  .passo .s { position:absolute; left: 70px; right: 90px; top: 800px; font-size: 44px; font-weight: 700; line-height: 1.3; color: var(--tinta-2); }
+  .passo .pg { position:absolute; left: 230px; top: 1060px; width: 620px; }
+  .passo .lst { position:absolute; left: 70px; right: 90px; top: 1040px; }
+  .passo .lst div { background:#fff; border-radius: 22px; padding: 24px 30px; margin-bottom: 16px; font-size: 42px; font-weight: 800; color: var(--tinta); box-shadow: 0 10px 26px rgba(27,56,32,.10); }
+  .passo .lst div b { color: var(--verde-2); margin-right: 14px; }
+  .data { position:absolute; left: 330px; top: 300px; }
+</style></head>
+<body>
+  <div class="cena" id="c1"><div class="fundo" id="bg1"></div><div class="veu-escuro"></div>
+    <div class="gancho abs" id="h1">3 mudanças pra <em>sair da cozinha</em> na ceia</div>
+  </div>
+  <div class="cena passo" id="p1">
+    <div class="n abs" id="p1n">1</div><div class="chip abs data" id="p1d" style="background:var(--verde);color:#fff">17 ou 18 de dezembro</div>
+    <div class="t abs" id="p1t">Decida o cardápio uma semana antes.</div>
+    <div class="s abs" id="p1s">E já compre o que não estraga, além das carnes para o congelador.</div>
+    <div class="pagina pg abs" id="p1g"><img src="../../assets/site/guia-p008.webp"></div>
+  </div>
+  <div class="cena passo" id="p2">
+    <div class="n abs" id="p2n">2</div><div class="chip abs data" id="p2d" style="background:var(--verde);color:#fff">Dia 23</div>
+    <div class="t abs" id="p2t">Adiante o que pode ficar pronto na véspera.</div>
+    <div class="lst abs" id="p2l" style="top: 860px">
+      <div><b>✔</b>Sobremesas geladas</div>
+      <div><b>✔</b>Farofa e salpicão prontos</div>
+      <div><b>✔</b>Carnes marinando na geladeira</div>
+    </div>
+  </div>
+  <div class="cena passo" id="p3">
+    <div class="n abs" id="p3n">3</div><div class="chip abs data" id="p3d" style="background:var(--verde);color:#fff">Dia 24</div>
+    <div class="t abs" id="p3t">Siga o dia hora a hora.</div>
+    <div class="s abs" id="p3s" style="top: 680px">O forno tem horário. E às 18h30, enquanto o peru assa, o momento é seu.</div>
+    <div class="pagina pg abs" id="p3g" style="top: 1000px"><img src="../../assets/site/guia-p022.webp"></div>
+  </div>
+<script src="motor.js"></script>
+<script>
+  window.DURACAO = 21;
+  montaFinal('Esse plano já vem pronto no guia', ['Cronograma do dia 17 ao dia 25', '3 cardápios para 8 a 10 pessoas', 'Lista de compras e 30 receitas']);
+  quebraPalavras('#h1');
+  function passo(id, a, b, comPagina) {
+    cena('#' + id, t_, a, b, 0.2);
+    entra(`#${id}n`, t_, a, 1e9, { dy: 0, s0: 0.5, dur: 0.5, ease: E.back });
+    entra(`#${id}d`, t_, a + 0.2, 1e9, { dy: 20, dx: -30 });
+    entra(`#${id}t`, t_, a + 0.35, 1e9, { dy: 40 });
+    entra(`#${id}s`, t_, a + 0.8, 1e9, { dy: 30 });
+    if (comPagina) { entra(`#${id}g`, t_, a + 0.9, 1e9, { dy: 300, dur: 0.8 }); }
+  }
+  let t_ = 0;
+  window.render = function (t) {
+    t_ = t;
+    cena('#c1', t, 0, 3.2, 0.01);
+    kb('#bg1', t, 0, 3.2, 1.05, 1.18, 0, -30);
+    palavras('#h1', t, 0.05, 0.11);
+    passo('p1', 3.2, 8, true);
+    passo('p2', 8, 12.6, false);
+    [...document.querySelectorAll('#p2l div')].forEach((d, i) => entra(d, t, 9.0 + i * 0.45, 1e9, { dy: 30, dx: -40, dur: 0.4 }));
+    passo('p3', 12.6, 17.2, true);
+    animaFinal(t, 17.2);
+  };
+  window.render(0);
+</script>
+</body></html>

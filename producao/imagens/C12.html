@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="../base.css">
+<style>
+  body { width:1080px; height:1350px; background: var(--creme); position: relative; }
+  .metade { position:absolute; left:0; right:0; height: 670px; overflow:hidden; }
+  .m1 { top: 0; }
+  .m2 { top: 680px; }
+  .m1 .foto { background-image: url('../../assets/site/cozinha-baguncada.webp'); background-position: 45% 55%; filter: saturate(.75) brightness(.92); }
+  .m2 .foto { background-image: url('../../assets/site/mesa-servida.webp'); background-position: 70% 40%; }
+  .veu { position:absolute; inset:0; }
+  .m1 .veu { background: linear-gradient(90deg, rgba(20,16,14,.86) 0%, rgba(20,16,14,.55) 48%, rgba(20,16,14,0) 75%); }
+  .m2 .veu { background: linear-gradient(90deg, rgba(27,56,32,.92) 0%, rgba(27,56,32,.62) 48%, rgba(27,56,32,0) 75%); }
+  .txt { position:absolute; left: 64px; top: 90px; width: 540px; color: #fff; }
+  .rot { display:inline-block; font-weight: 900; font-size: 24px; letter-spacing: .14em; text-transform: uppercase; padding: 10px 18px; border-radius: 999px; }
+  .m1 .rot { background: #fff; color: var(--tinta); }
+  .m2 .rot { background: var(--dourado); color: var(--verde); }
+  h2 { font-family:'Serif'; font-weight:400; font-size: 84px; line-height: .98; margin-top: 18px; }
+  ul { list-style:none; margin-top: 22px; }
+  li { font-size: 30px; font-weight: 700; line-height: 1.25; margin-bottom: 12px; padding-left: 40px; position: relative; }
+  .m1 li::before { content:'✕'; position:absolute; left:0; color: #ff9a9a; font-weight: 900; }
+  .m2 li::before { content:'✓'; position:absolute; left:0; color: var(--dourado); font-weight: 900; }
+  .divisa { position:absolute; left:0; right:0; top: 670px; height: 10px; background: var(--dourado); }
+  .preco { position:absolute; right: 50px; bottom: 44px; background: var(--creme); color: var(--verde); font-weight: 900; font-size: 34px; padding: 12px 24px; border-radius: 999px; box-shadow: 0 10px 24px rgba(0,0,0,.25); }
+  .preco small { font-weight: 700; font-size: 24px; color: var(--tinta-2); margin-right: 8px; }
+</style></head>
+<body>
+  <div class="metade m1"><div class="foto"></div><div class="veu"></div>
+    <div class="txt"><span class="rot">Ceia improvisada</span><h2>Tudo no dia 24.</h2>
+      <ul><li>Cardápio decidido de cabeça</li><li>Volta ao mercado na véspera</li><li>Sem tempo nem pro banho</li></ul></div>
+  </div>
+  <div class="divisa"></div>
+  <div class="metade m2"><div class="foto"></div><div class="veu"></div>
+    <div class="txt"><span class="rot">Ceia planejada</span><h2>Cada coisa no seu dia.</h2>
+      <ul><li>Cardápio e lista prontos</li><li>Dia 24 hora a hora</li><li>18h30: seu momento</li></ul></div>
+    <div class="preco"><small>Guia da ceia</small>R$ 19,90</div>
+  </div>
+</body></html>

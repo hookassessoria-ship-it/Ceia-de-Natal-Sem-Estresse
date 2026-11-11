@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="video.css">
+<style>
+  #c1 { background: var(--creme-2); }
+  #h1 { left:70px; right:70px; top: 260px; font-size: 128px; color: var(--tinta); }
+  .pal { position:absolute; font-family:'Hand'; font-size: 64px; color: #3a3125; white-space: nowrap; }
+  .sec { position:absolute; left: 70px; right: 70px; font-weight: 900; font-size: 30px; letter-spacing: .12em; text-transform: uppercase; color: var(--vermelho); border-bottom: 3px solid rgba(179,33,47,.35); padding-bottom: 8px; }
+  #cap { left:70px; right:70px; top: 260px; font-size: 92px; color: var(--verde); }
+  #c3 { background: var(--creme-2); }
+  #t3 { left:70px; right:70px; top: 240px; font-size: 76px; color: var(--verde); }
+  #pg3 { left: 140px; top: 520px; width: 800px; }
+</style></head>
+<body>
+  <div class="cena" id="c1">
+    <div class="gancho abs" id="h1">Esqueceu o creme de leite?</div>
+    <div id="secoes"></div>
+    <div id="palavras"></div>
+    <div class="gancho abs" id="cap">Lista por seção do mercado.</div>
+  </div>
+  <div class="cena" id="c3">
+    <div class="gancho abs" id="t3">Uma lista pra cada cardápio, com caixinhas pra marcar.</div>
+    <div class="pagina abs" id="pg3"><img src="../../assets/site/guia-p012.webp"></div>
+  </div>
+<script src="motor.js"></script>
+<script>
+  window.DURACAO = 17;
+  montaFinal('Lista pronta, por seção do mercado', ['3 cardápios para 8 a 10 pessoas', 'Quantidades e caixinhas pra marcar', 'Cronograma e 30 receitas'], 'Toque no botão e veja a lista por dentro');
+  // Itens reais da lista do cardápio Econômico (página 12)
+  const SECOES = [
+    ['Hortifrúti', ['batata 1,5 kg', 'cebola 3 un.', 'alho 1 cabeça', 'maracujá 2 un.']],
+    ['Açougue', ['chester ~3,5 kg', 'bacon 200 g']],
+    ['Frios e laticínios', ['creme de leite 4 cx.', 'manteiga 200 g', 'ovos 6 un.']],
+    ['Mercearia', ['arroz 1 kg', 'farinha de mandioca 500 g', 'maionese 500 g']],
+    ['Temperos', ['azeite', 'páprica doce']],
+  ];
+  const secoesEl = $('#secoes'), palEl = $('#palavras');
+  const alvo = [];
+  let y = 540;
+  SECOES.forEach(([nome, itens], si) => {
+    const s = document.createElement('div'); s.className = 'sec'; s.style.top = y + 'px'; s.textContent = nome; s.id = 'sec' + si; secoesEl.appendChild(s);
+    let x = 70, yy = y + 56;
+    itens.forEach((it, ii) => {
+      const w = Math.min(it.length * 23 + 20, 900);
+      if (x + w > 1000) { x = 70; yy += 64; }
+      alvo.push({ it, x, y: yy, si });
+      x += w + 20;
+    });
+    y = yy + 84;
+  });
+  // posições "bagunçadas" iniciais (determinísticas)
+  const rnd = (i, k) => { const v = Math.sin(i * 12.9898 + k * 78.233) * 43758.5453; return v - Math.floor(v); };
+  alvo.forEach((a, i) => {
+    const p = document.createElement('div'); p.className = 'pal'; p.textContent = a.it; p.id = 'pal' + i; palEl.appendChild(p);
+    a.x0 = 80 + (i % 2) * 430 + (rnd(i, 1) - 0.5) * 120; a.y0 = 600 + Math.floor(i / 2) * 125 + (rnd(i, 2) - 0.5) * 50; a.r0 = (rnd(i, 3) - 0.5) * 24;
+  });
+  window.render = function (t) {
+    cena('#c1', t, 0, 9.6, 0.01);
+    entra('#h1', t, 0, 5.2, { dy: 40 });
+    alvo.forEach((a, i) => {
+      const el = $('#pal' + i);
+      const ap = E.out(prog(t, 0.3 + i * 0.08, 0.7 + i * 0.08));
+      const m = E.inOut(prog(t, 3.2 + i * 0.12, 4.2 + i * 0.12));
+      const x = a.x0 + (a.x - a.x0) * m, yv = a.y0 + (a.y - a.y0) * m, r = a.r0 * (1 - m);
+      el.style.opacity = ap;
+      el.style.left = x + 'px'; el.style.top = yv + 'px';
+      el.style.transform = `rotate(${r}deg) scale(${1 - 0.38 * m})`;
+      el.style.transformOrigin = 'left top';
+      el.style.fontFamily = m > 0.5 ? "'Sans'" : "'Hand'";
+      el.style.fontWeight = m > 0.5 ? '700' : '700';
+      el.style.fontSize = m > 0.5 ? '66px' : '64px';
+      el.style.color = m > 0.5 ? 'var(--tinta)' : '#3a3125';
+    });
+    SECOES.forEach((s, si) => entra('#sec' + si, t, 3.0 + si * 0.15, 1e9, { dy: 20 }));
+    entra('#cap', t, 5.6, 1e9, { dy: 30 });
+    const cr = alvo.findIndex(a => a.it.startsWith('creme'));
+    if (t > 5.0) { const el = $('#pal' + cr); el.style.color = 'var(--vermelho)'; el.style.fontWeight = '900'; el.textContent = '✔ creme de leite 4 cx.'; } else { $('#pal' + cr).textContent = 'creme de leite 4 cx.'; }
+    cena('#c3', t, 9.6, 13, 0.25);
+    entra('#t3', t, 9.7, 1e9, { dy: 30 });
+    entra('#pg3', t, 10.0, 1e9, { dy: 400, dur: 0.8 });
+    animaFinal(t, 13);
+  };
+  window.render(0);
+</script>
+</body></html>

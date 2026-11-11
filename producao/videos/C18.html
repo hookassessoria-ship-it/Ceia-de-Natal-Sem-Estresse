@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="video.css">
+<style>
+  #c1 { background: var(--verde); color:#fff; }
+  #h1 { left:70px; right:70px; top: 250px; font-size: 118px; text-align:center; }
+  #capa1 { left: 50%; top: 600px; width: 720px; margin-left: -360px; border-radius: 10px; box-shadow: 0 40px 80px rgba(0,0,0,.5); }
+  #c2 { background: var(--creme-2); }
+  .pg { position:absolute; left: 160px; top: 540px; width: 760px; }
+  .rot { position:absolute; left: 70px; right: 70px; top: 250px; }
+  .rot .n { font-family:'Serif'; font-size: 44px; color: var(--vermelho); }
+  .rot .x { font-family:'Serif'; font-size: 66px; line-height: 1.02; color: var(--verde); margin-top: 4px; }
+  #cont { right: 70px; top: 1480px; font-size: 30px; font-weight: 900; color: var(--tinta-2); letter-spacing: .1em; text-transform: uppercase; }
+</style></head>
+<body>
+  <div class="cena" id="c1">
+    <div class="gancho abs" id="h1">O que vem dentro do guia</div>
+    <img class="abs" id="capa1" src="../../assets/site/capa-ceia.webp">
+  </div>
+  <div class="cena" id="c2"></div>
+<script src="motor.js"></script>
+<script>
+  window.DURACAO = 20;
+  montaFinal('Tudo em um PDF de 63 páginas', ['3 cardápios, listas e cronograma', '30 receitas com tempo e rendimento', 'Bônus das sobras + checklist']);
+  const PAGINAS = [
+    ['guia-p008', '3 cardápios para 8 a 10 pessoas'],
+    ['guia-p012', 'Lista de compras por seção do mercado'],
+    ['guia-p022', 'Dia 24, hora a hora'],
+    ['guia-p031', '30 receitas com tempo, rendimento e dica'],
+    ['guia-p057', 'Bônus: receitas com as sobras'],
+    ['guia-p062', 'Checklist de última hora'],
+  ];
+  const c2 = $('#c2');
+  PAGINAS.forEach(([img, txt], i) => {
+    c2.insertAdjacentHTML('beforeend', `<div class="rot abs" id="r${i}"><div class="n">${i + 1} de 6</div><div class="x">${txt}</div></div>
+      <div class="pagina pg abs" id="g${i}"><img src="../../assets/site/${img}.webp"></div>`);
+  });
+  const T0 = 2.8, P = 2.25;
+  window.render = function (t) {
+    cena('#c1', t, 0, T0, 0.01);
+    entra('#h1', t, 0, 1e9, { dy: 40 });
+    entra('#capa1', t, 0.3, 1e9, { dy: 120, s0: 0.85, dur: 0.7 });
+    cena('#c2', t, T0, T0 + PAGINAS.length * P, 0.2);
+    PAGINAS.forEach((_, i) => {
+      const a = T0 + i * P, b = a + P;
+      entra('#r' + i, t, a + 0.1, b - 0.15, { dy: 30, dur: 0.4, outDur: 0.2 });
+      // página entra pela direita girando e sai pela esquerda
+      const pin = E.out(prog(t, a, a + 0.5)), pout = E.inOut(prog(t, b - 0.3, b));
+      const el = $('#g' + i);
+      const x = (1 - pin) * 900 - pout * 1000, rot = (1 - pin) * 12 - pout * 10;
+      const zoom = 1 + 0.05 * prog(t, a, b);
+      el.style.opacity = (t >= a && t < b) ? 1 : 0;
+      el.style.transform = `translateX(${x}px) rotate(${rot}deg) scale(${zoom})`;
+    });
+    animaFinal(t, T0 + PAGINAS.length * P);
+  };
+  window.render(0);
+</script>
+</body></html>

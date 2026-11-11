@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="video.css">
+<style>
+  #c1 { background:#000; }
+  #bg1 { background-image: url('../../assets/site/mesa-servida.webp'); background-position: 65% 40%; }
+  #h1 { left:70px; right:70px; top: 330px; font-size: 136px; color: #fff; }
+  #h1 em { color: #ffd48a; font-style: italic; }
+  #c2 { background: var(--creme); }
+  .rc { left: 70px; right: 70px; top: 300px; }
+  .rc .n { font-family:'Serif'; font-size: 260px; line-height: .8; color: var(--vermelho); }
+  .rc .nm { font-family:'Serif'; font-size: 104px; line-height: 1; color: var(--verde); margin-top: 30px; }
+  .rc .tm { display:inline-block; margin-top: 30px; background: var(--verde); color:#fff; font-weight: 900; font-size: 40px; padding: 12px 28px; border-radius: 999px; }
+  .rc .ds { font-size: 42px; font-weight: 700; color: var(--tinta-2); margin-top: 26px; line-height: 1.3; }
+  #pg { left: 300px; top: 1080px; width: 640px; transform: rotate(4deg); }
+  #c3 { background: var(--verde); color: #fff; }
+  #t3a { left: 70px; right: 70px; top: 300px; }
+  #t3 { left:70px; right:70px; top: 470px; font-size: 92px; }
+  #t3b { left:70px; right:70px; top: 1000px; font-size: 44px; font-weight: 700; line-height: 1.3; opacity: .92; }
+</style></head>
+<body>
+  <div class="cena" id="c1"><div class="fundo" id="bg1"></div><div class="veu-escuro"></div>
+    <div class="gancho abs" id="h1">3 ideias com as <em>sobras da ceia</em></div>
+  </div>
+  <div class="cena" id="c2">
+    <div class="rc abs" id="r0"><div class="n">1</div><div class="nm">Sanduíche de peru ou chester</div><span class="tm">15 min · rende 6</span><div class="ds">Carne desfiada com maionese, mostarda e cebolinha.</div></div>
+    <div class="rc abs" id="r1"><div class="n">2</div><div class="nm">Risoto de aproveitamento</div><span class="tm">25 min</span><div class="ds">O que sobrou da ceia vira um almoço novo no dia 25.</div></div>
+    <div class="rc abs" id="r2"><div class="n">3</div><div class="nm">Rabanada de panetone</div><span class="tm">25 min</span><div class="ds">O panetone que sobrou vira sobremesa.</div></div>
+    <div class="pagina abs" id="pg"><img src="../../assets/site/guia-p057.webp"></div>
+  </div>
+  <div class="cena" id="c3">
+    <div class="chip abs" id="t3a" style="background:var(--dourado);color:var(--verde);width:auto;right:auto">Segurança alimentar</div>
+    <div class="gancho abs" id="t3">Sobras na geladeira em até 2 horas depois da ceia.</div>
+    <div class="abs" id="t3b">Carne guardada assim: consuma em até 3 dias.</div>
+  </div>
+<script src="motor.js"></script>
+<script>
+  window.DURACAO = 18;
+  montaFinal('O dia 25 também resolvido', ['Bônus: 4 receitas com as sobras', 'Como guardar e requentar', '+ 3 cardápios, lista e cronograma']);
+  quebraPalavras('#h1');
+  window.render = function (t) {
+    cena('#c1', t, 0, 3, 0.01);
+    kb('#bg1', t, 0, 3, 1.04, 1.16, 0, -40);
+    palavras('#h1', t, 0.05, 0.12);
+    cena('#c2', t, 3, 11.6, 0.2);
+    [[3, 5.9], [5.9, 8.8], [8.8, 11.6]].forEach(([a, b], i) => entra('#r' + i, t, a + 0.05, i < 2 ? b - 0.2 : 1e9, { dy: 60, dur: 0.45, outDur: 0.2 }));
+    entra('#pg', t, 3.4, 5.7, { dy: 300, dur: 0.7, base: 'rotate(4deg)', outDur: 0.2 });
+    cena('#c3', t, 11.6, 14.6, 0.25);
+    entra('#t3a', t, 11.7, 1e9, { dy: 20 });
+    entra('#t3', t, 11.9, 1e9, { dy: 40 });
+    entra('#t3b', t, 12.8, 1e9, { dy: 30 });
+    animaFinal(t, 14.6);
+  };
+  window.render(0);
+</script>
+</body></html>

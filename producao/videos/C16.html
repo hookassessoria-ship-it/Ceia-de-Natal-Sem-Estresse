@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="video.css">
+<style>
+  #c1 { background: var(--creme); }
+  #h1 { left:70px; right:70px; top: 330px; font-size: 120px; color: var(--tinta); }
+  #h1b { left:70px; right:70px; top: 620px; font-size: 140px; color: var(--vermelho); font-style: italic; }
+  #risco { left: 70px; top: 915px; height: 10px; width: 0; background: var(--vermelho); border-radius: 5px; }
+  #h1c { left:70px; right:70px; top: 1010px; font-size: 48px; font-weight: 800; color: var(--tinta-2); line-height: 1.3; }
+  #c2 { background: var(--verde); color:#fff; }
+  #t2 { left:70px; right:70px; top: 250px; font-size: 80px; }
+  .et { left: 70px; right: 70px; background: rgba(255,255,255,.08); border: 2px solid rgba(255,255,255,.18); border-radius: 26px; padding: 28px 34px; }
+  .et .d { font-size: 30px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; color: var(--dourado); }
+  .et .x { font-size: 40px; font-weight: 800; line-height: 1.28; margin-top: 8px; }
+  #e1 { top: 520px; } #e2 { top: 830px; } #e3 { top: 1120px; }
+  #c3 { background: var(--creme); }
+  #t3 { left:70px; right:70px; top: 560px; font-size: 128px; color: var(--verde); }
+  #t3b { left:70px; right:70px; top: 960px; font-size: 46px; font-weight: 700; color: var(--tinta-2); line-height: 1.3; }
+</style></head>
+<body>
+  <div class="cena" id="c1">
+    <div class="gancho abs" id="h1">O erro nº 1 da ceia:</div>
+    <div class="gancho abs" id="h1b">deixar tudo pra véspera.</div>
+    <div class="abs" id="risco"></div>
+    <div class="abs" id="h1c">Tudo precisa ficar pronto na mesma hora, e o forno não dá conta.</div>
+  </div>
+  <div class="cena" id="c2">
+    <div class="gancho abs" id="t2">O que dá pra adiantar:</div>
+    <div class="et abs" id="e1"><div class="d">Uma semana antes · 17 ou 18/12</div><div class="x">Escolher o cardápio, imprimir a lista e comprar o que não estraga.</div></div>
+    <div class="et abs" id="e2"><div class="d">Três dias antes · 21/12</div><div class="x">Passar o peru do congelador pra geladeira e fazer gelo extra.</div></div>
+    <div class="et abs" id="e3"><div class="d">Dia 23</div><div class="x">Sobremesas geladas, farofa e salpicão prontos. Carnes marinando.</div></div>
+  </div>
+  <div class="cena" id="c3">
+    <div class="gancho abs" id="t3">E o forno chega livre ao dia 24.</div>
+    <div class="abs" id="t3b">Cada coisa no seu dia. Nenhum dia fica pesado.</div>
+  </div>
+<script src="motor.js"></script>
+<script>
+  window.DURACAO = 21;
+  montaFinal('Esse cronograma está no guia', ['Do dia 17 ao dia 25, com o dia 24 hora a hora', '3 cardápios e listas de compras', '30 receitas + checklist de última hora']);
+  window.render = function (t) {
+    cena('#c1', t, 0, 4.6, 0.01);
+    entra('#h1', t, 0, 1e9, { dy: 40 });
+    entra('#h1b', t, 0.6, 1e9, { dy: 40 });
+    $('#risco').style.width = (E.out(prog(t, 1.6, 2.2)) * 700) + 'px';
+    entra('#h1c', t, 2.4, 1e9, { dy: 30 });
+    cena('#c2', t, 4.6, 13.4, 0.25);
+    entra('#t2', t, 4.7, 1e9, { dy: 30 });
+    entra('#e1', t, 5.3, 1e9, { dy: 60 });
+    entra('#e2', t, 7.6, 1e9, { dy: 60 });
+    entra('#e3', t, 9.9, 1e9, { dy: 60 });
+    cena('#c3', t, 13.4, 16.8, 0.25);
+    entra('#t3', t, 13.5, 1e9, { dy: 40 });
+    entra('#t3b', t, 14.3, 1e9, { dy: 30 });
+    animaFinal(t, 16.8);
+  };
+  window.render(0);
+</script>
+</body></html>

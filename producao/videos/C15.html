@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="video.css">
+<style>
+  #c1 { background: var(--vermelho); color:#fff; }
+  #h1 { left:70px; right:70px; top: 400px; font-size: 140px; }
+  #h1b { left:70px; right:70px; top: 960px; font-size: 76px; font-family:'Serif'; line-height: 1.02; color: #ffe2b0; }
+  #c2 { background: var(--creme); }
+  #t2 { left:70px; right:70px; top: 240px; font-size: 58px; color: var(--verde); }
+  .cd { left: 70px; right: 70px; padding: 34px 40px; }
+  .cd .nm { font-family:'Serif'; font-size: 76px; color: var(--vermelho); line-height: 1; }
+  .cd .meta { font-size: 30px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--dourado-escuro); margin-top: 10px; }
+  .cd .it { font-size: 36px; font-weight: 700; color: var(--tinta); margin-top: 14px; line-height: 1.3; }
+  #k1 { top: 430px; } #k2 { top: 790px; } #k3 { top: 1080px; }
+  #c3 { background: var(--verde); color: #fff; }
+  #t3 { left:70px; right:70px; top: 560px; font-size: 104px; }
+  #t3 em { color: var(--dourado); font-style: normal; }
+  #t3b { left:70px; right:70px; top: 960px; font-size: 46px; font-weight: 700; line-height: 1.3; opacity: .92; }
+</style></head>
+<body>
+  <div class="cena" id="c1">
+    <div class="gancho abs" id="h1">Você não precisa de 300 receitas.</div>
+    <div class="abs" id="h1b">Precisa de um cardápio fechado.</div>
+  </div>
+  <div class="cena" id="c2">
+    <div class="gancho abs" id="t2">3 cardápios prontos, para 8 a 10 pessoas</div>
+    <div class="card cd abs" id="k1"><div class="nm">Econômico</div><div class="meta">cerca de 3h de cozinha no dia 24</div><div class="it">Chester assado com ervas, arroz de forno, farofa de bacon, mousse de maracujá</div></div>
+    <div class="card cd abs" id="k2"><div class="nm">Tradicional</div><div class="meta">cerca de 5h de cozinha no dia 24</div><div class="it">Peru, arroz à grega, farofa e salpicão</div></div>
+    <div class="card cd abs" id="k3"><div class="nm">Fartura</div><div class="meta">cerca de 7h de cozinha no dia 24</div><div class="it">O Tradicional + pernil, bacalhau e purê</div></div>
+  </div>
+  <div class="cena" id="c3">
+    <div class="gancho abs" id="t3">Cada um com <em>lista de compras</em> e cronograma.</div>
+    <div class="abs" id="t3b">E um teste de 2 minutos ajuda a escolher o seu.</div>
+  </div>
+<script src="motor.js"></script>
+<script>
+  window.DURACAO = 19;
+  montaFinal('30 receitas + 3 cardápios', ['Menos de R$ 1 por receita', 'Lista de compras por seção', 'Dia 24 hora a hora']);
+  quebraPalavras('#h1');
+  window.render = function (t) {
+    cena('#c1', t, 0, 3.6, 0.01);
+    palavras('#h1', t, 0.05, 0.12);
+    entra('#h1b', t, 1.6, 1e9, { dy: 40 });
+    cena('#c2', t, 3.6, 11.4, 0.25);
+    entra('#t2', t, 3.7, 1e9, { dy: 30 });
+    entra('#k1', t, 4.2, 1e9, { dx: 120, dy: 0, dur: 0.55 });
+    entra('#k2', t, 6.4, 1e9, { dx: 120, dy: 0, dur: 0.55 });
+    entra('#k3', t, 8.6, 1e9, { dx: 120, dy: 0, dur: 0.55 });
+    cena('#c3', t, 11.4, 15, 0.25);
+    entra('#t3', t, 11.5, 1e9, { dy: 40 });
+    entra('#t3b', t, 12.4, 1e9, { dy: 30 });
+    animaFinal(t, 15);
+  };
+  window.render(0);
+</script>
+</body></html>
