@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="../base.css">
+<style>
+  body { width:1080px; height:1350px; background: var(--vermelho); position: relative; color: #fff; }
+  .bg { position:absolute; inset:0; background: radial-gradient(ellipse at 30% 20%, #c73040 0%, var(--vermelho) 45%, var(--vermelho-2) 100%); }
+  .marca { position:absolute; left:70px; top: 70px; color: #fff; opacity: .9; }
+  .marca svg path { stroke: #fff; }
+  h1 { position:absolute; left:70px; right:70px; top: 230px; font-family:'Serif'; font-weight:400; font-size: 150px; line-height: 0.95; letter-spacing:-0.025em; }
+  .resp { position:absolute; left:70px; right:70px; top: 790px; font-size: 40px; font-weight: 800; line-height: 1.25; }
+  .ops { position:absolute; left:70px; right:70px; top: 920px; display:flex; flex-direction:column; gap: 16px; }
+  .op { background: rgba(255,255,255,.12); border: 2px solid rgba(255,255,255,.35); border-radius: 18px; padding: 20px 26px; display:flex; justify-content:space-between; align-items:center; font-size: 34px; font-weight: 800; }
+  .op small { font-size: 26px; font-weight: 700; opacity: .85; }
+  .base { position:absolute; left:70px; right:70px; bottom: 56px; display:flex; justify-content:space-between; align-items:center; font-size: 27px; font-weight: 700; opacity: .95; }
+  .base b { background: #fff; color: var(--vermelho); font-weight: 900; font-size: 36px; padding: 10px 24px; border-radius: 999px; }
+</style></head>
+<body>
+  <div class="bg"></div>
+  <div class="marca"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Cantinho do Lar</div>
+  <h1>Já decidiu o cardápio da ceia?</h1>
+  <div class="resp">Se ainda não, tem 3 prontos,<br>para 8 a 10 pessoas:</div>
+  <div class="ops">
+    <div class="op">Econômico <small>simples e no bolso</small></div>
+    <div class="op">Tradicional <small>os clássicos da ceia</small></div>
+    <div class="op">Fartura <small>mesa farta</small></div>
+  </div>
+  <div class="base"><span>Com lista de compras e cronograma</span><b>R$ 19,90</b></div>
+</body></html>

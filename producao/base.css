@@ -1,0 +1,44 @@
+/* Identidade visual "Cantinho do Lar", tirada da capa e das páginas reais do guia */
+@font-face { font-family: 'Serif'; src: url('fonts/dm-serif-display-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'Serif'; src: url('fonts/dm-serif-display-latin-400-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; }
+@font-face { font-family: 'Sans'; src: url('fonts/nunito-latin-400-normal.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'Sans'; src: url('fonts/nunito-latin-600-normal.woff2') format('woff2'); font-weight: 600; }
+@font-face { font-family: 'Sans'; src: url('fonts/nunito-latin-700-normal.woff2') format('woff2'); font-weight: 700; }
+@font-face { font-family: 'Sans'; src: url('fonts/nunito-latin-800-normal.woff2') format('woff2'); font-weight: 800; }
+@font-face { font-family: 'Sans'; src: url('fonts/nunito-latin-900-normal.woff2') format('woff2'); font-weight: 900; }
+@font-face { font-family: 'Hand'; src: url('fonts/caveat-latin-700-normal.woff2') format('woff2'); font-weight: 700; }
+
+:root {
+  --creme: #fef7ec;
+  --creme-2: #f6ead3;
+  --verde: #1b3820;
+  --verde-2: #24502e;
+  --verde-claro: #e6ece1;
+  --vermelho: #b3212f;
+  --vermelho-2: #8f1a25;
+  --dourado: #c9a24a;
+  --dourado-escuro: #8a6d1f;
+  --tinta: #2a2420;
+  --tinta-2: #5b524b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; }
+body { font-family: 'Sans', sans-serif; color: var(--tinta); background: var(--creme); -webkit-font-smoothing: antialiased; overflow: hidden; }
+
+.serif { font-family: 'Serif', serif; font-weight: 400; letter-spacing: -0.01em; }
+.hand { font-family: 'Hand', cursive; }
+.eyebrow { font-family: 'Sans'; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+
+/* selo da marca */
+.marca { display: inline-flex; align-items: center; gap: 12px; font-family: 'Serif'; font-size: 30px; color: var(--verde); }
+.marca svg { width: 30px; height: 30px; }
+
+/* "página" do PDF com sombra suave */
+.pagina { background: #fff; border-radius: 10px; box-shadow: 0 30px 60px rgba(27,56,32,0.25), 0 6px 14px rgba(0,0,0,0.12); overflow: hidden; }
+.pagina img { display: block; width: 100%; height: auto; }
+
+/* faixa de preço/selo */
+.pill { display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; padding: 14px 26px; font-weight: 800; }
+
+.foto { position: absolute; inset: 0; background-size: cover; background-position: center; }

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="../base.css">
+<style>
+  body { width:1080px; height:1350px; background: var(--verde); position: relative; color: #fff; }
+  .bg { position:absolute; inset:0; background: radial-gradient(ellipse at 50% 40%, #2c5a35 0%, var(--verde) 70%); }
+  .topo { position:absolute; left:70px; right:70px; top:72px; text-align:center; }
+  .topo .eyebrow { color: var(--dourado); font-size: 26px; }
+  h1 { font-family:'Serif'; font-weight:400; font-size: 100px; line-height: 1.0; margin-top: 18px; letter-spacing:-0.015em; }
+  h1 em { font-style: normal; color: var(--dourado); }
+  .palco { position:absolute; left:0; right:0; top: 380px; height: 600px; }
+  .pg { position:absolute; width: 300px; top: 70px; }
+  .pg.a { left: 105px; transform: rotate(-9deg); }
+  .pg.b { right: 105px; transform: rotate(9deg); }
+  .capa { position:absolute; left: 50%; top: 0; width: 520px; margin-left:-260px; border-radius: 8px; box-shadow: 0 40px 80px rgba(0,0,0,.45), 0 0 0 6px rgba(255,255,255,.08); }
+  .cards { position:absolute; left: 70px; right: 70px; top: 1000px; display:flex; gap: 18px; }
+  .card { flex:1; background: var(--creme); color: var(--verde); border-radius: 20px; padding: 22px 16px; text-align:center; }
+  .card b { display:block; font-family:'Serif'; font-weight:400; font-size: 42px; color: var(--vermelho); }
+  .card span { font-size: 24px; font-weight: 700; color: var(--tinta-2); }
+  .rodape { position:absolute; left:70px; right:70px; bottom: 60px; display:flex; align-items:center; justify-content:space-between; }
+  .rodape .a { font-size: 29px; font-weight: 700; line-height: 1.35; opacity: .92; }
+  .preco { background: var(--dourado); color: var(--verde); font-weight: 900; font-size: 44px; padding: 14px 32px; border-radius: 999px; }
+</style></head>
+<body>
+  <div class="bg"></div>
+  <div class="topo">
+    <div class="eyebrow">Guia digital · Natal 2026</div>
+    <h1>3 cardápios prontos<br>para <em>8 a 10 pessoas</em></h1>
+  </div>
+  <div class="palco">
+    <div class="pg pagina a"><img src="../../assets/site/guia-p008.webp"></div>
+    <div class="pg pagina b"><img src="../../assets/site/guia-p012.webp"></div>
+    <img class="capa" src="../../assets/site/capa-ceia.webp">
+  </div>
+  <div class="cards">
+    <div class="card"><b>Econômico</b><span>simples e no bolso</span></div>
+    <div class="card"><b>Tradicional</b><span>os clássicos da ceia</span></div>
+    <div class="card"><b>Fartura</b><span>mesa farta</span></div>
+  </div>
+  <div class="rodape">
+    <div class="a">Com lista de compras, cronograma<br>e 30 receitas · PDF de 63 páginas</div>
+    <div class="preco">R$ 19,90</div>
+  </div>
+</body></html>
