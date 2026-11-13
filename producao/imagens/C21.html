@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="formatos" content="45,916">
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="../objecoes.css">
+<style>
+  body { background: var(--pessego-100); }
+  .zona { justify-content: space-between; align-items: center; }
+  .olho { color: var(--terracota); align-self: flex-start; }
+  .bilhete { position: relative; width: 760px; align-self: flex-start; margin-left: -10px; background: #fffdf7; padding: 70px 70px 64px; transform: rotate(-3deg);
+    box-shadow: 0 30px 60px rgba(90,50,20,.22), 0 4px 10px rgba(0,0,0,.08); z-index: 3; }
+  .bilhete .fita { position:absolute; top:-26px; left: 50%; width: 190px; height: 54px; margin-left: -95px; background: rgba(242,184,128,.75); transform: rotate(2deg); }
+  .bilhete .l1 { font-size: 112px; line-height: .95; color: #2b2520; }
+  .bilhete .l2 { font-size: 76px; line-height: 1.05; color: #3a3028; margin-top: 34px; }
+  .bilhete .ass { font-size: 50px; color: var(--terracota); margin-top: 40px; text-align: right; }
+  .base-linha { width: 100%; display:flex; justify-content: space-between; align-items: flex-end; }
+  .base-linha .titulo { font-size: 50px; color: var(--verde-profundo); max-width: 520px; }
+  body.f916 .bilhete { width: 820px; padding: 86px 76px 80px; }
+  .pg { position:absolute; right: -60px; width: 560px; transform: rotate(6deg); z-index: 2; }
+  body.f45 .pg { top: 300px; } body.f916 .pg { top: 470px; width: 600px; }
+  .pg .marca18 { position:absolute; left: 4%; right: 3%; top: 52.6%; height: 3.6%; background: rgba(242,184,128,.55); mix-blend-mode: multiply; border-radius: 4px; }
+  body.f916 .bilhete .l1 { font-size: 124px; }
+  body.f916 .bilhete .l2 { font-size: 84px; }
+</style></head>
+<body class="papel">
+  <div class="cheio" style="background: var(--pessego-100)"></div>
+  <div class="pg folha"><img src="../../assets/site/guia-p022.webp"><div class="marca18"></div></div>
+  <div class="zona">
+    <div></div>
+    <div class="bilhete mao">
+      <div class="fita"></div>
+      <div class="l1">Valeu, eu de novembro.</div>
+      <div class="l2">Peru assando. Eu, no banho.</div>
+      <div class="ass">— eu, 24/12, 18h30</div>
+    </div>
+    <div class="base-linha">
+      <div class="titulo">Planeje <em>agora.</em></div>
+      <div class="ponte"><img src="../../assets/site/capa-ceia.webp"><span class="preco">R$ 19,90</span></div>
+    </div>
+  </div>
+  <div class="grao"></div>
+<script src="../luz.js"></script>
+<script>formato();</script>
+</body></html>

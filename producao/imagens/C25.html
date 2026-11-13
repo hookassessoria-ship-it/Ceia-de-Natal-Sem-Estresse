@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="formatos" content="45,916">
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="../objecoes.css">
+<style>
+  .foto { position:absolute; left:0; right:0; bottom:0; background-image: url('../../assets/derivados/meias-sem-rosto.jpg'); background-size: 1080px auto; background-repeat:no-repeat; }
+  body.f45 .foto { top: 560px; background-position: 50% 100%; }
+  body.f916 .foto { top: 800px; bottom: 300px; background-position: 50% 92%; }
+  .foto::before { content:''; position:absolute; left:0; right:0; top:0; height: 260px; background: linear-gradient(180deg, var(--papel) 0%, rgba(255,250,242,.0) 100%); }
+  body.f916 .foto::after { content:''; position:absolute; left:0; right:0; bottom:0; height: 160px; background: linear-gradient(0deg, var(--papel) 0%, rgba(255,250,242,0) 100%); }
+  .zona { justify-content: space-between; }
+  .titulo { font-size: 118px; color: var(--verde-profundo); }
+  .apoio { color: var(--tinta-2); margin-top: 26px; }
+  .ponte { align-self: flex-end; }
+  .ponte img { box-shadow: 0 18px 30px rgba(0,0,0,.45); }
+  body.f916 .titulo { font-size: 128px; }
+</style></head>
+<body class="papel">
+  <div class="cheio" style="background: var(--papel)"></div>
+  <div class="foto"></div>
+  <div class="zona">
+    <div>
+      <div class="titulo">A ceia de sempre.<br><em>Sem a correria.</em></div>
+      <div class="apoio">Você cozinha. O guia organiza.</div>
+    </div>
+    <div class="ponte"><img src="../../assets/site/capa-ceia.webp"><span class="preco">R$ 19,90</span></div>
+  </div>
+  <div class="grao"></div>
+<script src="../luz.js"></script><script>formato();</script>
+</body></html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="formatos" content="45,916">
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="../objecoes.css">
+<style>
+  .zona { justify-content: space-between; }
+  .olho { color: var(--terracota); }
+  .titulo { font-size: 116px; color: var(--verde-profundo); margin-top: 26px; }
+  .trilha { position: relative; display:flex; gap: 34px; margin-top: 10px; }
+  .trilha::before { content:''; position:absolute; left: 30px; right: 30px; top: 30px; height: 4px; background: repeating-linear-gradient(90deg, var(--pessego) 0 18px, transparent 18px 30px); }
+  .ponto { position: relative; flex: 1; }
+  .ponto .bola { width: 64px; height: 64px; border-radius: 50%; background: var(--papel); border: 5px solid var(--pessego); }
+  .ponto:last-child .bola { background: var(--pessego); }
+  .ponto .data { font-family:'Serif'; font-size: 58px; color: var(--verde-profundo); margin-top: 24px; line-height: 1; }
+  .ponto .rot { font-family:'Sans'; font-weight: 800; font-size: 34px; line-height: 1.2; color: var(--tinta-2); margin-top: 10px; }
+  .base { display:flex; justify-content: space-between; align-items: flex-end; }
+  .pg { position:absolute; right: -70px; width: 430px; transform: rotate(7deg); z-index: 1; opacity: .96; }
+  body.f45 .pg { bottom: -150px; } body.f916 .pg { bottom: 170px; width: 470px; }
+  body.f916 .titulo { font-size: 128px; }
+  body.f916 .trilha { flex-direction: column; gap: 46px; margin-top: 0; }
+  body.f916 .trilha::before { left: 30px; right: auto; top: 30px; bottom: 30px; width: 4px; height: auto; background: repeating-linear-gradient(180deg, var(--pessego) 0 18px, transparent 18px 30px); }
+  body.f916 .ponto { width: auto; display:grid; grid-template-columns: 64px auto; column-gap: 34px; align-items: center; }
+  body.f916 .ponto .data { margin-top: 0; font-size: 72px; }
+  body.f916 .ponto .rot { grid-column: 2; margin-top: 4px; }
+  body.f916 .ponto .bola { grid-row: 1 / span 2; }
+</style></head>
+<body class="papel">
+  <div class="cheio" style="background: var(--papel)"></div>
+  <div class="pg folha"><img src="../../assets/site/guia-p012.webp"></div>
+  <div class="zona">
+    <div>
+      <div class="titulo">Aos poucos, <em>pode pesar menos.</em></div>
+    </div>
+    <div class="trilha">
+      <div class="ponto"><div class="bola"></div><div class="data">Novembro</div><div class="rot">carne na oferta</div></div>
+      <div class="ponto"><div class="bola"></div><div class="data">17/12</div><div class="rot">os secos</div></div>
+      <div class="ponto"><div class="bola"></div><div class="data">24/12</div><div class="rot">pão e gelo</div></div>
+    </div>
+    <div class="base"><div class="ponte"><img src="../../assets/site/capa-ceia.webp"><span class="preco">R$ 19,90</span></div></div>
+  </div>
+  <div class="grao"></div>
+<script src="../luz.js"></script><script>formato();</script>
+</body></html>

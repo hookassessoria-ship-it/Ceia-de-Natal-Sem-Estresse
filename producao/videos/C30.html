@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="video.css"><link rel="stylesheet" href="../objecoes.css">
+<style>
+  .f { left: 90px; right: 90px; top: 0; height: 1920px; display:flex; align-items:center; justify-content:center; text-align:center; }
+  .f > div { text-wrap: balance; font-family:'Serif'; font-size: 112px; line-height: 1.0; letter-spacing: -0.02em; color: var(--papel); margin-top: -120px; }
+  .f em { font-style: italic; color: var(--pessego); }
+</style></head>
+<body>
+  <div class="cena" id="fundo"><div class="cheio noite"></div><canvas class="luz" id="cv"></canvas><div class="vinheta"></div></div>
+  <div class="abs f" id="l1"><div>O primeiro prato na mesa.</div></div>
+  <div class="abs f" id="l2"><div>Um silêncio bom.</div></div>
+  <div class="abs f" id="l3"><div>Depois, um <em>que lindo</em> baixinho.</div></div>
+  <div class="abs f" id="l4"><div>Ceia pequena. <em>Momento grande.</em></div></div>
+<script src="../luz.js"></script><script src="motor.js"></script>
+<script>
+  window.DURACAO = 12.5; window.SEM_AUDIO = true;
+  montaFinal2('Cardápio, lista e cronograma prontos.');
+  const cv = document.getElementById('cv');
+  window.render = function (t) {
+    luz(cv, { semente: 30, n: 52, min: 16, max: 130, alfa: .24, deriva: 40, brilhos: [[0.5, 1.05, 700 + 40 * Math.sin(t * .6), .45], [0.15, 0.85, 320, .22], [0.88, 0.82, 300, .2]] }, t);
+    cv.style.transform = `scale(${1 + 0.05 * prog(t, 0, 9.4)})`;
+    entra('#l1', t, 0.15, 2.3, { dy: 30, dur: .6, outDur: .35 });
+    entra('#l2', t, 2.6, 4.7, { dy: 30, dur: .6, outDur: .35 });
+    entra('#l3', t, 5.0, 7.2, { dy: 30, dur: .6, outDur: .35 });
+    entra('#l4', t, 7.5, 9.2, { dy: 30, dur: .6, outDur: .3 });
+    animaFinal2(t, 9.4);
+  };
+  window.render(0);
+</script>
+</body></html>

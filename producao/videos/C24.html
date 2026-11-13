@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="video.css"><link rel="stylesheet" href="../objecoes.css">
+<style>
+  #a { background: radial-gradient(ellipse 90% 70% at 50% 35%, #8a3a1f 0%, #5c2412 50%, #2e1209 100%); color: var(--papel); }
+  #b { background: var(--papel); color: var(--tinta); }
+  .hora { left: 90px; top: 300px; font-size: 150px; }
+  .relogio { position:absolute; right: 110px; top: 300px; width: 190px; height: 190px; border-radius: 50%; border: 6px solid currentColor; opacity: .9; }
+  .relogio i { position:absolute; left: 50%; top: 50%; width: 6px; margin-left: -3px; background: currentColor; transform-origin: 50% 0; border-radius: 3px; }
+  .relogio .hh { height: 52px; } .relogio .mm { height: 76px; }
+  .linha { text-wrap: balance; left: 90px; right: 90px; font-family:'Serif'; font-size: 84px; line-height: 1.02; }
+  #a .linha { color: var(--pessego-200); }
+  #b .linha em { font-style: italic; color: var(--verde-profundo); background: linear-gradient(transparent 62%, var(--pessego-200) 62%, var(--pessego-200) 92%, transparent 92%); }
+  #b .hora { color: var(--verde-profundo); }
+  #b .relogio { color: var(--verde-profundo); }
+  .rotulo { left: 90px; top: 250px; font-family:'Sans'; font-weight: 900; letter-spacing: .2em; font-size: 26px; text-transform: uppercase; }
+  #a .rotulo { color: var(--pessego); } #b .rotulo { color: var(--terracota); }
+  #corte { position:absolute; left:0; right:0; top:0; height: 0; background: var(--pessego); z-index: 20; }
+</style></head>
+<body>
+  <div class="cena" id="a">
+    <div class="abs rotulo" id="a0">Do jeito de sempre</div>
+    <div class="abs gancho hora" id="a1">24/12, 10h.</div>
+    <div class="relogio" id="ra"><i class="hh" id="ra-h"></i><i class="mm" id="ra-m"></i></div>
+    <div class="abs linha" id="a2" style="top:620px">Fila do mercado.</div>
+    <div class="abs linha" id="a3" style="top:800px">Faltou o creme de leite.</div>
+    <div class="abs linha" id="a4" style="top:1070px">E às 21h, o forno lotado.</div>
+  </div>
+  <div class="cena" id="b">
+    <div class="abs rotulo" id="b0">Com o plano</div>
+    <div class="abs gancho hora" id="b1">24/12, 10h.</div>
+    <div class="relogio" id="rb"><i class="hh" id="rb-h"></i><i class="mm" id="rb-m"></i></div>
+    <div class="abs linha" id="b2" style="top:620px">Só pão, gelo <em>e frutas.</em></div>
+    <div class="abs linha" id="b3" style="top:900px">18h30: banho, com o peru <em>no forno.</em></div>
+  </div>
+  <div id="corte"></div>
+<script src="../luz.js"></script><script src="motor.js"></script>
+<script>
+  window.DURACAO = 13.5; window.SEM_AUDIO = true;
+  montaFinal2('O dia 24 hora a hora está no guia.');
+  function relogio(id, minutos) {
+    $(`#${id}-m`).style.transform = `rotate(${180 + minutos * 6}deg)`;
+    $(`#${id}-h`).style.transform = `rotate(${180 + (10 * 60 + minutos) * 0.5}deg)`;
+  }
+  window.render = function (t) {
+    cena('#a', t, 0, 6.3, 0.01);
+    entra('#a0', t, 0.0, 1e9, { dy: 10, dur: 0.3 });
+    entra('#a1', t, 0.0, 1e9, { dy: 40, dur: 0.4 });
+    entra('#ra', t, 0.1, 1e9, { dy: 0, s0: .7, dur: .4 });
+    relogio('ra', Math.pow(prog(t, 0, 6.2), 1.4) * 170);
+    const tremor = (k) => t > k ? `translateX(${Math.sin(t * 40 + k) * 3}px)` : '';
+    entra('#a2', t, 0.6, 1e9, { dy: 40, dur: 0.35 }); $('#a2').style.transform += tremor(0.6);
+    entra('#a3', t, 2.0, 1e9, { dy: 40, dur: 0.35 }); $('#a3').style.transform += tremor(2.0);
+    entra('#a4', t, 3.4, 1e9, { dy: 40, dur: 0.35 }); $('#a4').style.transform += tremor(3.4);
+    // corte em pêssego
+    const c = prog(t, 5.9, 6.3), c2 = prog(t, 6.3, 6.7);
+    $('#corte').style.top = (c2 * 1920) + 'px';
+    $('#corte').style.height = (c * 1920 - c2 * 1920) + 'px';
+    cena('#b', t, 6.3, 10.2, 0.01);
+    entra('#b0', t, 6.5, 1e9, { dy: 10, dur: 0.3 });
+    entra('#b1', t, 6.5, 1e9, { dy: 30 });
+    entra('#rb', t, 6.6, 1e9, { dy: 0, s0: .8 });
+    relogio('rb', prog(t, 6.3, 10.2) * 4);
+    entra('#b2', t, 7.1, 1e9, { dy: 40 });
+    entra('#b3', t, 8.4, 1e9, { dy: 40 });
+    animaFinal2(t, 10.2);
+  };
+  window.render(0);
+</script>
+</body></html>

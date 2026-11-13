@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="video.css"><link rel="stylesheet" href="../objecoes.css">
+<style>
+  #foto { position:absolute; inset:-60px; background-image: url('../../assets/derivados/louca-quente.jpg'); background-size: cover; background-position: 50% 50%; filter: blur(5px) saturate(1.05) brightness(.82); }
+  #veu { position:absolute; inset:0; background: linear-gradient(180deg, rgba(30,14,6,.55) 0%, rgba(30,14,6,.35) 45%, rgba(15,38,25,.80) 100%); }
+  .f { left: 90px; right: 90px; font-family:'Serif'; line-height: 1.0; letter-spacing: -0.02em; color: var(--papel); text-shadow: 0 4px 30px rgba(0,0,0,.35); }
+  .f em { font-style: italic; color: var(--pessego); }
+  .pilha { position:absolute; left: 90px; right: 90px; top: 320px; display:flex; flex-direction:column; gap: 34px; z-index: 5; }
+  .pilha .f { position: relative; left: auto; right: auto; font-size: 96px; text-wrap: balance; }
+  #h { font-size: 190px; color: var(--pessego); margin-bottom: 10px; }
+</style></head>
+<body>
+  <div class="cena" id="fundo"><div id="foto"></div><div id="veu"></div><div class="grao"></div></div>
+  <div class="pilha" id="pilha">
+    <div class="f" id="h">23h30.</div>
+    <div class="f" id="l1">A louça pode esperar.</div>
+    <div class="f" id="l2">As sobras já têm pote.</div>
+    <div class="f" id="l3">E o coração, <em>cheio.</em></div>
+    <div class="f" id="l4">Ceia pequena. <em>Noite cheia.</em></div>
+  </div>
+<script src="../luz.js"></script><script src="motor.js"></script>
+<script>
+  window.DURACAO = 13; window.SEM_AUDIO = true;
+  montaFinal2('O plano da ceia, pronto no guia.');
+  window.render = function (t) {
+    cena('#fundo', t, 0, 10.0, 0.01);
+    kb('#foto', t, 0, 10, 1.04, 1.14, 0, -30, 0, -20);
+    entra('#h', t, 0.0, 9.6, { dy: 30, dur: .5 });
+    entra('#l1', t, 0.5, 9.6, { dy: 30, dur: .5 });
+    entra('#l2', t, 2.6, 9.6, { dy: 30, dur: .5 });
+    entra('#l3', t, 4.8, 9.6, { dy: 30, dur: .5 });
+    entra('#l4', t, 7.0, 9.6, { dy: 30, dur: .5 });
+    animaFinal2(t, 9.8);
+  };
+  window.render(0);
+</script>
+</body></html>

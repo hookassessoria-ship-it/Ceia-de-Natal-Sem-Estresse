@@ -1,0 +1,50 @@
+/* Série "objeções" (C21 em diante). Paleta da página de vendas: verde profundo, creme, pêssego, terracota.
+   Formatos: body.f45 (1080x1350) e body.f916 (1080x1920). No 9:16 nada importante fica nos 250 px do topo nem nos 340 px da base. */
+:root {
+  --pessego: #F2B880;
+  --pessego-200: #F8D9B6;
+  --pessego-100: #FCEBD6;
+  --verde-profundo: #1D4A32;
+  --noite: #0f2619;
+  --papel: #FFFAF2;
+  --creme-lp: #FFF4E3;
+  --terracota: #C4532B;
+  --ouro: #C9A45C;
+  --ouro-suave: #E8D3A2;
+  --linha: #EAD9BD;
+}
+body.f45 { width:1080px; height:1350px; --topo: 88px; --base: 80px; --k: 1; }
+body.f916 { width:1080px; height:1920px; --topo: 300px; --base: 400px; --k: 1.08; }
+body { position: relative; overflow: hidden; }
+
+.zona { position:absolute; left:84px; right:84px; top: var(--topo); bottom: var(--base); display:flex; flex-direction:column; z-index: 5; }
+.cheio { position:absolute; inset:0; }
+
+/* fundos */
+.noite { background: radial-gradient(ellipse 90% 70% at 50% 38%, #2a5e41 0%, #1a3f2b 42%, #0d2216 100%); color: var(--papel); }
+.papel { background: var(--papel); color: var(--tinta); }
+.pessego-fundo { background: var(--pessego-100); color: var(--tinta); }
+canvas.luz { position:absolute; inset:0; width:100%; height:100%; z-index: 1; }
+.vinheta { position:absolute; inset:0; z-index: 2; pointer-events:none; background: radial-gradient(ellipse 85% 75% at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,.42) 100%); }
+.grao { position:absolute; inset:0; z-index: 60; pointer-events:none; opacity: .16; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+
+/* tipografia */
+.olho { font-family:'Sans'; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; font-size: calc(24px * var(--k)); }
+.titulo { font-family:'Serif'; font-weight:400; letter-spacing:-0.022em; line-height: .97; text-wrap: balance; }
+.noite .titulo em, .noite em.it { font-style: italic; color: var(--pessego); }
+.papel .titulo em, .pessego-fundo .titulo em, .papel em.it { font-style: italic; color: var(--verde-profundo);
+  background: linear-gradient(transparent 62%, var(--pessego-200) 62%, var(--pessego-200) 92%, transparent 92%); padding: 0 .06em; }
+.apoio { font-family:'Sans'; font-weight: 700; line-height: 1.32; font-size: calc(34px * var(--k)); }
+.mao { font-family:'Hand'; font-weight:700; }
+
+/* ponte com o produto: capa + preço */
+.ponte { display:flex; align-items:center; gap: 26px; }
+.ponte img { width: calc(150px * var(--k)); border-radius: 6px; box-shadow: 0 14px 30px rgba(0,0,0,.35); }
+.ponte .preco { font-family:'Sans'; font-weight: 900; font-size: calc(40px * var(--k)); padding: 12px 30px; border-radius: 999px; background: var(--pessego); color: var(--noite); white-space: nowrap; }
+.papel .ponte .preco, .pessego-fundo .ponte .preco { background: var(--verde-profundo); color: var(--papel); }
+.ponte .nome { font-family:'Serif'; font-size: calc(30px * var(--k)); line-height: 1.05; }
+
+/* página real do PDF como objeto */
+.folha { background:#fff; border-radius: 8px; overflow:hidden; box-shadow: 0 34px 70px rgba(15,38,25,.30), 0 6px 16px rgba(0,0,0,.12); }
+.folha img { display:block; width:100%; }

@@ -1,0 +1,86 @@
+[
+ {
+  "id": "C21",
+  "formato": "imagens",
+  "palavras": 16,
+  "texto": "Valeu, eu de novembro. Peru assando. Eu, no banho. — eu, 24/12, 18h30 Planeje agora. R$ 19,90",
+  "problemas": []
+ },
+ {
+  "id": "C22",
+  "formato": "imagens",
+  "palavras": 18,
+  "texto": "Aos poucos, pode pesar menos. Novembro carne na oferta 17/12 os secos 24/12 pão e gelo R$ 19,90",
+  "problemas": []
+ },
+ {
+  "id": "C23",
+  "formato": "imagens",
+  "palavras": 16,
+  "texto": "Ainda é novembro. Ótimo. 17/12 compras 21/12 descongelar 23/12 adiantar 24/12 hora a hora R$ 19,90",
+  "problemas": []
+ },
+ {
+  "id": "C25",
+  "formato": "imagens",
+  "palavras": 14,
+  "texto": "A ceia de sempre. Sem a correria. Você cozinha. O guia organiza. R$ 19,90",
+  "problemas": []
+ },
+ {
+  "id": "C26",
+  "formato": "imagens",
+  "palavras": 14,
+  "texto": "Quem cozinha também senta à mesa. Reservado pra quem fez a ceia R$ 19,90",
+  "problemas": []
+ },
+ {
+  "id": "C28",
+  "formato": "imagens",
+  "palavras": 14,
+  "texto": "Você sabe fazer tudo. Falta o plano. Dia 24, hora a hora R$ 19,90",
+  "problemas": []
+ },
+ {
+  "id": "C29",
+  "formato": "imagens",
+  "palavras": 11,
+  "texto": "Mesa pra poucos. Capricho inteiro. Velas testadas · música escolhida R$ 19,90",
+  "problemas": []
+ },
+ {
+  "id": "C31",
+  "formato": "imagens",
+  "palavras": 15,
+  "texto": "Pra quem está à mesa, o capricho é presente. checklist de última hora R$ 19,90",
+  "problemas": []
+ },
+ {
+  "id": "C24",
+  "formato": "videos",
+  "palavras": 52,
+  "texto": "Do jeito de sempre 24/12, 10h. Fila do mercado. Faltou o creme de leite. E às 21h, o forno lotado. Com o plano 24/12, 10h. Só pão, gelo e frutas. 18h30: banho, com o peru no forno. O dia 24 hora a hora está no guia. R$ 19,90 Toque em Saiba mais",
+  "problemas": []
+ },
+ {
+  "id": "C27",
+  "formato": "videos",
+  "palavras": 58,
+  "texto": "Você sabe fazer o peru. Mas sabe quando tirar do congelador? Peru de 5 kg: 2 a 3 dias descongelando na geladeira. Está no guia, pág. 31 E às 21h, o forno é um só. Saber fazer não é o problema. É a ordem. O guia põe cada coisa no seu dia. R$ 19,90 Toque em Saiba mais",
+  "problemas": []
+ },
+ {
+  "id": "C30",
+  "formato": "videos",
+  "palavras": 28,
+  "texto": "O primeiro prato na mesa. Um silêncio bom. Depois, um que lindo baixinho. Ceia pequena. Momento grande. Cardápio, lista e cronograma prontos. R$ 19,90 Toque em Saiba mais",
+  "problemas": []
+ },
+ {
+  "id": "C32",
+  "formato": "videos",
+  "palavras": 31,
+  "texto": "23h30. A louça pode esperar. As sobras já têm pote. E o coração, cheio. Ceia pequena. Noite cheia. O plano da ceia, pronto no guia. R$ 19,90 Toque em Saiba mais",
+  "problemas": []
+ }
+]

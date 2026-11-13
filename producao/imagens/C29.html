@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="formatos" content="45,916">
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="../objecoes.css">
+<style>
+  .zona { justify-content: space-between; align-items: center; text-align: center; }
+  .centro { margin-top: auto; margin-bottom: auto; }
+  .titulo { font-size: 136px; }
+  .titulo em { display:block; margin-top: 10px; }
+  .detalhe { font-family:'Sans'; font-weight: 800; font-size: 30px; letter-spacing: .24em; text-transform: uppercase; color: var(--ouro-suave); margin-top: 54px; }
+  .detalhe i { font-style: normal; color: var(--pessego); margin: 0 14px; }
+  .ponte img { width: 120px; }
+  .ponte .preco { font-size: 34px; }
+  body.f916 .titulo { font-size: 148px; }
+</style></head>
+<body class="noite">
+  <div class="cheio noite"></div>
+  <canvas class="luz" id="cv"></canvas>
+  <div class="vinheta"></div>
+  <div class="zona">
+    <div class="centro">
+      <div class="titulo">Mesa pra poucos.<em>Capricho inteiro.</em></div>
+      <div class="detalhe">Velas testadas<i>·</i>música escolhida</div>
+    </div>
+    <div class="ponte"><img src="../../assets/site/capa-ceia.webp"><span class="preco">R$ 19,90</span></div>
+  </div>
+  <div class="grao"></div>
+<script src="../luz.js"></script>
+<script>formato(); luz(document.getElementById('cv'), { semente: 29, n: 46, faixa: [0, 1], min: 16, max: 120, alfa: .22, brilhos: [[0.5, 1.02, 620, .42], [0.12, 0.9, 300, .22], [0.9, 0.86, 280, .2]] }, 0);</script>
+</body></html>

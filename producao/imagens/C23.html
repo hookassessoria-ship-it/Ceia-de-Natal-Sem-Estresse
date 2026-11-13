@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="formatos" content="45,916">
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="../objecoes.css">
+<style>
+  .zona { justify-content: space-between; }
+  .titulo { font-size: 128px; }
+  .titulo em { font-size: 1.22em; display:inline-block; margin-top: 8px; }
+  .grade { display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .dia { background: var(--creme-lp); border-radius: 22px; padding: 26px 30px 28px; color: var(--verde-profundo); }
+  .dia b { display:block; font-family:'Serif'; font-weight:400; font-size: 76px; line-height: 1; }
+  .dia span { display:block; font-family:'Sans'; font-weight: 800; font-size: 34px; color: var(--tinta-2); margin-top: 8px; }
+  .dia.hoje { background: var(--pessego); }
+  .dia.hoje span { color: var(--noite); }
+  body.f916 .titulo { font-size: 140px; }
+  body.f916 .dia { padding: 34px 34px 36px; }
+</style></head>
+<body class="noite">
+  <div class="cheio noite"></div>
+  <canvas class="luz" id="cv"></canvas>
+  <div class="vinheta"></div>
+  <div class="zona">
+    <div class="titulo">Ainda é novembro.<br><em>Ótimo.</em></div>
+    <div class="grade">
+      <div class="dia"><b>17/12</b><span>compras</span></div>
+      <div class="dia"><b>21/12</b><span>descongelar</span></div>
+      <div class="dia"><b>23/12</b><span>adiantar</span></div>
+      <div class="dia hoje"><b>24/12</b><span>hora a hora</span></div>
+    </div>
+    <div class="ponte"><img src="../../assets/site/capa-ceia.webp"><span class="preco">R$ 19,90</span></div>
+  </div>
+  <div class="grao"></div>
+<script src="../luz.js"></script>
+<script>formato(); luz(document.getElementById('cv'), { semente: 23, n: 30, faixa: [0, 0.55], min: 20, max: 110, alfa: .20, brilhos: [[0.85, 0.08, 520, .25]] }, 0);</script>
+</body></html>

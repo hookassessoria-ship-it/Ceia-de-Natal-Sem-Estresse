@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="formatos" content="45,916">
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="../objecoes.css">
+<style>
+  .zona { justify-content: space-between; align-items: center; text-align: center; }
+  .titulo { font-size: 120px; }
+  .mesa { position: relative; width: 760px; height: 420px; }
+  .mesa::after { content:''; position:absolute; left: 6%; right: 6%; bottom: 8px; height: 60px; border-radius: 50%; background: radial-gradient(ellipse, rgba(0,0,0,.55), rgba(0,0,0,0) 70%); filter: blur(6px); }
+  .cartao { position:absolute; left: 70px; right: 70px; top: 40px; height: 300px; z-index: 2;
+    background: linear-gradient(180deg, #fffaf0 0%, #fff4e3 70%, #f1e2c6 100%); border-radius: 6px;
+    box-shadow: 0 28px 50px rgba(0,0,0,.45), inset 0 -24px 30px rgba(160,120,70,.18);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; transform: perspective(900px) rotateX(10deg); }
+  .cartao::before { content:''; position:absolute; left: 22px; right: 22px; top: 22px; bottom: 22px; border: 2px solid var(--ouro); border-radius: 3px; }
+  .cartao .r { font-family:'Sans'; font-weight: 900; letter-spacing: .28em; font-size: 30px; color: var(--terracota); }
+  .cartao .q { font-family:'Serif'; font-style: italic; font-size: 64px; color: var(--verde-profundo); margin-top: 14px; }
+  body.f916 .titulo { font-size: 128px; }
+  body.f916 .mesa { transform: scale(1.08); }
+</style></head>
+<body class="noite">
+  <div class="cheio noite"></div>
+  <canvas class="luz" id="cv"></canvas>
+  <div class="vinheta"></div>
+  <div class="zona">
+    <div class="titulo">Quem cozinha também <em>senta à mesa.</em></div>
+    <div class="mesa"><div class="cartao"><div class="r">Reservado</div><div class="q">pra quem fez a ceia</div></div></div>
+    <div class="ponte"><img src="../../assets/site/capa-ceia.webp"><span class="preco">R$ 19,90</span></div>
+  </div>
+  <div class="grao"></div>
+<script src="../luz.js"></script>
+<script>formato(); luz(document.getElementById('cv'), { semente: 11, n: 40, faixa: [0.35, 0.85], min: 14, max: 80, alfa: .24, brilhos: [[0.18, 0.62, 360, .30], [0.84, 0.58, 300, .26]] }, 0);</script>
+</body></html>

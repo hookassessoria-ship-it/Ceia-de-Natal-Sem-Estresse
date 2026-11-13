@@ -1,4 +1,4 @@
-id,onda,formato,angulo,nivel_consciencia,gancho,texto_curto,texto_medio,texto_lista,titulo_1,titulo_2,descricao,cta,arquivo,utm_content,referencia_da_pesquisa
+id,onda,formato,angulo,nivel_consciencia,gancho,texto_curto,texto_medio,texto_lista,titulo_1,titulo_2,descricao,cta,arquivo,utm_content,referencia_da_pesquisa,nome,url,titulo_3,objecao,gatilho,gancho_alt_1,gancho_alt_2,gancho_alt_3,arquivo_9x16
 C01,1,imagem,A4 cena do dia 24,b) sente o problema,Passou a ceia inteira na cozinha?,"Passou a ceia inteira na cozinha? Este ano, sente à mesa. Cardápio, lista de compras e cronograma prontos por R$ 19,90.","Passou a ceia inteira na cozinha?
 Às nove da noite, a casa cheia, todo mundo conversando na sala, e a ceia ainda no fogão.
 O guia traz o plano pronto: 3 cardápios para 8 a 10 pessoas, a lista de compras por seção do mercado e o dia 24 hora a hora.
@@ -8,7 +8,7 @@ O guia traz o plano pronto: 3 cardápios para 8 a 10 pessoas, a lista de compras
 ✔ Cronograma do dia 17 ao 25, com o dia 24 hora a hora
 ✔ 30 receitas com tempo e rendimento
 ✔ Bônus: receitas com as sobras
-R$ 19,90 · PDF de 63 páginas · acesso imediato por e-mail · garantia de 7 dias","Este ano, sente à mesa","A ceia planejada por R$ 19,90",Guia em PDF · acesso imediato,Saiba mais,criativos/imagens/C01.png,C01,"P3 cena do dia 24 (R02, R04); P1 estrutura com lista"
+R$ 19,90 · PDF de 63 páginas · acesso imediato por e-mail · garantia de 7 dias","Este ano, sente à mesa","A ceia planejada por R$ 19,90",Guia em PDF · acesso imediato,Saiba mais,criativos/imagens/C01.png,C01,"P3 cena do dia 24 (R02, R04); P1 estrutura com lista",C01 | Cozinha inteira | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C01,,,,,,,
 C02,1,imagem,A8 planejar em uma tarde,c) quer uma solução,Planeje a ceia inteira em uma tarde.,"Planeje a ceia inteira em uma tarde: escolha o cardápio, imprima a lista e siga o cronograma. Guia em PDF por R$ 19,90.","Planeje a ceia inteira em uma tarde.
 Uma ceia tranquila não depende de cozinhar mais rápido. Depende de decidir antes.
 No guia, você escolhe 1 dos 3 cardápios (um teste de 2 minutos ajuda), imprime a lista por seção do mercado e cola o cronograma na geladeira. No dia 24, é só seguir a hora a hora.
@@ -18,7 +18,7 @@ R$ 19,90, acesso imediato por e-mail.","Planeje a ceia inteira em uma tarde, em 
 ✔ Cole o cronograma do dia 17 ao 25 na geladeira
 ✔ No dia 24, siga a hora a hora
 + 30 receitas, checklist de última hora e bônus das sobras.
-R$ 19,90 · acesso imediato · garantia de 7 dias",Planeje a ceia em uma tarde,3 cardápios + lista + cronograma,PDF de 63 páginas,Comprar agora,criativos/imagens/C02.png,C02,"P5 antecipação (R16, R17); P6 páginas por dentro"
+R$ 19,90 · acesso imediato · garantia de 7 dias",Planeje a ceia em uma tarde,3 cardápios + lista + cronograma,PDF de 63 páginas,Comprar agora,criativos/imagens/C02.png,C02,"P5 antecipação (R16, R17); P6 páginas por dentro",C02 | Planeje em uma tarde | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C02,,,,,,,
 C03,1,imagem,A5 quanto comprar / lista,c) quer uma solução,"Lista de compras pronta, por seção do mercado.","Lista de compras da ceia pronta, separada por seção do mercado e com as quantidades para 8 a 10 pessoas. R$ 19,90.","Lista de compras pronta, por seção do mercado.
 Nada de lista feita de cabeça.
 Cada um dos 3 cardápios tem a sua lista: hortifrúti, açougue, frios e laticínios, mercearia e temperos, com as quantidades para 8 a 10 pessoas e caixinhas pra marcar. E o guia separa o que comprar antes e o que deixar pra véspera.
@@ -28,7 +28,7 @@ R$ 19,90, acesso imediato.","Lista de compras pronta, por seção do mercado. �
 ✔ Uma lista para cada um dos 3 cardápios
 ✔ O que comprar antes e o que deixar pra véspera
 ✔ + cronograma, 30 receitas e checklist de última hora
-R$ 19,90 · PDF · acesso imediato por e-mail","Lista da ceia pronta, por seção",Imprima e risque no mercado,Para 8 a 10 pessoas,Comprar agora,criativos/imagens/C03.png,C03,"P6 mostrar por dentro (R04, R05, R06)"
+R$ 19,90 · PDF · acesso imediato por e-mail","Lista da ceia pronta, por seção",Imprima e risque no mercado,Para 8 a 10 pessoas,Comprar agora,criativos/imagens/C03.png,C03,"P6 mostrar por dentro (R04, R05, R06)",C03 | Lista por seção | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C03,,,,,,,
 C04,1,imagem,A10 produto por dentro + preço,c) quer uma solução,3 cardápios prontos para 8 a 10 pessoas.,"3 cardápios de ceia prontos para 8 a 10 pessoas, com lista de compras e cronograma. 30 receitas por R$ 19,90.","3 cardápios prontos para 8 a 10 pessoas: Econômico, Tradicional e Fartura.
 Cada um vem com a lista de compras por seção do mercado e o cronograma do dia 17 ao dia 25.
 São 30 receitas com ingredientes, preparo, tempo, rendimento e uma dica.
@@ -38,7 +38,7 @@ Tudo num PDF de 63 páginas por R$ 19,90: menos de R$ 1 por receita. Acesso imed
 ✔ Cronograma do dia 17 ao 25, com o dia 24 hora a hora
 ✔ 30 receitas: 5 entradas, 6 principais, 8 acompanhamentos, 8 sobremesas e 3 bebidas
 ✔ Checklist de última hora + bônus das sobras
-R$ 19,90 · menos de R$ 1 por receita · garantia de 7 dias",3 cardápios prontos pra ceia,"30 receitas + 3 cardápios: R$ 19,90",Acesso imediato por e-mail,Comprar agora,criativos/imagens/C04.png,C04,"P1 lista do que vem (R11); P6 mockup + preço (R08, R10)"
+R$ 19,90 · menos de R$ 1 por receita · garantia de 7 dias",3 cardápios prontos pra ceia,"30 receitas + 3 cardápios: R$ 19,90",Acesso imediato por e-mail,Comprar agora,criativos/imagens/C04.png,C04,"P1 lista do que vem (R11); P6 mockup + preço (R08, R10)",C04 | 3 cardápios | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C04,,,,,,,
 C05,1,imagem,A7 plano hora a hora,b) sente o problema,"Dia 24, hora a hora.","Dia 24, hora a hora: do café da manhã às 9h até a ceia servida às 22h. Está tudo no guia, por R$ 19,90.","Dia 24, hora a hora.
 17h30: peru no forno. 18h30: seu momento, banho e arrumação, enquanto o peru assa. 22h: ceia servida.
 O guia traz o cronograma completo, do dia 17 ao dia 25, para cada tarefa cair no seu dia e o forno chegar livre ao dia 24.
@@ -48,7 +48,7 @@ Com 3 cardápios, lista de compras e 30 receitas. R$ 19,90.","Dia 24, hora a hor
 ✔ 17h30 peru (ou chester) no forno
 ✔ 18h30 seu momento: banho e arrumação
 ✔ 22h ceia servida
-O cronograma vai do dia 17 ao 25. + 3 cardápios, lista de compras e 30 receitas por R$ 19,90.","Dia 24, hora a hora","Ceia servida às 22h, com plano",Cronograma do dia 17 ao 25,Saiba mais,criativos/imagens/C05.png,C05,"Oportunidade 1: ninguém mostra o cronograma (R02, R04, R06 só citam)"
+O cronograma vai do dia 17 ao 25. + 3 cardápios, lista de compras e 30 receitas por R$ 19,90.","Dia 24, hora a hora","Ceia servida às 22h, com plano",Cronograma do dia 17 ao 25,Saiba mais,criativos/imagens/C05.png,C05,"Oportunidade 1: ninguém mostra o cronograma (R02, R04, R06 só citam)",C05 | Dia 24 hora a hora | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C05,,,,,,,
 C06,2,imagem,A3 dia 25 / sobras,a) não sabe que tem o problema,E as sobras? Tem receita pra isso.,"E as sobras da ceia? O guia tem 4 receitas pro dia 25, do sanduíche de peru à rabanada de panetone.","E as sobras? Tem receita pra isso.
 A ceia sempre rende. No dia 25, o que sobrou vira sanduíche de peru ou chester (15 min), risoto (25 min), torta salgada (55 min) ou rabanada de panetone (25 min).
 O bônus também ensina a guardar e requentar farofa, arroz e carnes com segurança.
@@ -58,7 +58,7 @@ Vem junto com o guia completo da ceia, por R$ 19,90.","E as sobras? Tem receita 
 ✔ Torta salgada de sobras · 55 min
 ✔ Rabanada de panetone · 25 min
 ✔ Como guardar e requentar com segurança
-Bônus do guia Ceia de Natal Sem Estresse, com 3 cardápios, lista e cronograma. R$ 19,90.",O dia 25 também resolvido,4 receitas com as sobras da ceia,Bônus do guia da ceia,Saiba mais,criativos/imagens/C06.png,C06,Oportunidade 2: ninguém fala das sobras
+Bônus do guia Ceia de Natal Sem Estresse, com 3 cardápios, lista e cronograma. R$ 19,90.",O dia 25 também resolvido,4 receitas com as sobras da ceia,Bônus do guia da ceia,Saiba mais,criativos/imagens/C06.png,C06,Oportunidade 2: ninguém fala das sobras,C06 | Sobras | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C06,,,,,,,
 C07,2,imagem,A5 quanto comprar,b) sente o problema,Quanto comprar pra 10 pessoas?,"Quanto comprar pra 10 pessoas? O guia da ceia já traz as quantidades, item por item. R$ 19,90.","Quanto comprar pra 10 pessoas?
 No guia, cada cardápio tem a lista com as quantidades para 8 a 10 pessoas. No Econômico, por exemplo: 1 chester de cerca de 3,5 kg, 1,5 kg de batata e 1 kg de arroz.
 Vai receber mais gente? É só multiplicar as receitas.
@@ -68,7 +68,7 @@ R$ 19,90, com cronograma e 30 receitas. Acesso imediato.","Quanto comprar pra 10
 ✔ Arroz: 1 pacote (1 kg)
 ✔ Farinha de mandioca torrada: 500 g
 ✔ Creme de leite: 4 caixinhas
-São 3 cardápios, cada um com sua lista por seção do mercado. R$ 19,90.",Quanto comprar pra 10 pessoas,A lista da ceia com quantidades,Para 8 a 10 pessoas,Saiba mais,criativos/imagens/C07.png,C07,P6 página de quantidades (R04); dor da página de vendas
+São 3 cardápios, cada um com sua lista por seção do mercado. R$ 19,90.",Quanto comprar pra 10 pessoas,A lista da ceia com quantidades,Para 8 a 10 pessoas,Saiba mais,criativos/imagens/C07.png,C07,P6 página de quantidades (R04); dor da página de vendas,C07 | Quanto comprar | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C07,,,,,,,
 C08,1,imagem,A2 carga mental de decidir,a) não sabe que tem o problema,Já decidiu o cardápio da ceia?,"Já decidiu o cardápio da ceia? Se ainda não, tem 3 prontos aqui, para 8 a 10 pessoas.","Já decidiu o cardápio da ceia?
 O que servir, quanto comprar, o que fazer antes: é muita decisão pra uma noite só.
 O guia traz 3 cardápios fechados (Econômico, Tradicional e Fartura), cada um com lista de compras e cronograma. Um teste de 2 minutos ajuda a escolher.
@@ -77,7 +77,7 @@ R$ 19,90, acesso imediato por e-mail.","Já decidiu o cardápio da ceia? Se não
 ✔ Tradicional: os clássicos da ceia
 ✔ Fartura: mesa farta
 Todos para 8 a 10 pessoas, com lista de compras por seção e cronograma do dia 17 ao 25.
-+ 30 receitas · R$ 19,90 · garantia de 7 dias",Já decidiu o cardápio da ceia?,3 cardápios prontos pra escolher,Com teste pra escolher,Saiba mais,criativos/imagens/C08.png,C08,"P4 carga mental (R07, R23); formato nativo de texto (R16, R22, R23)"
++ 30 receitas · R$ 19,90 · garantia de 7 dias",Já decidiu o cardápio da ceia?,3 cardápios prontos pra escolher,Com teste pra escolher,Saiba mais,criativos/imagens/C08.png,C08,"P4 carga mental (R07, R23); formato nativo de texto (R16, R22, R23)",C08 | Já decidiu o cardápio | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C08,,,,,,,
 C09,1,imagem,A6 economia sem promessa de valor,b) sente o problema,Tem cardápio econômico pra ceia.,"Tem cardápio econômico pra ceia: pratos que rendem e ingredientes fáceis de achar, para 8 a 10 pessoas.","Tem cardápio econômico pra ceia.
 Chester assado com ervas (ou lombo com mostarda e mel), arroz de forno cremoso, farofa de bacon, salada de maionese, canapés, mousse de maracujá e suco natalino.
 Dica do guia: compre o chester com antecedência, quando aparecer uma boa oferta, e congele.
@@ -87,7 +87,7 @@ Com lista de compras e cronograma. R$ 19,90.","Tem cardápio econômico pra ceia
 ✔ Cerca de 3 horas de cozinha no dia 24
 ✔ Dica de quando comprar o chester
 ✔ + cardápios Tradicional e Fartura no mesmo guia
-R$ 19,90 · PDF de 63 páginas · acesso imediato",Cardápio econômico pra ceia,Ceia para 10 com lista pronta,+ Tradicional e Fartura,Saiba mais,criativos/imagens/C09.png,C09,"P7 economia (R03, R07, R09)"
+R$ 19,90 · PDF de 63 páginas · acesso imediato",Cardápio econômico pra ceia,Ceia para 10 com lista pronta,+ Tradicional e Fartura,Saiba mais,criativos/imagens/C09.png,C09,"P7 economia (R03, R07, R09)",C09 | Cardápio econômico | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C09,,,,,,,
 C10,2,imagem,A11 garantia,c) quer uma solução,"Teste por 7 dias. Se não gostar, devolvemos.","Teste o guia da ceia por 7 dias. Se não for pra você, peça o reembolso pelo e-mail e devolvemos o valor integral.","Teste por 7 dias. Se não gostar, devolvemos.
 Você recebe o PDF por e-mail logo depois da compra. Se achar que não é pra você, peça o reembolso pelo e-mail em até 7 dias e devolvemos o valor integral.
 Dentro: 3 cardápios para 8 a 10 pessoas, lista de compras, cronograma e 30 receitas.
@@ -97,7 +97,7 @@ R$ 19,90, pagamento único.","Teste por 7 dias. Se não gostar, devolvemos.
 ✔ Lista de compras por seção e cronograma do dia 17 ao 25
 ✔ 30 receitas + bônus das sobras
 ✔ Garantia de 7 dias, conforme o Código de Defesa do Consumidor
-R$ 19,90 · pagamento único",7 dias de garantia,Teste o guia da ceia por 7 dias,Reembolso integral pelo e-mail,Comprar agora,criativos/imagens/C10.png,C10,"Oportunidade 6: garantia só no rodapé (R04, R10, R11)"
+R$ 19,90 · pagamento único",7 dias de garantia,Teste o guia da ceia por 7 dias,Reembolso integral pelo e-mail,Comprar agora,criativos/imagens/C10.png,C10,"Oportunidade 6: garantia só no rodapé (R04, R10, R11)",C10 | Garantia 7 dias | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C10,,,,,,,
 C11,2,imagem,A10 formato,c) quer uma solução,Seu guia da ceia no celular.,"Seu guia da ceia no celular, ou impresso na porta da geladeira. PDF de 63 páginas, acesso imediato. R$ 19,90.","Seu guia da ceia no celular. Ou impresso na porta da geladeira.
 É um PDF de 63 páginas que chega por e-mail logo depois da compra. Dá pra consultar no mercado, riscar a lista impressa e deixar o cronograma à vista na cozinha.
 3 cardápios para 8 a 10 pessoas, 30 receitas e o dia 24 hora a hora.
@@ -107,7 +107,7 @@ R$ 19,90.","Seu guia da ceia no celular. 📲
 ✔ 3 cardápios e listas de compras com caixinhas
 ✔ Cronograma pra deixar na porta da geladeira
 ✔ 30 receitas com tempo e rendimento
-R$ 19,90 · garantia de 7 dias",O guia da ceia no seu celular,PDF com acesso imediato,Ou impresso na geladeira,Comprar agora,criativos/imagens/C11.png,C11,"P6 mostrar o produto; ""passo a passo no seu celular"" (R02, R07)"
+R$ 19,90 · garantia de 7 dias",O guia da ceia no seu celular,PDF com acesso imediato,Ou impresso na geladeira,Comprar agora,criativos/imagens/C11.png,C11,"P6 mostrar o produto; ""passo a passo no seu celular"" (R02, R07)",C11 | Guia no celular | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C11,,,,,,,
 C12,2,imagem,A4 contraste,b) sente o problema,Ceia improvisada x ceia planejada.,Ceia improvisada: tudo no dia 24. Ceia planejada: cada coisa no seu dia. O plano está pronto no guia.,"Ceia improvisada x ceia planejada.
 Na improvisada, o cardápio é decidido de cabeça, a volta ao mercado acontece na véspera e tudo precisa ficar pronto na mesma hora.
 Na planejada, a lista já está pronta, as sobremesas geladas saem no dia 23 e às 18h30 o momento é seu.
@@ -117,7 +117,7 @@ O plano vem pronto no guia. R$ 19,90.","Ceia improvisada x ceia planejada. O gui
 ✔ O que adiantar 1 semana antes, 3 dias antes e no dia 23
 ✔ Dia 24 hora a hora
 ✔ 30 receitas e checklist de última hora
-R$ 19,90 · acesso imediato",Cada coisa no seu dia,"A ceia planejada, por R$ 19,90",Cronograma do dia 17 ao 25,Saiba mais,criativos/imagens/C12.png,C12,"P3 cena (R04); contraste de categoria (R20, R22)"
+R$ 19,90 · acesso imediato",Cada coisa no seu dia,"A ceia planejada, por R$ 19,90",Cronograma do dia 17 ao 25,Saiba mais,criativos/imagens/C12.png,C12,"P3 cena (R04); contraste de categoria (R20, R22)",C12 | Improvisada x planejada | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C12,,,,,,,
 C13,1,vídeo,A1 erro comum / educativo,a) não sabe que tem o problema,3 mudanças pra sair da cozinha na ceia.,"3 mudanças pra sair da cozinha na ceia. A 3ª é a melhor: às 18h30, enquanto o peru assa, o momento é seu.","3 mudanças pra sair da cozinha na ceia:
 1. Decida o cardápio uma semana antes e já compre o que não estraga.
 2. No dia 23, deixe prontas as sobremesas geladas, a farofa e o salpicão.
@@ -128,7 +128,7 @@ Esse plano vem pronto no guia Ceia de Natal Sem Estresse, por R$ 19,90.","3 muda
 ✔ O que adiantar no dia 23
 ✔ Dia 24 hora a hora, com a ceia às 22h
 ✔ 30 receitas para 8 a 10 pessoas
-R$ 19,90 · acesso imediato por e-mail",3 mudanças pra sair da cozinha,"O plano da ceia, pronto",Do dia 17 ao dia 25,Saiba mais,criativos/videos/C13.mp4,C13,P4 erro comum/educativo (R03: 7 primeiras posições)
+R$ 19,90 · acesso imediato por e-mail",3 mudanças pra sair da cozinha,"O plano da ceia, pronto",Do dia 17 ao dia 25,Saiba mais,criativos/videos/C13.mp4,C13,P4 erro comum/educativo (R03: 7 primeiras posições),C13 | 3 mudanças | Vídeo,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C13,,,,,,,
 C14,1,vídeo,A7 plano hora a hora,b) sente o problema,"Dia 24, hora a hora.","18h30: banho e arrumação, enquanto o peru assa. 22h: ceia servida. O dia 24 hora a hora está no guia.","Dia 24, hora a hora, com a ceia servida às 22h.
 9h café tranquilo. 14h mesa montada e bebidas gelando. 17h30 peru no forno. 18h30 seu momento: banho e arrumação. 21h40 velas acesas.
 O guia traz esse cronograma completo e o plano do dia 17 ao 25, com 3 cardápios, lista de compras e 30 receitas.
@@ -138,7 +138,7 @@ R$ 19,90.","Dia 24, hora a hora. Trecho real do guia:
 ✔ 17h30 peru no forno, coberto com papel-alumínio
 ✔ 18h30 seu momento: banho e arrumação
 ✔ 22h ceia servida
-+ 3 cardápios, lista de compras e 30 receitas. R$ 19,90.","Dia 24, hora a hora",18h30: o seu momento,Ceia servida às 22h,Saiba mais,criativos/videos/C14.mp4,C14,Oportunidade 1 (cronograma como protagonista); P8 vídeo vertical
++ 3 cardápios, lista de compras e 30 receitas. R$ 19,90.","Dia 24, hora a hora",18h30: o seu momento,Ceia servida às 22h,Saiba mais,criativos/videos/C14.mp4,C14,Oportunidade 1 (cronograma como protagonista); P8 vídeo vertical,C14 | Dia 24 hora a hora | Vídeo,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C14,,,,,,,
 C15,1,vídeo,A9 clareza em vez de volume,c) quer uma solução,Você não precisa de 300 receitas.,"Você não precisa de 300 receitas. Precisa de um cardápio fechado, com lista e cronograma. São 3, por R$ 19,90.","Você não precisa de 300 receitas. Precisa de um cardápio fechado.
 No guia são 3: Econômico (cerca de 3 horas de cozinha no dia 24), Tradicional (cerca de 5) e Fartura (cerca de 7), todos para 8 a 10 pessoas.
 Cada um com lista de compras e cronograma. São 30 receitas no total.
@@ -148,7 +148,7 @@ R$ 19,90: menos de R$ 1 por receita.","Você não precisa de 300 receitas. Preci
 ✔ Lista de compras por seção para cada cardápio
 ✔ Cronograma do dia 17 ao 25
 ✔ Teste de 2 minutos para escolher o seu
-R$ 19,90 · menos de R$ 1 por receita",Não precisa de 300 receitas,"3 cardápios fechados: R$ 19,90",Menos de R$ 1 por receita,Comprar agora,criativos/videos/C15.mp4,C15,"Oportunidade 3: contraste com P2 (volume em R01, R02, R05, R09)"
+R$ 19,90 · menos de R$ 1 por receita",Não precisa de 300 receitas,"3 cardápios fechados: R$ 19,90",Menos de R$ 1 por receita,Comprar agora,criativos/videos/C15.mp4,C15,"Oportunidade 3: contraste com P2 (volume em R01, R02, R05, R09)",C15 | 300 receitas | Vídeo,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C15,,,,,,,
 C16,1,vídeo,A1 erro comum / educativo,a) não sabe que tem o problema,O erro nº 1 da ceia: deixar tudo pra véspera.,O erro nº 1 da ceia é deixar tudo pra véspera: o forno não dá conta de tudo na mesma hora. Veja o que dá pra adiantar.,"O erro nº 1 da ceia: deixar tudo pra véspera.
 O que dá pra adiantar: uma semana antes, escolher o cardápio e comprar o que não estraga. No dia 21, passar o peru do congelador pra geladeira. No dia 23, sobremesas geladas, farofa e salpicão prontos.
 Assim o forno chega livre ao dia 24.
@@ -158,7 +158,7 @@ Esse cronograma está no guia, por R$ 19,90.","O erro nº 1 da ceia: deixar tudo
 ✔ 23/12: sobremesas geladas, farofa e salpicão
 ✔ 24/12: hora a hora, com a ceia às 22h
 ✔ 25/12: sobras guardadas e reaproveitadas
-R$ 19,90 · 3 cardápios · 30 receitas",O que adiantar antes da ceia,O forno livre no dia 24,Cronograma do dia 17 ao 25,Saiba mais,criativos/videos/C16.mp4,C16,"P4 erro comum (R03); P5 antecipação (R16, R17)"
+R$ 19,90 · 3 cardápios · 30 receitas",O que adiantar antes da ceia,O forno livre no dia 24,Cronograma do dia 17 ao 25,Saiba mais,criativos/videos/C16.mp4,C16,"P4 erro comum (R03); P5 antecipação (R16, R17)",C16 | Erro da véspera | Vídeo,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C16,,,,,,,
 C17,2,vídeo,A5 lista / quanto comprar,b) sente o problema,Esqueceu o creme de leite?,"Esqueceu o creme de leite e voltou ao mercado na véspera? Com a lista por seção, cada item tem o seu lugar.","Esqueceu o creme de leite?
 Lista feita de cabeça costuma deixar alguma coisa pra trás.
 No guia, cada cardápio tem a lista separada por seção do mercado (hortifrúti, açougue, frios e laticínios, mercearia e temperos), com as quantidades para 8 a 10 pessoas e caixinhas pra marcar.
@@ -168,7 +168,7 @@ R$ 19,90, com cronograma e 30 receitas.","Esqueceu o creme de leite? A lista do 
 ✔ Frios e laticínios (o creme de leite está aqui: 4 caixinhas)
 ✔ Mercearia
 ✔ Temperos e extras
-Com as quantidades para 8 a 10 pessoas. R$ 19,90 · acesso imediato",A lista da ceia por seção,"Lista pronta, com quantidades",Para 8 a 10 pessoas,Saiba mais,criativos/videos/C17.mp4,C17,P3 cena específica (dor da página de vendas); P6 lista por dentro (R04)
+Com as quantidades para 8 a 10 pessoas. R$ 19,90 · acesso imediato",A lista da ceia por seção,"Lista pronta, com quantidades",Para 8 a 10 pessoas,Saiba mais,criativos/videos/C17.mp4,C17,P3 cena específica (dor da página de vendas); P6 lista por dentro (R04),C17 | Creme de leite | Vídeo,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C17,,,,,,,
 C18,1,vídeo,A10 produto por dentro,c) quer uma solução,O que vem dentro do guia.,"Veja por dentro: 3 cardápios, lista de compras, cronograma, 30 receitas, bônus das sobras e checklist. R$ 19,90.","O que vem dentro do guia Ceia de Natal Sem Estresse:
 3 cardápios para 8 a 10 pessoas, uma lista de compras por seção para cada um, o cronograma do dia 17 ao 25 com o dia 24 hora a hora, 30 receitas com tempo e rendimento, o checklist de última hora e o bônus das sobras.
 63 páginas, R$ 19,90, acesso imediato por e-mail.","O que vem dentro do guia: 🎄
@@ -178,7 +178,7 @@ C18,1,vídeo,A10 produto por dentro,c) quer uma solução,O que vem dentro do gu
 ✔ 30 receitas com ingredientes, preparo, tempo, rendimento e dica
 ✔ Checklist de última hora
 ✔ Bônus: receitas com as sobras
-63 páginas · R$ 19,90 · garantia de 7 dias",Veja o guia da ceia por dentro,"63 páginas por R$ 19,90",Acesso imediato por e-mail,Comprar agora,criativos/videos/C18.mp4,C18,"P1 lista do que vem (R11); P6 páginas por dentro (R05, R06)"
+63 páginas · R$ 19,90 · garantia de 7 dias",Veja o guia da ceia por dentro,"63 páginas por R$ 19,90",Acesso imediato por e-mail,Comprar agora,criativos/videos/C18.mp4,C18,"P1 lista do que vem (R11); P6 páginas por dentro (R05, R06)",C18 | Por dentro do guia | Vídeo,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C18,,,,,,,
 C19,2,vídeo,A3 dia 25 / sobras,a) não sabe que tem o problema,3 ideias com as sobras da ceia.,"3 ideias com as sobras da ceia: sanduíche de peru (15 min), risoto (25 min) e rabanada de panetone (25 min).","3 ideias com as sobras da ceia:
 1. Sanduíche de peru ou chester, em 15 minutos.
 2. Risoto de aproveitamento, em 25.
@@ -190,7 +190,7 @@ As receitas estão no bônus do guia, junto com os 3 cardápios. R$ 19,90.","3 i
 ✔ Rabanada de panetone · 25 min
 ✔ Torta salgada de sobras · 55 min
 ✔ Como guardar e requentar com segurança
-Bônus do guia completo da ceia · R$ 19,90",O que fazer com as sobras,O dia 25 também resolvido,Bônus do guia da ceia,Saiba mais,criativos/videos/C19.mp4,C19,Oportunidade 2 (sobras); P4 educativo
+Bônus do guia completo da ceia · R$ 19,90",O que fazer com as sobras,O dia 25 também resolvido,Bônus do guia da ceia,Saiba mais,criativos/videos/C19.mp4,C19,Oportunidade 2 (sobras); P4 educativo,C19 | Ideias com sobras | Vídeo,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C19,,,,,,,
 C20,2,vídeo,A8 planejar em uma tarde,c) quer uma solução,Planeje a ceia em uma tarde: 4 passos.,"Planeje a ceia em uma tarde: escolha o cardápio, imprima a lista, cole o cronograma e siga a hora a hora.","Planeje a ceia em uma tarde, em 4 passos:
 1. Escolha um dos 3 cardápios.
 2. Imprima a lista de compras por seção.
@@ -202,4 +202,109 @@ Tudo isso vem pronto no guia, por R$ 19,90.","Planeje a ceia em uma tarde. O gui
 ✔ Cronograma do dia 17 ao 25
 ✔ Dia 24 hora a hora
 ✔ 30 receitas + bônus das sobras
-R$ 19,90 · acesso imediato · garantia de 7 dias",A ceia planejada em 4 passos,"Planeje hoje, sente à mesa dia 24",PDF com acesso imediato,Comprar agora,criativos/videos/C20.mp4,C20,"P5 antecipação (R16, R17); P1 estrutura"
+R$ 19,90 · acesso imediato · garantia de 7 dias",A ceia planejada em 4 passos,"Planeje hoje, sente à mesa dia 24",PDF com acesso imediato,Comprar agora,criativos/videos/C20.mp4,C20,"P5 antecipação (R16, R17); P1 estrutura",C20 | Ceia em 4 passos | Vídeo,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C20,,,,,,,
+C21,3,imagem,OBJ1a o eu do dia 24 agradece o eu de novembro,b) sente o problema,"Um bilhete do seu dia 24: valeu, novembro.","Um bilhete do seu dia 24 para você, hoje: valeu. Às 18h30, o peru assa e você toma banho com calma.","Um bilhete do seu dia 24 para você, hoje: valeu.
+18h30, o peru assando e você no banho, com calma. Esse horário está no cronograma do guia.
+Planejar em novembro costuma deixar o dia 24 mais leve.
+3 cardápios para 8 a 10 pessoas, lista de compras e o dia 24 hora a hora, por R$ 19,90.","Um bilhete do seu dia 24: valeu, novembro.
+• Cardápio escolhido com antecedência (3 opções, para 8 a 10 pessoas)
+• Lista de compras por seção do mercado
+• Cronograma do dia 17 ao 25
+• Dia 24 hora a hora, com o seu momento às 18h30
+R$ 19,90, acesso imediato por e-mail.",Um bilhete do seu dia 24,"Planeje em novembro, respire no dia 24","Guia em PDF · R$ 19,90",Saiba mais,criativos/imagens/C21.png,C21,"P3 cena do dia 24 (R02, R04); oportunidade 1 (cronograma)",C21 | Eu de novembro | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C21,18h30 do dia 24: você no banho,OBJ1 Ainda é novembro,Autocontinuidade (o eu do futuro) + estado final,Seu dia 24 mandou um recado.,O favor que novembro faz pro dia 24.,"18h30 do dia 24: peru no forno, você no banho.",criativos/imagens/C21_9x16.png
+C22,3,imagem,OBJ1b comprar aos poucos pesa menos,b) sente o problema,"Aos poucos, a ceia pode pesar menos.","Aos poucos, a ceia pode pesar menos no bolso: a carne na oferta, com antecedência; os secos no dia 17; pão e gelo no dia 24.","Aos poucos, a ceia pode pesar menos no bolso.
+Comprar tudo de uma vez, na semana do Natal, costuma apertar. O guia sugere comprar o chester ou o lombo com antecedência, quando aparecer uma boa oferta, e congelar.
+E a lista separa o que comprar antes e o que deixar para a véspera.
+3 cardápios para 8 a 10 pessoas, por R$ 19,90.","Aos poucos, a ceia pode pesar menos.
+• Com antecedência: o chester ou o lombo, quando aparecer uma boa oferta, direto pro congelador
+• 17 ou 18/12: o que não estraga
+• 24/12, 10h: pão, gelo e frutas
+Tudo com a lista de compras por seção do guia. R$ 19,90.",Aos poucos pode pesar menos,"A carne na oferta, o resto no dia certo",Lista do que comprar antes,Saiba mais,criativos/imagens/C22.png,C22,"P7 economia sem prometer valor (R03, R07)",C22 | Aos poucos | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C22,"Compre a ceia aos poucos, com lista",OBJ1 Ainda é novembro,Aversão à perda (o aperto de comprar tudo de uma vez) + especificidade das datas,A ceia não precisa caber numa compra só.,Novembro: a carne. Dezembro: o resto.,Comprar aos poucos também é planejar.,criativos/imagens/C22_9x16.png
+C23,3,imagem,"OBJ1c o que o cronograma marca, desde já",b) sente o problema,Ainda é novembro? Ótimo.,Ainda é novembro? Ótimo. Escolha o cardápio agora e chegue a dezembro com cada dia marcado.,"Ainda é novembro? Ótimo: dá tempo de fazer do jeito tranquilo.
+O cronograma do guia marca cada etapa: compras na semana do dia 17, o peru indo do congelador para a geladeira no dia 21, sobremesas, farofa e salpicão prontos no dia 23.
+No dia 24, é seguir a hora a hora.
+Escolha o cardápio agora. R$ 19,90, acesso imediato por e-mail.","Ainda é novembro? Ótimo. O que o cronograma do guia marca:
+• 17 ou 18/12: compras do que não estraga
+• 21/12: peru do congelador para a geladeira
+• 23/12: sobremesas, farofa e salpicão prontos
+• 24/12: hora a hora, com a ceia às 22h
+R$ 19,90.",Ainda é novembro. Ótimo.,"Seu dezembro, com cada dia marcado",Cronograma do dia 17 ao 25,Saiba mais,criativos/imagens/C23.png,C23,"P5 urgência real e antecipação (R16, R17)",C23 | Ainda é novembro | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C23,"Escolha hoje, siga o cronograma depois",OBJ1 Ainda é novembro,Reenquadramento da objeção + especificidade (datas reais do cronograma),Dá tempo. E é agora que dá.,Faltam semanas. Perfeito pra planejar.,Dezembro com cada coisa no seu dia.,criativos/imagens/C23_9x16.png
+C24,3,vídeo,OBJ1d dia 24 no mercado x dia 24 tranquilo,b) sente o problema,"24/12, 10h. Fila do mercado.","24/12, 10h: fila do mercado ou só pão, gelo e frutas? A diferença é o plano.","24 de dezembro, 10h, fila do mercado.
+Ou: 24 de dezembro, 10h, só pão, gelo e frutas, porque o resto já foi comprado antes.
+A diferença é o plano: lista de compras por seção e cronograma do dia 17 ao 25.
+No guia, por R$ 19,90.","24/12, 10h: só pão, gelo e frutas. Porque antes vieram:
+• A lista de compras por seção do mercado
+• As compras do que não estraga, na semana do dia 17
+• O dia 24 hora a hora, das 9h às 23h30
+Guia Ceia de Natal Sem Estresse, R$ 19,90.","Dia 24: só pão, gelo e frutas",O mercado fica pra antes do dia 24,Lista e cronograma prontos,Saiba mais,criativos/videos/C24.mp4,C24,"P3 cena do dia 24; contraste (C12 era imagem, este é vídeo com horário)",C24 | Mercado no dia 24 | Vídeo,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C24,10h do dia 24: fila ou café?,OBJ1 Ainda é novembro,Contraste vivido (correria x calma) + aversão à perda (a manhã perdida no mercado),"Dia 24, 10h: fila ou café?","O que fica pra véspera: pão, gelo e frutas.","24/12, 10h. Onde você quer estar?",
+C25,3,imagem,"OBJ2a mesma ceia de sempre, sem a correria",a) não sabe que tem o problema,A ceia de sempre. Sem a correria.,"A ceia de sempre, sem a correria de sempre. Você cozinha; o guia organiza o dia.","A ceia de sempre, sem a correria de sempre.
+Você já sabe cozinhar. O que costuma apertar é a ordem: o que comprar antes, o que adiantar no dia 23, o que vai ao forno e a que horas.
+O guia organiza isso em 3 cardápios prontos para 8 a 10 pessoas, com cronograma do dia 17 ao 25 e lista de compras por seção.
+R$ 19,90.","A ceia de sempre. Sem a correria.
+• Cronograma do dia 17 ao 25
+• Dia 24 hora a hora, das 9h às 23h30
+• Lista de compras por seção, com quantidades
+• Checklist de última hora com 14 itens
+R$ 19,90, acesso imediato por e-mail.","A ceia de sempre, sem correria","Você cozinha, o guia organiza",Cronograma e lista prontos,Saiba mais,criativos/imagens/C25.png,C25,P3 cena; oportunidade 1,C25 | Ceia de sempre | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C25,"O dia 24 em ordem, das 9h às 23h30",OBJ2 Eu já sei fazer,Estado final + preservação de identidade (você continua quem cozinha),Você já sabe fazer. Falta o dia 24 tranquilo.,Não é receita que falta. É hora marcada.,"A mesma noite, sem correr.",criativos/imagens/C25_9x16.png
+C26,3,imagem,OBJ2b quem cozinha também quer sentar à mesa,a) não sabe que tem o problema,Quem cozinha também senta à mesa.,"Quem cozinha também senta à mesa. Com o dia 24 hora a hora, às 18h30 o momento é seu.","Quem faz a ceia também é convidado.
+Em muita casa, a conversa acontece na sala e quem cozinha só escuta de longe. Com o dia 24 hora a hora, às 18h30 o peru assa e o momento é seu.
+No checklist do guia tem até “lugar de cada convidado definido”. O seu também.
+R$ 19,90, acesso imediato.","Quem cozinha também senta à mesa.
+• 18h30: banho e arrumação, enquanto o peru assa
+• 21h40: velas acesas, travessas na mesa
+• 22h: ceia servida
+• No checklist: lugar de cada convidado definido
+R$ 19,90.",Quem cozinha também senta à mesa,Um lugar reservado pra quem cozinhou,Dia 24 hora a hora,Saiba mais,criativos/imagens/C26.png,C26,"P3 cena (R04); C01 tratava a dor, este trata identidade",C26 | Também senta à mesa | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C26,"Este ano, a conversa é com você",OBJ2 Eu já sei fazer,Identidade (quem cozinha também é convidado) + aversão à perda (a conversa à mesa),Quem fez a ceia também é convidado.,A conversa é na sala. E quem cozinha?,Lugar marcado pra quem cozinhou.,criativos/imagens/C26_9x16.png
+C27,3,vídeo,OBJ2c o que dá errado até pra quem sabe,a) não sabe que tem o problema,Você sabe fazer o peru. Mas sabe quando tirar do congelador?,Você sabe fazer o peru. Mas sabia que um de 5 kg leva de 2 a 3 dias para descongelar na geladeira?,"Você sabe fazer o peru. Mas sabe quando tirar do congelador?
+Um peru de 5 kg leva de 2 a 3 dias para descongelar na geladeira. E no dia 24, às 21h, o forno é um só para tudo.
+O que costuma dar errado não é a receita. É a ordem.
+O guia traz o cronograma do dia 17 ao 25, com o dia 24 hora a hora. R$ 19,90.","Até quem sabe fazer tropeça na ordem:
+• Peru de 5 kg: de 2 a 3 dias descongelando na geladeira
+• 21/12: hora de passar o peru do congelador para a geladeira
+• 23/12: sobremesas, farofa e salpicão prontos
+• 24/12: o forno com hora marcada
+Tudo no cronograma do guia. R$ 19,90.",Saber fazer não é o problema,Peru de 5 kg: 2 a 3 dias pra descongelar,Cronograma do dia 17 ao 25,Saiba mais,criativos/videos/C27.mp4,C27,P4 erro comum (R03); oportunidade 4 (educar com o guia),C27 | O que dá errado | Vídeo,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C27,O que dá errado até pra quem sabe,OBJ2 Eu já sei fazer,Especificidade (dado real do guia) + reconhecimento + aversão à perda,Quando tirar o peru do congelador?,Quem sabe fazer também corre no dia 24.,A receita você sabe. E o horário?,
+C28,3,imagem,"OBJ2d reconhecimento: faz tudo certo, falta organizar",a) não sabe que tem o problema,Você sabe fazer tudo. Falta o plano.,"Você sabe fazer tudo. Falta só o plano: o dia 24 em 18 horários, das 9h às 23h30.","Você sabe fazer tudo. Falta só o plano.
+Não é falta de prática: é tudo no mesmo dia, ao mesmo tempo. O guia distribui a ceia do dia 17 ao 25 e põe o dia 24 em ordem, em 18 horários, das 9h às 23h30.
+Com lista de compras por seção e quantidades para 8 a 10 pessoas.
+R$ 19,90, acesso imediato por e-mail.","Você sabe fazer tudo. O guia entra com o plano:
+• Dia 24 em 18 horários, das 9h às 23h30
+• Cronograma do dia 17 ao 25
+• Lista de compras por seção, com quantidades
+• Checklist de última hora
+R$ 19,90.",Você sabe fazer. Falta o plano.,O dia 24 em 18 horários,Dia 24 hora a hora,Saiba mais,criativos/imagens/C28.png,C28,P6 mostrar por dentro (página real do cronograma),C28 | Falta o plano | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C28,Prática você tem. Falta a ordem.,OBJ2 Eu já sei fazer,Reconhecimento (validação de quem já sabe) + especificidade (18 horários),Prática não falta. Falta a ordem.,Você faz tudo certo. Só que tudo junto.,O que falta não é receita.,criativos/imagens/C28_9x16.png
+C29,3,imagem,"OBJ3a mesa posta para poucos, luz quente",a) não sabe que tem o problema,Mesa pra poucos. Capricho inteiro.,"Mesa pra poucos, capricho inteiro. Ceia pequena também merece vela acesa e música escolhida.","Mesa pra poucos, capricho inteiro.
+Velas testadas, música escolhida, cada lugar pensado. Ceia pequena também merece esse cuidado.
+O guia traz cardápio, lista e cronograma pensados para 8 a 10 pessoas; para menos gente, é só dividir as receitas e a lista na mesma proporção.
+R$ 19,90.","Mesa pra poucos. Capricho inteiro.
+• Velas testadas e música escolhida (está no checklist)
+• Lugar de cada um pensado
+• Cardápios para 8 a 10 pessoas: para menos gente, divida receitas e lista
+• Cronograma do dia 17 ao 25
+R$ 19,90.","Mesa pra poucos, capricho inteiro",Ceia pequena também é ceia,Dá pra dividir as receitas,Saiba mais,criativos/imagens/C29.png,C29,Oportunidade 7 (prova honesta); checklist real,C29 | Mesa pra poucos | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C29,O cuidado não depende do tamanho,OBJ3 Ceia pequena,Estado final + orgulho de caprichar (100% emocional na arte),Poucos à mesa. Nenhum detalhe a menos.,Ceia pequena também acende vela.,"Pra quem importa, a mesa posta.",criativos/imagens/C29_9x16.png
+C30,3,vídeo,OBJ3b o instante do primeiro prato,a) não sabe que tem o problema,O primeiro prato na mesa.,O primeiro prato na mesa. Um silêncio bom. Ceia pequena também tem esse instante.,"O primeiro prato chega à mesa. Um silêncio bom.
+Ceia pequena também tem esse instante, quando o capricho aparece.
+O guia ajuda a chegar nele com calma: cardápio, lista de compras e cronograma, pensados para 8 a 10 pessoas. Para menos gente, é só dividir as receitas e a lista.
+R$ 19,90.","Pra chegar ao primeiro prato com calma:
+• Cardápio escolhido (3 opções)
+• Lista de compras por seção
+• Cronograma do dia 17 ao 25
+• Receitas para 8 a 10 pessoas, que dá pra dividir para menos gente
+R$ 19,90.","O primeiro prato, com calma","Ceia pequena, momento grande",Dá pra dividir as receitas,Saiba mais,criativos/videos/C30.mp4,C30,P8 vídeo vertical; tom emocional sem prova inventada,C30 | Primeiro prato | Vídeo,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C30,Quando a mesa fica pronta,OBJ3 Ceia pequena,Momento sensorial (antecipação do estado final) + pertencimento (100% emocional até o cartão final),Aquele silêncio bom do primeiro prato.,Quando a mesa fica pronta e ninguém fala.,Ceia pequena. Momento grande.,
+C31,3,imagem,OBJ3c a gratidão de quem recebe o cuidado,a) não sabe que tem o problema,"Pra quem está à mesa, o capricho é presente.","Pra quem está à mesa, o capricho é presente: lugar pensado, música escolhida, velas testadas.","Pra quem está à mesa, o capricho é presente.
+O lugar de cada um pensado, a música escolhida, as velas testadas. Quem recebe esse cuidado sente.
+Esses detalhes estão no checklist de última hora do guia, junto com cardápios, lista e cronograma para 8 a 10 pessoas (para menos gente, é só dividir).
+R$ 19,90.","Pra quem está à mesa, o capricho é presente. Do checklist do guia:
+• Velas, fósforo e pisca-pisca testados
+• Lugar de cada convidado definido
+• Música escolhida
+• Um tempinho para respirar antes de abrir a porta
+R$ 19,90.",O capricho também é presente,"Pra quem está à mesa, o detalhe",Checklist de última hora,Saiba mais,criativos/imagens/C31.png,C31,P6 mostrar por dentro (página real do checklist),C31 | Capricho é presente | Imagem,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C31,"14 detalhes de última hora, numa lista",OBJ3 Ceia pequena,Reciprocidade afetiva (quem recebe sente) + especificidade (checklist real),O detalhe que quem senta à mesa nota.,Lugar pensado pra cada um.,"Pra quem você ama, a mesa posta.",criativos/imagens/C31_9x16.png
+C32,3,vídeo,"OBJ3d fim da noite, louça na pia e coração cheio",a) não sabe que tem o problema,23h30. A louça pode esperar.,"23h30. A louça pode esperar, as sobras já têm pote e o coração está cheio.","Fim da noite: louça na pia, coração cheio.
+As sobras já têm pote e espaço na geladeira, porque estava no checklist. E no dia 25 viram sanduíche ou rabanada de panetone.
+Ceia pequena também termina assim.
+O guia traz cardápio, lista e cronograma para 8 a 10 pessoas (para menos gente, é só dividir). R$ 19,90.","23h30, fim da noite:
+• Sobras na geladeira em até 2 horas depois de servir
+• Potes e papel-alumínio já à mão (está no checklist)
+• No dia 25: sanduíche de peru, risoto ou rabanada de panetone
+O guia traz isso e o plano da ceia inteira. R$ 19,90.","Louça na pia, coração cheio",O fim de noite que vale a ceia,Dá pra dividir as receitas,Saiba mais,criativos/videos/C32.mp4,C32,Oportunidade 2 (sobras); tom emocional,C32 | Fim da noite | Vídeo,https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C32,"Ceia pequena, noite cheia",OBJ3 Ceia pequena,Estado final (a memória da noite) + pertencimento (100% emocional até o cartão final),23h30: a louça pode esperar.,Quando a noite acaba e o coração não.,"Fim da noite, coração cheio.",

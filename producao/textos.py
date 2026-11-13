@@ -158,7 +158,166 @@ PROIBIDO = [r'estressad', r'cansad', r'sem dinheiro', r'só hoje', r'últim[ao]s
             r'order bump', r'upsell']
 EMOJI = re.compile('[\U0001F300-\U0001FAFF\u2600-\u26FF]')
 
+# ---------------------------------------------------------------------------------------------
+# Série de objeções (C21 a C32). Texto principal = coluna texto_medio. Todos com CTA "Saiba mais".
+# Cada afirmação foi conferida contra FATOS.md.
+# ---------------------------------------------------------------------------------------------
+B = [
+    dict(id='C21', nome='Eu de novembro', objecao='OBJ1 Ainda é novembro', angulo='OBJ1a o eu do dia 24 agradece o eu de novembro', nivel='b', formato='imagem',
+         gatilho='Autocontinuidade (o eu do futuro) + estado final',
+         gancho='Um bilhete do seu dia 24: valeu, novembro.',
+         curto='Um bilhete do seu dia 24 para você, hoje: valeu. Às 18h30, o peru assa e você toma banho com calma.',
+         medio='Um bilhete do seu dia 24 para você, hoje: valeu.\n18h30, o peru assando e você no banho, com calma. Esse horário está no cronograma do guia.\nPlanejar em novembro costuma deixar o dia 24 mais leve.\n3 cardápios para 8 a 10 pessoas, lista de compras e o dia 24 hora a hora, por R$ 19,90.',
+         lista='Um bilhete do seu dia 24: valeu, novembro.\n• Cardápio escolhido com antecedência (3 opções, para 8 a 10 pessoas)\n• Lista de compras por seção do mercado\n• Cronograma do dia 17 ao 25\n• Dia 24 hora a hora, com o seu momento às 18h30\nR$ 19,90, acesso imediato por e-mail.',
+         t1='Um bilhete do seu dia 24', t2='Planeje em novembro, respire no dia 24', t3='18h30 do dia 24: você no banho', desc='Guia em PDF · R$ 19,90',
+         alt=['Seu dia 24 mandou um recado.', 'O favor que novembro faz pro dia 24.', '18h30 do dia 24: peru no forno, você no banho.'],
+         ref='P3 cena do dia 24 (R02, R04); oportunidade 1 (cronograma)'),
+    dict(id='C22', nome='Aos poucos', objecao='OBJ1 Ainda é novembro', angulo='OBJ1b comprar aos poucos pesa menos', nivel='b', formato='imagem',
+         gatilho='Aversão à perda (o aperto de comprar tudo de uma vez) + especificidade das datas',
+         gancho='Aos poucos, a ceia pode pesar menos.',
+         curto='Aos poucos, a ceia pode pesar menos no bolso: a carne na oferta, com antecedência; os secos no dia 17; pão e gelo no dia 24.',
+         medio='Aos poucos, a ceia pode pesar menos no bolso.\nComprar tudo de uma vez, na semana do Natal, costuma apertar. O guia sugere comprar o chester ou o lombo com antecedência, quando aparecer uma boa oferta, e congelar.\nE a lista separa o que comprar antes e o que deixar para a véspera.\n3 cardápios para 8 a 10 pessoas, por R$ 19,90.',
+         lista='Aos poucos, a ceia pode pesar menos.\n• Com antecedência: o chester ou o lombo, quando aparecer uma boa oferta, direto pro congelador\n• 17 ou 18/12: o que não estraga\n• 24/12, 10h: pão, gelo e frutas\nTudo com a lista de compras por seção do guia. R$ 19,90.',
+         t1='Aos poucos pode pesar menos', t2='A carne na oferta, o resto no dia certo', t3='Compre a ceia aos poucos, com lista', desc='Lista do que comprar antes',
+         alt=['A ceia não precisa caber numa compra só.', 'Novembro: a carne. Dezembro: o resto.', 'Comprar aos poucos também é planejar.'],
+         ref='P7 economia sem prometer valor (R03, R07)'),
+    dict(id='C23', nome='Ainda é novembro', objecao='OBJ1 Ainda é novembro', angulo='OBJ1c o que o cronograma marca, desde já', nivel='b', formato='imagem',
+         gatilho='Reenquadramento da objeção + especificidade (datas reais do cronograma)',
+         gancho='Ainda é novembro? Ótimo.',
+         curto='Ainda é novembro? Ótimo. Escolha o cardápio agora e chegue a dezembro com cada dia marcado.',
+         medio='Ainda é novembro? Ótimo: dá tempo de fazer do jeito tranquilo.\nO cronograma do guia marca cada etapa: compras na semana do dia 17, o peru indo do congelador para a geladeira no dia 21, sobremesas, farofa e salpicão prontos no dia 23.\nNo dia 24, é seguir a hora a hora.\nEscolha o cardápio agora. R$ 19,90, acesso imediato por e-mail.',
+         lista='Ainda é novembro? Ótimo. O que o cronograma do guia marca:\n• 17 ou 18/12: compras do que não estraga\n• 21/12: peru do congelador para a geladeira\n• 23/12: sobremesas, farofa e salpicão prontos\n• 24/12: hora a hora, com a ceia às 22h\nR$ 19,90.',
+         t1='Ainda é novembro. Ótimo.', t2='Seu dezembro, com cada dia marcado', t3='Escolha hoje, siga o cronograma depois', desc='Cronograma do dia 17 ao 25',
+         alt=['Dá tempo. E é agora que dá.', 'Faltam semanas. Perfeito pra planejar.', 'Dezembro com cada coisa no seu dia.'],
+         ref='P5 urgência real e antecipação (R16, R17)'),
+    dict(id='C24', nome='Mercado no dia 24', objecao='OBJ1 Ainda é novembro', angulo='OBJ1d dia 24 no mercado x dia 24 tranquilo', nivel='b', formato='vídeo',
+         gatilho='Contraste vivido (correria x calma) + aversão à perda (a manhã perdida no mercado)',
+         gancho='24/12, 10h. Fila do mercado.',
+         curto='24/12, 10h: fila do mercado ou só pão, gelo e frutas? A diferença é o plano.',
+         medio='24 de dezembro, 10h, fila do mercado.\nOu: 24 de dezembro, 10h, só pão, gelo e frutas, porque o resto já foi comprado antes.\nA diferença é o plano: lista de compras por seção e cronograma do dia 17 ao 25.\nNo guia, por R$ 19,90.',
+         lista='24/12, 10h: só pão, gelo e frutas. Porque antes vieram:\n• A lista de compras por seção do mercado\n• As compras do que não estraga, na semana do dia 17\n• O dia 24 hora a hora, das 9h às 23h30\nGuia Ceia de Natal Sem Estresse, R$ 19,90.',
+         t1='Dia 24: só pão, gelo e frutas', t2='O mercado fica pra antes do dia 24', t3='10h do dia 24: fila ou café?', desc='Lista e cronograma prontos',
+         alt=['Dia 24, 10h: fila ou café?', 'O que fica pra véspera: pão, gelo e frutas.', '24/12, 10h. Onde você quer estar?'],
+         ref='P3 cena do dia 24; contraste (C12 era imagem, este é vídeo com horário)'),
+    dict(id='C25', nome='Ceia de sempre', objecao='OBJ2 Eu já sei fazer', angulo='OBJ2a mesma ceia de sempre, sem a correria', nivel='a', formato='imagem',
+         gatilho='Estado final + preservação de identidade (você continua quem cozinha)',
+         gancho='A ceia de sempre. Sem a correria.',
+         curto='A ceia de sempre, sem a correria de sempre. Você cozinha; o guia organiza o dia.',
+         medio='A ceia de sempre, sem a correria de sempre.\nVocê já sabe cozinhar. O que costuma apertar é a ordem: o que comprar antes, o que adiantar no dia 23, o que vai ao forno e a que horas.\nO guia organiza isso em 3 cardápios prontos para 8 a 10 pessoas, com cronograma do dia 17 ao 25 e lista de compras por seção.\nR$ 19,90.',
+         lista='A ceia de sempre. Sem a correria.\n• Cronograma do dia 17 ao 25\n• Dia 24 hora a hora, das 9h às 23h30\n• Lista de compras por seção, com quantidades\n• Checklist de última hora com 14 itens\nR$ 19,90, acesso imediato por e-mail.',
+         t1='A ceia de sempre, sem correria', t2='Você cozinha, o guia organiza', t3='O dia 24 em ordem, das 9h às 23h30', desc='Cronograma e lista prontos',
+         alt=['Você já sabe fazer. Falta o dia 24 tranquilo.', 'Não é receita que falta. É hora marcada.', 'A mesma noite, sem correr.'],
+         ref='P3 cena; oportunidade 1'),
+    dict(id='C26', nome='Também senta à mesa', objecao='OBJ2 Eu já sei fazer', angulo='OBJ2b quem cozinha também quer sentar à mesa', nivel='a', formato='imagem',
+         gatilho='Identidade (quem cozinha também é convidado) + aversão à perda (a conversa à mesa)',
+         gancho='Quem cozinha também senta à mesa.',
+         curto='Quem cozinha também senta à mesa. Com o dia 24 hora a hora, às 18h30 o momento é seu.',
+         medio='Quem faz a ceia também é convidado.\nEm muita casa, a conversa acontece na sala e quem cozinha só escuta de longe. Com o dia 24 hora a hora, às 18h30 o peru assa e o momento é seu.\nNo checklist do guia tem até “lugar de cada convidado definido”. O seu também.\nR$ 19,90, acesso imediato.',
+         lista='Quem cozinha também senta à mesa.\n• 18h30: banho e arrumação, enquanto o peru assa\n• 21h40: velas acesas, travessas na mesa\n• 22h: ceia servida\n• No checklist: lugar de cada convidado definido\nR$ 19,90.',
+         t1='Quem cozinha também senta à mesa', t2='Um lugar reservado pra quem cozinhou', t3='Este ano, a conversa é com você', desc='Dia 24 hora a hora',
+         alt=['Quem fez a ceia também é convidado.', 'A conversa é na sala. E quem cozinha?', 'Lugar marcado pra quem cozinhou.'],
+         ref='P3 cena (R04); C01 tratava a dor, este trata identidade'),
+    dict(id='C27', nome='O que dá errado', objecao='OBJ2 Eu já sei fazer', angulo='OBJ2c o que dá errado até pra quem sabe', nivel='a', formato='vídeo',
+         gatilho='Especificidade (dado real do guia) + reconhecimento + aversão à perda',
+         gancho='Você sabe fazer o peru. Mas sabe quando tirar do congelador?',
+         curto='Você sabe fazer o peru. Mas sabia que um de 5 kg leva de 2 a 3 dias para descongelar na geladeira?',
+         medio='Você sabe fazer o peru. Mas sabe quando tirar do congelador?\nUm peru de 5 kg leva de 2 a 3 dias para descongelar na geladeira. E no dia 24, às 21h, o forno é um só para tudo.\nO que costuma dar errado não é a receita. É a ordem.\nO guia traz o cronograma do dia 17 ao 25, com o dia 24 hora a hora. R$ 19,90.',
+         lista='Até quem sabe fazer tropeça na ordem:\n• Peru de 5 kg: de 2 a 3 dias descongelando na geladeira\n• 21/12: hora de passar o peru do congelador para a geladeira\n• 23/12: sobremesas, farofa e salpicão prontos\n• 24/12: o forno com hora marcada\nTudo no cronograma do guia. R$ 19,90.',
+         t1='Saber fazer não é o problema', t2='Peru de 5 kg: 2 a 3 dias pra descongelar', t3='O que dá errado até pra quem sabe', desc='Cronograma do dia 17 ao 25',
+         alt=['Quando tirar o peru do congelador?', 'Quem sabe fazer também corre no dia 24.', 'A receita você sabe. E o horário?'],
+         ref='P4 erro comum (R03); oportunidade 4 (educar com o guia)'),
+    dict(id='C28', nome='Falta o plano', objecao='OBJ2 Eu já sei fazer', angulo='OBJ2d reconhecimento: faz tudo certo, falta organizar', nivel='a', formato='imagem',
+         gatilho='Reconhecimento (validação de quem já sabe) + especificidade (18 horários)',
+         gancho='Você sabe fazer tudo. Falta o plano.',
+         curto='Você sabe fazer tudo. Falta só o plano: o dia 24 em 18 horários, das 9h às 23h30.',
+         medio='Você sabe fazer tudo. Falta só o plano.\nNão é falta de prática: é tudo no mesmo dia, ao mesmo tempo. O guia distribui a ceia do dia 17 ao 25 e põe o dia 24 em ordem, em 18 horários, das 9h às 23h30.\nCom lista de compras por seção e quantidades para 8 a 10 pessoas.\nR$ 19,90, acesso imediato por e-mail.',
+         lista='Você sabe fazer tudo. O guia entra com o plano:\n• Dia 24 em 18 horários, das 9h às 23h30\n• Cronograma do dia 17 ao 25\n• Lista de compras por seção, com quantidades\n• Checklist de última hora\nR$ 19,90.',
+         t1='Você sabe fazer. Falta o plano.', t2='O dia 24 em 18 horários', t3='Prática você tem. Falta a ordem.', desc='Dia 24 hora a hora',
+         alt=['Prática não falta. Falta a ordem.', 'Você faz tudo certo. Só que tudo junto.', 'O que falta não é receita.'],
+         ref='P6 mostrar por dentro (página real do cronograma)'),
+    dict(id='C29', nome='Mesa pra poucos', objecao='OBJ3 Ceia pequena', angulo='OBJ3a mesa posta para poucos, luz quente', nivel='a', formato='imagem',
+         gatilho='Estado final + orgulho de caprichar (100% emocional na arte)',
+         gancho='Mesa pra poucos. Capricho inteiro.',
+         curto='Mesa pra poucos, capricho inteiro. Ceia pequena também merece vela acesa e música escolhida.',
+         medio='Mesa pra poucos, capricho inteiro.\nVelas testadas, música escolhida, cada lugar pensado. Ceia pequena também merece esse cuidado.\nO guia traz cardápio, lista e cronograma pensados para 8 a 10 pessoas; para menos gente, é só dividir as receitas e a lista na mesma proporção.\nR$ 19,90.',
+         lista='Mesa pra poucos. Capricho inteiro.\n• Velas testadas e música escolhida (está no checklist)\n• Lugar de cada um pensado\n• Cardápios para 8 a 10 pessoas: para menos gente, divida receitas e lista\n• Cronograma do dia 17 ao 25\nR$ 19,90.',
+         t1='Mesa pra poucos, capricho inteiro', t2='Ceia pequena também é ceia', t3='O cuidado não depende do tamanho', desc='Dá pra dividir as receitas',
+         alt=['Poucos à mesa. Nenhum detalhe a menos.', 'Ceia pequena também acende vela.', 'Pra quem importa, a mesa posta.'],
+         ref='Oportunidade 7 (prova honesta); checklist real'),
+    dict(id='C30', nome='Primeiro prato', objecao='OBJ3 Ceia pequena', angulo='OBJ3b o instante do primeiro prato', nivel='a', formato='vídeo',
+         gatilho='Momento sensorial (antecipação do estado final) + pertencimento (100% emocional até o cartão final)',
+         gancho='O primeiro prato na mesa.',
+         curto='O primeiro prato na mesa. Um silêncio bom. Ceia pequena também tem esse instante.',
+         medio='O primeiro prato chega à mesa. Um silêncio bom.\nCeia pequena também tem esse instante, quando o capricho aparece.\nO guia ajuda a chegar nele com calma: cardápio, lista de compras e cronograma, pensados para 8 a 10 pessoas. Para menos gente, é só dividir as receitas e a lista.\nR$ 19,90.',
+         lista='Pra chegar ao primeiro prato com calma:\n• Cardápio escolhido (3 opções)\n• Lista de compras por seção\n• Cronograma do dia 17 ao 25\n• Receitas para 8 a 10 pessoas, que dá pra dividir para menos gente\nR$ 19,90.',
+         t1='O primeiro prato, com calma', t2='Ceia pequena, momento grande', t3='Quando a mesa fica pronta', desc='Dá pra dividir as receitas',
+         alt=['Aquele silêncio bom do primeiro prato.', 'Quando a mesa fica pronta e ninguém fala.', 'Ceia pequena. Momento grande.'],
+         ref='P8 vídeo vertical; tom emocional sem prova inventada'),
+    dict(id='C31', nome='Capricho é presente', objecao='OBJ3 Ceia pequena', angulo='OBJ3c a gratidão de quem recebe o cuidado', nivel='a', formato='imagem',
+         gatilho='Reciprocidade afetiva (quem recebe sente) + especificidade (checklist real)',
+         gancho='Pra quem está à mesa, o capricho é presente.',
+         curto='Pra quem está à mesa, o capricho é presente: lugar pensado, música escolhida, velas testadas.',
+         medio='Pra quem está à mesa, o capricho é presente.\nO lugar de cada um pensado, a música escolhida, as velas testadas. Quem recebe esse cuidado sente.\nEsses detalhes estão no checklist de última hora do guia, junto com cardápios, lista e cronograma para 8 a 10 pessoas (para menos gente, é só dividir).\nR$ 19,90.',
+         lista='Pra quem está à mesa, o capricho é presente. Do checklist do guia:\n• Velas, fósforo e pisca-pisca testados\n• Lugar de cada convidado definido\n• Música escolhida\n• Um tempinho para respirar antes de abrir a porta\nR$ 19,90.',
+         t1='O capricho também é presente', t2='Pra quem está à mesa, o detalhe', t3='14 detalhes de última hora, numa lista', desc='Checklist de última hora',
+         alt=['O detalhe que quem senta à mesa nota.', 'Lugar pensado pra cada um.', 'Pra quem você ama, a mesa posta.'],
+         ref='P6 mostrar por dentro (página real do checklist)'),
+    dict(id='C32', nome='Fim da noite', objecao='OBJ3 Ceia pequena', angulo='OBJ3d fim da noite, louça na pia e coração cheio', nivel='a', formato='vídeo',
+         gatilho='Estado final (a memória da noite) + pertencimento (100% emocional até o cartão final)',
+         gancho='23h30. A louça pode esperar.',
+         curto='23h30. A louça pode esperar, as sobras já têm pote e o coração está cheio.',
+         medio='Fim da noite: louça na pia, coração cheio.\nAs sobras já têm pote e espaço na geladeira, porque estava no checklist. E no dia 25 viram sanduíche ou rabanada de panetone.\nCeia pequena também termina assim.\nO guia traz cardápio, lista e cronograma para 8 a 10 pessoas (para menos gente, é só dividir). R$ 19,90.',
+         lista='23h30, fim da noite:\n• Sobras na geladeira em até 2 horas depois de servir\n• Potes e papel-alumínio já à mão (está no checklist)\n• No dia 25: sanduíche de peru, risoto ou rabanada de panetone\nO guia traz isso e o plano da ceia inteira. R$ 19,90.',
+         t1='Louça na pia, coração cheio', t2='O fim de noite que vale a ceia', t3='Ceia pequena, noite cheia', desc='Dá pra dividir as receitas',
+         alt=['23h30: a louça pode esperar.', 'Quando a noite acaba e o coração não.', 'Fim da noite, coração cheio.'],
+         ref='Oportunidade 2 (sobras); tom emocional'),
+]
+
+# Nomes no padrão "Cxx | Nome curto | Formato" para os criativos antigos (inferidos; os do Gerenciador prevalecem)
+NOMES_ANTIGOS = {
+    'C01': 'Cozinha inteira', 'C02': 'Planeje em uma tarde', 'C03': 'Lista por seção', 'C04': '3 cardápios', 'C05': 'Dia 24 hora a hora',
+    'C06': 'Sobras', 'C07': 'Quanto comprar', 'C08': 'Já decidiu o cardápio', 'C09': 'Cardápio econômico', 'C10': 'Garantia 7 dias',
+    'C11': 'Guia no celular', 'C12': 'Improvisada x planejada', 'C13': '3 mudanças', 'C14': 'Dia 24 hora a hora', 'C15': '300 receitas',
+    'C16': 'Erro da véspera', 'C17': 'Creme de leite', 'C18': 'Por dentro do guia', 'C19': 'Ideias com sobras', 'C20': 'Ceia em 4 passos',
+}
+URL = 'https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content={}'
+
+
+def nome_anuncio(id_, nome, formato):
+    return f"{id_} | {nome} | {'Imagem' if formato == 'imagem' else 'Vídeo'}"
+
+
+# Regras extras da série de objeções: atributos pessoais, depoimento, promessa, estatística, clique-isca, escassez falsa.
+PROIBIDO_B = PROIBIDO + [r'\bcasad', r'marido', r'esposa', r'solteir', r'sozinh', r'trist', r'solid', r'viúv', r'\bpena\b', r'anfitriã',
+                         r'cliente', r'disse que', r'aluna', r'\d+ ?%', r'nunca mais', r'você não vai acreditar', r'corre[!,]', r'acaba (hoje|logo)',
+                         r'vagas', r'garant(?!ia)', r'Papai Noel', r'\bDeus\b', r'Jesus', r'saúde', r'emagre', r'Sadia|Perdigão|Seara']
+
 erros = []
+for b in B:
+    linhas = [l for l in b['medio'].split('\n') if l.strip()]
+    if not 3 <= len(linhas) <= 5:
+        erros.append(f"{b['id']} texto principal com {len(linhas)} linhas (3 a 5)")
+    for campo in ('curto', 'medio', 'lista', 'gancho', 't1', 't2', 't3', 'desc'):
+        txt = b[campo]
+        if campo in ('curto', 'medio', 'lista') and len(txt.split('\n')[0]) > 125:
+            erros.append(f"{b['id']} {campo}: 1ª linha com mais de 125 caracteres")
+        if len(EMOJI.findall(txt)) > 1:
+            erros.append(f"{b['id']} {campo}: mais de 1 emoji")
+        for p in PROIBIDO_B:
+            if re.search(p, txt, re.I):
+                erros.append(f"{b['id']} {campo}: termo proibido '{p}'")
+        for preco in re.findall(r'R\$ ?\d+(?:,\d{2})?', txt):
+            if preco.replace(' ', '') != 'R$19,90':
+                erros.append(f"{b['id']} {campo}: valor não permitido {preco}")
+    for campo, lim in (('t1', 40), ('t2', 40), ('t3', 40), ('desc', 30)):
+        if len(b[campo]) > lim:
+            erros.append(f"{b['id']} {campo}: {len(b[campo])} caracteres (máx. {lim})")
+    if len(b['alt']) != 3:
+        erros.append(f"{b['id']}: precisa de 3 ganchos alternativos")
+    for g in b['alt']:
+        for p in PROIBIDO_B:
+            if re.search(p, g, re.I):
+                erros.append(f"{b['id']} gancho alternativo: termo proibido '{p}'")
 for a in A:
     for campo in ('curto', 'medio', 'lista'):
         txt = a[campo]
@@ -180,13 +339,24 @@ if erros:
     print('\n'.join(erros))
     sys.exit(1)
 
+def arquivo(id_, formato):
+    return f"criativos/imagens/{id_}.png" if formato == 'imagem' else f"criativos/videos/{id_}.mp4"
+
+
 saida = RAIZ / 'textos-anuncios.csv'
 with open(saida, 'w', newline='', encoding='utf-8') as f:
     w = csv.writer(f)
+    # As 16 primeiras colunas são as originais; as seguintes foram acrescentadas na série de objeções (C21+).
     w.writerow(['id', 'onda', 'formato', 'angulo', 'nivel_consciencia', 'gancho', 'texto_curto', 'texto_medio', 'texto_lista',
-                'titulo_1', 'titulo_2', 'descricao', 'cta', 'arquivo', 'utm_content', 'referencia_da_pesquisa'])
+                'titulo_1', 'titulo_2', 'descricao', 'cta', 'arquivo', 'utm_content', 'referencia_da_pesquisa',
+                'nome', 'url', 'titulo_3', 'objecao', 'gatilho', 'gancho_alt_1', 'gancho_alt_2', 'gancho_alt_3', 'arquivo_9x16'])
     for a in A:
-        arq = f"criativos/imagens/{a['id']}.png" if a['formato'] == 'imagem' else f"criativos/videos/{a['id']}.mp4"
         w.writerow([a['id'], a['onda'], a['formato'], a['angulo'], NIVEL[a['nivel']], a['gancho'], a['curto'], a['medio'], a['lista'],
-                    a['t1'], a['t2'], a['desc'], a['cta'], arq, a['id'], a['ref']])
-print(f'ok: {len(A)} anúncios em {saida.relative_to(RAIZ)}')
+                    a['t1'], a['t2'], a['desc'], a['cta'], arquivo(a['id'], a['formato']), a['id'], a['ref'],
+                    nome_anuncio(a['id'], NOMES_ANTIGOS[a['id']], a['formato']), URL.format(a['id']), '', '', '', '', '', '', ''])
+    for b in B:
+        w.writerow([b['id'], 3, b['formato'], b['angulo'], NIVEL[b['nivel']], b['gancho'], b['curto'], b['medio'], b['lista'],
+                    b['t1'], b['t2'], b['desc'], 'Saiba mais', arquivo(b['id'], b['formato']), b['id'], b['ref'],
+                    nome_anuncio(b['id'], b['nome'], b['formato']), URL.format(b['id']), b['t3'], b['objecao'], b['gatilho'],
+                    *b['alt'], f"criativos/imagens/{b['id']}_9x16.png" if b['formato'] == 'imagem' else ''])
+print(f'ok: {len(A) + len(B)} anúncios em {saida.relative_to(RAIZ)}')

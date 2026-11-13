@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="video.css"><link rel="stylesheet" href="../objecoes.css">
+<style>
+  #a { background: var(--papel); }
+  .l { text-wrap: balance; left: 90px; right: 90px; font-family:'Serif'; line-height: 1.0; color: var(--verde-profundo); letter-spacing: -0.02em; }
+  #a1 { top: 520px; font-size: 128px; }
+  #a2 { top: 860px; font-size: 92px; color: var(--tinta); }
+  #b { background: var(--pessego-100); }
+  #b1 { top: 480px; font-size: 92px; }
+  #b2 { left: 80px; top: 610px; font-family:'Serif'; font-style: italic; font-size: 196px; line-height: .9; color: var(--terracota); white-space: nowrap; }
+  #b3 { top: 850px; font-size: 76px; color: var(--tinta); }
+  #b4 { left: 90px; top: 1090px; font-family:'Sans'; font-weight: 800; font-size: 30px; letter-spacing: .14em; text-transform: uppercase; color: var(--terracota); }
+  #c { background: var(--papel); }
+  #c1 { top: 640px; font-size: 118px; }
+  #c1 em, #d1 em { font-style: italic; background: linear-gradient(transparent 62%, var(--pessego-200) 62%, var(--pessego-200) 92%, transparent 92%); }
+  #d { background: var(--papel); }
+  #d1 { top: 580px; font-size: 118px; }
+</style></head>
+<body>
+  <div class="cena" id="a">
+    <div class="abs l" id="a1">Você sabe fazer o peru.</div>
+    <div class="abs l" id="a2">Mas sabe quando tirar do congelador?</div>
+  </div>
+  <div class="cena" id="b">
+    <div class="abs l" id="b1">Peru de 5 kg:</div>
+    <div class="abs" id="b2">2 a 3 dias</div>
+    <div class="abs l" id="b3">descongelando na geladeira.</div>
+    <div class="abs" id="b4">Está no guia, pág. 31</div>
+  </div>
+  <div class="cena" id="c"><div class="abs l" id="c1">E às 21h, o forno <em>é um só.</em></div></div>
+  <div class="cena" id="d"><div class="abs l" id="d1">Saber fazer não é o problema. <em>É a ordem.</em></div></div>
+<script src="../luz.js"></script><script src="motor.js"></script>
+<script>
+  window.DURACAO = 14.5; window.SEM_AUDIO = true;
+  montaFinal2('O guia põe cada coisa no seu dia.');
+  quebraPalavras('#a1');
+  window.render = function (t) {
+    cena('#a', t, 0, 4.3, 0.01);
+    palavras('#a1', t, 0.0, 0.1);
+    entra('#a2', t, 1.9, 1e9, { dy: 40 });
+    cena('#b', t, 4.3, 7.2, 0.2);
+    entra('#b1', t, 4.4, 1e9, { dy: 30 });
+    entra('#b2', t, 4.7, 1e9, { dy: 0, s0: .7, dur: .55, ease: E.back });
+    entra('#b3', t, 5.3, 1e9, { dy: 30 });
+    entra('#b4', t, 5.8, 1e9, { dy: 16 });
+    cena('#c', t, 7.2, 9.4, 0.2);
+    entra('#c1', t, 7.3, 1e9, { dy: 40 });
+    cena('#d', t, 9.4, 11.5, 0.2);
+    entra('#d1', t, 9.5, 1e9, { dy: 40 });
+    animaFinal2(t, 11.5);
+  };
+  window.render(0);
+</script>
+</body></html>

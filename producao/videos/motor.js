@@ -82,3 +82,24 @@ function animaFinal(t, a) {
   entra('#f-preco', t, a + 1.4, 1e9, { dy: 0, s0: 0.6, dur: 0.5, ease: E.back, base: 'translateX(-50%)' });
   entra('#f-cta', t, a + 1.8, 1e9, { dy: 20 });
 }
+
+// Cartão final da série de objeções (C21 em diante): fundo noite com luz quente, capa, uma frase, preço e chamada.
+// Tudo entre y=250 e y=1580 (zonas seguras de Reels e Stories).
+function montaFinal2(frase, cta = 'Toque em Saiba mais') {
+  const d = document.createElement('div');
+  d.className = 'cena'; d.id = 'final2';
+  d.innerHTML = `<div class="cheio noite"></div><canvas class="luz" id="f2-luz"></canvas><div class="vinheta"></div>
+    <img class="abs" id="f2-capa" src="../../assets/site/capa-ceia.webp" style="left:50%;top:330px;width:520px;margin-left:-260px;border-radius:8px;box-shadow:0 40px 80px rgba(0,0,0,.5);z-index:5">
+    <div class="abs titulo" id="f2-frase" style="left:90px;right:90px;top:910px;text-align:center;font-size:66px;text-wrap:balance;color:var(--papel);z-index:5">${frase}</div>
+    <div class="abs" id="f2-preco" style="left:50%;top:1150px;z-index:5;font-family:'Sans';font-weight:900;font-size:58px;padding:16px 46px;border-radius:999px;background:var(--pessego);color:var(--noite);white-space:nowrap">R$ 19,90</div>
+    <div class="abs" id="f2-cta" style="left:90px;right:90px;top:1290px;text-align:center;font-family:'Sans';font-weight:800;font-size:36px;color:var(--ouro-suave);z-index:5">${cta}</div>`;
+  document.body.appendChild(d);
+}
+function animaFinal2(t, a, luzOpc = {}) {
+  cena('#final2', t, a, 1e9, 0.3);
+  if (t >= a - 0.05) luz(document.getElementById('f2-luz'), Object.assign({ semente: 5, n: 34, min: 16, max: 100, alfa: .2, brilhos: [[0.5, 1.0, 560, .32]] }, luzOpc), t);
+  entra('#f2-capa', t, a + 0.1, 1e9, { dy: 80, s0: 0.9, dur: 0.6 });
+  entra('#f2-frase', t, a + 0.45, 1e9, { dy: 30 });
+  entra('#f2-preco', t, a + 0.9, 1e9, { dy: 0, s0: 0.6, dur: 0.5, ease: E.back, base: 'translateX(-50%)' });
+  entra('#f2-cta', t, a + 1.25, 1e9, { dy: 20 });
+}
