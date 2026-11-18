@@ -19,7 +19,7 @@ A Vercel roda o mesmo comando (`vercel.json`). Se um campo obrigatório estiver 
 - [x] Barra fixa no celular: rola até `#oferta` e some quando o card está na tela.
 - [x] Card de oferta ("ticket"): guia + 3 bônus com selo GRÁTIS, "de R$ 39,90 por R$ 19,90", preço grande, contagem regressiva real até `PROMO_END`, botão para o checkout, selos (acesso por e-mail, pagamento seguro pela Kirvano) e garantia de 7 dias com o selo recortado em fundo transparente e efeito 3D.
 - [x] Depois de `PROMO_END` (testado simulando 01/12/2026): preço vira R$ 39,90; faixa, "de/por" e contagem somem.
-- [x] `SHOW_BONUS_VALUES` (padrão `false`): com `true`, mostra os valores riscados (R$ 14,90 / 18,90 / 11,90) e a soma "valor se comprados separados" (R$ 85,60). Testado nos dois modos.
+- [x] `SHOW_BONUS_VALUES` (padrão `false`): com `true`, mostra os valores riscados (R$ 14,90 / 18,90 / 11,90) e a soma "Valor percebido · os 4 e-books" (R$ 85,60). Testado nos dois modos.
 - [x] Parcelamento só aparece se `INSTALLMENTS_TEXT` for preenchido (hoje vazio).
 - [x] 4 vídeos (C30 no hero, C24 na dor, C27 em "o que vem", C32 no final): mudos, em loop, com poster, carregados só perto da tela. Comprimidos para 540x960 sem áudio: 204 a 421 KB cada.
 - [x] Pixel antigo removido de todas as páginas. Pixel novo `1205067451580311` com PageView em todas as páginas e ViewContent quando o card de oferta aparece. Nenhum InitiateCheckout ou Purchase no site.
@@ -47,7 +47,7 @@ A Vercel roda o mesmo comando (`vercel.json`). Se um campo obrigatório estiver 
 | `PROMO_PRICE` / `REGULAR_PRICE` | 19,90 / 39,90 | sim |
 | `INSTALLMENTS_TEXT` | vazio (não mostra parcelamento) | não |
 | `GUARANTEE_DAYS` / `BONUS_RELEASE_DAY` | 7 / 8 | sim |
-| `SHOW_BONUS_VALUES` | false | sim (true/false) |
+| `SHOW_BONUS_VALUES` | true (ligado em 18/11 a seu pedido) | sim (true/false) |
 | `BONUS_VALUES` | 14,90 / 18,90 / 11,90 | só se `SHOW_BONUS_VALUES` for true |
 | `SUPPORT_EMAIL`, `SITE_URL` | preenchidos | sim |
 

@@ -12,7 +12,7 @@
   "GUARANTEE_DAYS": "7",
   "BONUS_RELEASE_DAY": "8",
 
-  "SHOW_BONUS_VALUES": false,
+  "SHOW_BONUS_VALUES": true,
   "BONUS_VALUES": {
     "brincadeiras": "14,90",
     "sobras": "18,90",

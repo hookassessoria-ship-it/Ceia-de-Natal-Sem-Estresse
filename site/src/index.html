@@ -216,8 +216,12 @@ main{overflow-x:clip}
 .inclui li{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;font-weight:700;line-height:1.3;font-size:.98rem}
 .inclui li small{display:block;font-weight:600;font-size:.8rem;color:var(--ink-2)}
 .inclui .valor{font-size:.86rem;font-weight:700;color:var(--ink-2)}
-.inclui .gratis{margin:0}
-.ticket__total{margin:12px 18px 0;padding-top:12px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.inclui .gratis{margin:0;padding:6px 12px;font-size:.78rem;background:var(--cta);box-shadow:0 6px 14px -8px rgba(166,66,30,.9)}
+.inclui .lado{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.inclui .lado .valor{font-size:.84rem}
+.ticket__total{margin:14px 18px 0;padding:12px 14px;border-radius:12px;background:var(--peach-100);display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:.98rem;font-weight:800;color:var(--teal-900)}
+.ticket__total small{display:block;font-size:.76rem;font-weight:700;color:var(--ink-2)}
+.ticket__total .riscado{font-family:"Fraunces",Georgia,serif;font-size:1.25rem;color:var(--ink-2)}
 .preco{padding:20px 18px 6px;text-align:center}
 .preco__de{font-size:.98rem;font-weight:700;color:var(--ink-2)}
 .preco__valor{display:flex;align-items:flex-start;justify-content:center;gap:6px;margin-top:6px;font-family:"Fraunces",Georgia,serif;color:var(--teal-900);line-height:1}
@@ -623,11 +627,11 @@ main{overflow-x:clip}
         <div class="ticket__corte" aria-hidden="true"></div>
         <ul class="inclui">
           <li><span class="ic ic--sm"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></span><span>Ceia de Natal Sem Estresse<small>Guia em PDF, 63 páginas</small></span><!--@SE_VALORES@--><span class="valor riscado">R$ {{REGULAR_PRICE}}</span><!--@FIM_SE_VALORES@--></li>
-          <li><span class="ic ic--sm"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span><span>Brincadeiras e Jogos para a Festa<small>Bônus 1<!--@SE_VALORES@--> · <span class="riscado">R$ {{VAL_BRINCADEIRAS}}</span><!--@FIM_SE_VALORES@--></small></span><span class="gratis">Grátis</span></li>
-          <li><span class="ic ic--sm"><svg class="icon" aria-hidden="true"><use href="#i-chef"/></svg></span><span>Receitas com as Sobras da Ceia<small>Bônus 2<!--@SE_VALORES@--> · <span class="riscado">R$ {{VAL_SOBRAS}}</span><!--@FIM_SE_VALORES@--></small></span><span class="gratis">Grátis</span></li>
-          <li><span class="ic ic--sm"><svg class="icon" aria-hidden="true"><use href="#i-cart"/></svg></span><span>Ceia Econômica<small>Bônus 3<!--@SE_VALORES@--> · <span class="riscado">R$ {{VAL_ECONOMICA}}</span><!--@FIM_SE_VALORES@--></small></span><span class="gratis">Grátis</span></li>
+          <li><span class="ic ic--sm"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span><span>Brincadeiras e Jogos para a Festa<small>Bônus 1</small></span><span class="lado"><!--@SE_VALORES@--><span class="valor riscado">R$ {{VAL_BRINCADEIRAS}}</span><!--@FIM_SE_VALORES@--><span class="gratis">Grátis</span></span></li>
+          <li><span class="ic ic--sm"><svg class="icon" aria-hidden="true"><use href="#i-chef"/></svg></span><span>Receitas com as Sobras da Ceia<small>Bônus 2</small></span><span class="lado"><!--@SE_VALORES@--><span class="valor riscado">R$ {{VAL_SOBRAS}}</span><!--@FIM_SE_VALORES@--><span class="gratis">Grátis</span></span></li>
+          <li><span class="ic ic--sm"><svg class="icon" aria-hidden="true"><use href="#i-cart"/></svg></span><span>Ceia Econômica<small>Bônus 3</small></span><span class="lado"><!--@SE_VALORES@--><span class="valor riscado">R$ {{VAL_ECONOMICA}}</span><!--@FIM_SE_VALORES@--><span class="gratis">Grátis</span></span></li>
         </ul>
-        <!--@SE_VALORES@--><p class="ticket__total"><span>Valor se comprados separados</span><span class="riscado">R$ {{VAL_TOTAL_SEPARADOS}}</span></p><!--@FIM_SE_VALORES@-->
+        <!--@SE_VALORES@--><p class="ticket__total"><span>Valor percebido<small>os 4 e-books</small></span><span class="riscado">R$ {{VAL_TOTAL_SEPARADOS}}</span></p><!--@FIM_SE_VALORES@-->
         <div class="preco">
           <p class="preco__de" data-promo>de <span class="riscado">R$ {{REGULAR_PRICE}}</span> por <strong>R$ {{PROMO_PRICE}}</strong></p>
           <div class="preco__valor" data-promo aria-label="Preço de Black Friday: {{PROMO_PRICE}} reais"><small>R$</small><strong>{{PROMO_PRICE}}</strong></div>
