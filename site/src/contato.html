@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!--@PIXEL@-->
+
+<title>Contato | Cantinho do Lar</title>
+<meta name="description" content="Fale com o suporte do Cantinho do Lar: dúvidas, acesso ao guia e pedidos de reembolso.">
+<meta name="theme-color" content="#0B4A50">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230F5C63'/%3E%3Cpath d='M18 48 L50 22 L82 48' fill='none' stroke='%23FFF4E3' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M28 43 V78 H72 V43' fill='none' stroke='%23FFF4E3' stroke-width='7' stroke-linejoin='round'/%3E%3Cpath d='M50 72 C38 63 35 57 38 52 C41 47 47 48 50 53 C53 48 59 47 62 52 C65 57 62 63 50 72Z' fill='%23F2B880'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#0F5C63;--teal-900:#083A3F;--teal-50:#E3EFEE;--peach:#F2B880;--peach-100:#FCEBD6;--cream:#FFF4E3;--paper:#FFFAF2;--ink:#2A2522;--ink-2:#554C45;--line:#EAD9BD;--cta:#C4532B;--gold:#C9A45C}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 17.5px/1.65 "Nunito",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--teal);font-weight:700;text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+.topo{background:var(--teal-900);color:#FFF4E3}
+.topo .in{max-width:860px;margin:0 auto;padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:inline-flex;align-items:center;gap:9px;color:inherit;text-decoration:none;font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:1.06rem}
+.brand svg{width:24px;height:24px}
+.voltar{display:inline-flex;align-items:center;gap:6px;color:#FFF4E3;text-decoration:none;font-weight:800;font-size:.92rem;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,244,227,.35)}
+.voltar:hover{background:rgba(255,244,227,.1)}
+.voltar svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.topo a:focus-visible{outline-color:var(--peach)}
+main{max-width:860px;margin:0 auto;padding:40px 20px 64px}
+.cab{margin-bottom:26px}
+.over{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cta);margin:0 0 12px}
+.over::before{content:"";width:22px;height:2px;background:currentColor;border-radius:2px}
+h1{font-family:"Fraunces",Georgia,serif;font-weight:650;font-size:clamp(2rem,1.4rem + 2.6vw,3rem);line-height:1.06;color:var(--teal-900);margin:0;letter-spacing:-.012em;text-wrap:balance}
+.atual{margin:12px 0 0;color:var(--ink-2);font-size:.92rem;font-weight:700}
+.intro{margin:14px 0 0;color:var(--ink-2);font-size:1.05rem}
+.doc{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:26px 22px;box-shadow:0 18px 40px -28px rgba(42,37,34,.35)}
+.doc h2{font-family:"Fraunces",Georgia,serif;font-weight:640;font-size:1.3rem;line-height:1.25;color:var(--teal-900);margin:32px 0 8px}
+.doc h2:first-child{margin-top:0}
+.doc p{margin:0 0 12px}
+.doc ul{margin:0 0 12px;padding-left:1.2em}
+.doc li{margin:6px 0}
+.doc li::marker{color:var(--cta)}
+.ph{background:var(--peach-100);border:1px dashed var(--cta);border-radius:6px;padding:1px 6px;font-weight:700;color:var(--ink)}
+.cards{display:grid;gap:14px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:22px 20px;box-shadow:0 18px 40px -28px rgba(42,37,34,.35)}
+.card h2{font-family:"Fraunces",Georgia,serif;font-weight:640;font-size:1.3rem;line-height:1.25;color:var(--teal-900);margin:0 0 10px;display:flex;align-items:center;gap:12px}
+.card h2 .ic{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--teal);color:#FFF4E3;flex:none}
+.card h2 svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.card p{margin:0 0 10px;color:var(--ink-2)}
+.card ol{margin:6px 0 0;padding-left:1.25em;color:var(--ink-2)}
+.card li{margin:7px 0}
+.card li::marker{color:var(--cta);font-weight:800}
+.email{display:flex;align-items:center;justify-content:center;gap:8px;margin:14px 0 10px;padding:16px 14px;border-radius:999px;background:var(--cta);color:#fff;text-decoration:none;font-weight:800;font-size:clamp(.84rem,.62rem + 1.1vw,1rem);white-space:nowrap;text-align:center;box-shadow:0 14px 26px -14px rgba(166,66,30,.85)}
+@media (max-width:379px){.email svg{display:none}}
+.email:hover{background:#A6421E}
+.email svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.email:focus-visible{outline-color:var(--teal-900)}
+.prazo{display:inline-flex;align-items:center;gap:8px;font-weight:800;color:var(--teal);background:var(--teal-50);border-radius:999px;padding:6px 12px;font-size:.9rem}
+.prazo svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.rodape{background:var(--teal-900);color:#D9CDBD;padding:36px 0 40px;font-size:.9rem}
+.rodape .in{max-width:860px;margin:0 auto;padding:0 20px}
+.rodape nav{display:flex;flex-wrap:wrap;gap:6px 22px;margin-bottom:14px}
+.rodape nav a{color:#FFF4E3;text-decoration:underline;text-decoration-color:rgba(242,184,128,.6);padding:6px 0}
+.rodape nav a[aria-current="page"]{color:var(--peach);text-decoration:none}
+.rodape p{margin:10px 0 0;color:#BFB3A3;font-size:.84rem;line-height:1.55}
+.rodape .ident{margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,244,227,.14);font-size:.76rem;color:#A99D8E}
+.rodape .ident a{color:inherit;font-weight:700}
+.rodape a:focus-visible{outline-color:var(--peach)}
+@media (min-width:700px){main{padding:56px 24px 88px}.doc{padding:40px 44px}.card{padding:28px 30px}.cards{grid-template-columns:1fr 1fr}.card--full{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<header class="topo">
+  <div class="in">
+    <a class="brand" href="index.html" aria-label="Cantinho do Lar, página inicial">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M8 44L50 10l42 34" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 38v48a4 4 0 0 0 4 4h52a4 4 0 0 0 4-4V38" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/><rect x="66" y="14" width="9" height="16" rx="1.5" fill="currentColor"/><path d="M50 78C34 66 30 58 34 51c4-7 13-6 16 1c3-7 12-8 16-1c4 7 0 15-16 27z" fill="#F2B880"/></svg>
+      <span>Cantinho do Lar</span>
+    </a>
+    <a class="voltar" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="M11 18l-6-6"/><path d="M11 6l-6 6"/></svg>Voltar</a>
+  </div>
+</header>
+<main>
+  <div class="cab">
+    <p class="over">Fale com a gente</p>
+    <h1>Contato</h1>
+    <p class="intro">Dúvidas sobre o guia, problemas com o acesso ou pedido de reembolso: o atendimento é feito por e-mail.</p>
+  </div>
+  <div class="cards">
+    <section class="card card--full" aria-labelledby="c-email">
+      <h2 id="c-email"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/><path d="M3 7l9 6l9-6"/></svg></span>E-mail de suporte</h2>
+      <a class="email" href="mailto:suporte.cantinhodolar@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/><path d="M3 7l9 6l9-6"/></svg>suporte.cantinhodolar@gmail.com</a>
+      <p class="prazo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0"/><path d="M12 7v5l3 3"/></svg>Respondemos em até 2 dias úteis</p>
+    </section>
+
+    <section class="card" aria-labelledby="c-reembolso">
+      <h2 id="c-reembolso"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.46 20.846a12 12 0 0 1-7.96-14.846a12 12 0 0 0 8.5-3a12 12 0 0 0 8.5 3a12 12 0 0 1-.09 7.06"/><path d="M15 19l2 2l4-4"/></svg></span>Pedir reembolso</h2>
+      <p>Você tem 7 dias a partir da compra para pedir o reembolso, sem precisar justificar.</p>
+      <ol>
+        <li>Envie um e-mail para <a href="mailto:suporte.cantinhodolar@gmail.com?subject=Reembolso%20-%20Ceia%20de%20Natal%20Sem%20Estresse">suporte.cantinhodolar@gmail.com</a> dentro dos 7 dias, com o assunto <strong>“Reembolso”</strong>.</li>
+        <li>Informe o <strong>e-mail usado na compra</strong>, para localizarmos o seu pedido.</li>
+        <li>O valor é devolvido integralmente pelo mesmo meio de pagamento, por meio da Kirvano.</li>
+      </ol>
+    </section>
+
+    <section class="card" aria-labelledby="c-acesso">
+      <h2 id="c-acesso"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6"/><path d="M9 17h6"/></svg></span>Não recebeu o acesso?</h2>
+      <p>O acesso ao PDF é enviado para o e-mail informado na compra, depois que o pagamento é aprovado.</p>
+      <ol>
+        <li>Procure nas pastas de <strong>spam</strong> e de <strong>promoções</strong>.</li>
+        <li>Confira se o e-mail foi digitado certo no pagamento.</li>
+        <li>Se não encontrar, escreva para o suporte informando o e-mail usado na compra.</li>
+      </ol>
+    </section>
+  </div>
+</main>
+<footer class="rodape">
+  <div class="in">
+    <nav aria-label="Links legais">
+      <a href="termos.html">Termos de uso</a>
+      <a href="privacidade.html">Política de privacidade</a>
+      <a href="contato.html" aria-current="page">Contato</a>
+    </nav>
+    <p>Este site não faz parte do Facebook ou do Instagram, nem é endossado por eles.</p>
+    <p>© 2026 Cantinho do Lar. Todos os direitos reservados.</p>
+    <p class="ident">Cantinho do Lar · Material digital para imprimir. Nada é enviado pelo correio.</p>
+  </div>
+</footer>
+</body>
+</html>
