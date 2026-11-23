@@ -64,6 +64,10 @@ src="https://www.facebook.com/tr?id=${cfg.PIXEL_ID}&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->`;
 
+const pixelNoscript = `<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=${cfg.PIXEL_ID}&ev=PageView&noscript=1"
+/></noscript>`;
+
 const siteJs = `<script>window.SITE=${JSON.stringify({
   checkoutUrl: cfg.CHECKOUT_URL,
   promoEnd: cfg.PROMO_END,
@@ -122,6 +126,7 @@ const copiar = (de, para) => {
     if (fs.statSync(a).isDirectory()) { fs.mkdirSync(b, { recursive: true }); copiar(a, b); continue; }
     if (!a.endsWith('.html')) { fs.copyFileSync(a, b); continue; }
     let h = fs.readFileSync(a, 'utf8');
+    h = h.replace('<!--@PIXEL_NOSCRIPT@-->', pixelNoscript)
     h = h.replace('<!--@PIXEL@-->', pixel).replace('<!--@SITE@-->', siteJs);
     // blocos que só existem com SHOW_BONUS_VALUES=true
     h = h.replace(/<!--@SE_VALORES@-->([\s\S]*?)<!--@FIM_SE_VALORES@-->/g, (_, bloco) => (cfg.SHOW_BONUS_VALUES ? bloco : ''));
@@ -148,6 +153,10 @@ const varrer = (dir) => {
   }
 };
 varrer(DIST);
+for (const nome of fs.readdirSync(DIST).filter((n) => n.endsWith('.html'))) {
+  const h = fs.readFileSync(path.join(DIST, nome), 'utf8');
+  if (h.includes('x_f=atob') && h.includes("fbq('init'")) achados.push(`${nome}: Meta Pixel do site junto com o Pixel da Utmify (duplicado)`);
+}
 if (achados.length) falhar(achados);
 
 console.log(`✔ Build ok → dist/ (Pixel ${cfg.PIXEL_ID}, promoção até ${fimLabel}, valores dos bônus ${cfg.SHOW_BONUS_VALUES ? 'visíveis' : 'ocultos'})`);
