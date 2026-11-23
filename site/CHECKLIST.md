@@ -78,3 +78,13 @@ A Vercel roda o mesmo comando (`vercel.json`). Se um campo obrigatório estiver 
 ### Pendente (seu)
 - [x] **Pixel da Utmify instalado (22/11)** na página principal (`pixel.js`, pixelId `6af1669df0b199dced8a9a94`), assíncrono no `<head>`. Ele inicia o Meta Pixel `1205067451580311` (ligado a ele no painel da Utmify) e envia PageView e ViewContent no carregamento e InitiateCheckout no clique do botão da Kirvano, para a Utmify e para o Meta. Por isso a página principal **não tem mais o código do Meta do próprio site** (só o `<noscript>`): sem duplicar o pixel. As outras páginas (oferta, obrigado, termos, privacidade, contato) continuam com o Meta do site, só PageView. O build falha se alguma página tiver os dois juntos.
 - [ ] **Deploy:** o projeto `cantinho-ceia` na Vercel não está ligado ao GitHub. O push na `main` não publica sozinho; publicar com `npx vercel --prod` dentro de `site/`, ou ligar o repositório na Vercel (Settings → Git, Root Directory `site`).
+
+## Quarto bônus: Ceia na Medida (23/11)
+
+- [x] Site passa de 3 para 4 bônus (faixa, topo, lista de bônus, oferta, FAQ, barra fixa, SEO/OG, obrigado e termos). O build falha se aparecer "3 bônus" de novo.
+- [x] Card do bônus 4 "Ceia na Medida" no mesmo padrão dos outros; imagem do kit do card de oferta trocada pela versão com 4 bônus. A grade de bônus virou 2x2 no desktop.
+- [x] Valor do bônus 4: R$ 9,90 riscado (`BONUS_VALUES.ceia_medida`). Valor percebido: R$ 85,60 → **R$ 95,50** ("os 5 e-books"). Preço (R$ 19,90 / R$ 39,90), Pixel, Utmify, UTMs e botão da Kirvano não foram tocados.
+- [x] FAQ nova: "Serve para ceia pequena?".
+- [ ] **Confirmar na Kirvano** que o PDF do bônus 4 está na entrega, no mesmo dia dos outros bônus (o site diz que os 4 bônus chegam no {{BONUS_RELEASE_DAY}}º dia).
+- [ ] **Número de páginas do bônus:** o site não cita (o pedido dizia 8 a 12 páginas, sem confirmação). Se quiser, é só me passar o número exato.
+- [ ] Não há dados estruturados (JSON-LD) no site, então não havia o que atualizar.

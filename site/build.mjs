@@ -25,7 +25,7 @@ const erros = [];
 for (const k of OBRIGATORIOS) if (vazio(cfg[k])) erros.push(`Campo obrigatório vazio em site.config.json: ${k}`);
 if (typeof cfg.SHOW_BONUS_VALUES !== 'boolean') erros.push('SHOW_BONUS_VALUES precisa ser true ou false');
 if (cfg.SHOW_BONUS_VALUES) {
-  for (const b of ['brincadeiras', 'sobras', 'economica']) {
+  for (const b of ['brincadeiras', 'sobras', 'economica', 'ceia_medida']) {
     if (vazio(cfg.BONUS_VALUES?.[b])) erros.push(`SHOW_BONUS_VALUES está true, mas falta BONUS_VALUES.${b}`);
   }
 }
@@ -40,7 +40,7 @@ const num = (s) => Number(String(s).replace('.', '').replace(',', '.'));
 const brl = (n) => n.toFixed(2).replace('.', ',');
 const fim = new Date(cfg.PROMO_END);
 const fimLabel = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: '2-digit', timeZone: 'America/Sao_Paulo' }).format(fim);
-const somaSeparados = brl(num(cfg.REGULAR_PRICE) + ['brincadeiras', 'sobras', 'economica'].reduce((t, b) => t + num(cfg.BONUS_VALUES?.[b] || '0'), 0));
+const somaSeparados = brl(num(cfg.REGULAR_PRICE) + ['brincadeiras', 'sobras', 'economica', 'ceia_medida'].reduce((t, b) => t + num(cfg.BONUS_VALUES?.[b] || '0'), 0));
 
 const pixel = `<!-- Meta Pixel Code -->
 <script>
@@ -89,6 +89,7 @@ const tokens = {
   VAL_BRINCADEIRAS: cfg.BONUS_VALUES?.brincadeiras || '',
   VAL_SOBRAS: cfg.BONUS_VALUES?.sobras || '',
   VAL_ECONOMICA: cfg.BONUS_VALUES?.economica || '',
+  VAL_MEDIDA: cfg.BONUS_VALUES?.ceia_medida || '',
   VAL_TOTAL_SEPARADOS: somaSeparados,
 };
 
@@ -141,7 +142,7 @@ fs.mkdirSync(DIST, { recursive: true });
 copiar(SRC, DIST);
 
 // ---------- 4. controle de qualidade do que foi publicado ----------
-const PROIBIDOS = [/PREENCHER/i, /lorem/i, /XXX/, /TODO/, /1152510153974851/, /álcool/i, /alcool/i, /alcoólica/i, /\{\{[A-Z_]+\}\}/, /<!--@[A-Z_]+@-->/, /fonts\.googleapis\.com/, /ViewContent|InitiateCheckout|'Purchase'|AddToCart/];
+const PROIBIDOS = [/(?<![0-9])3 bônus|três bônus/i, /PREENCHER/i, /lorem/i, /XXX/, /TODO/, /1152510153974851/, /álcool/i, /alcool/i, /alcoólica/i, /\{\{[A-Z_]+\}\}/, /<!--@[A-Z_]+@-->/, /fonts\.googleapis\.com/, /ViewContent|InitiateCheckout|'Purchase'|AddToCart/];
 const achados = [];
 const varrer = (dir) => {
   for (const nome of fs.readdirSync(dir)) {

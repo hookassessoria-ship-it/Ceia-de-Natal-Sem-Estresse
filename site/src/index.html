@@ -23,14 +23,14 @@
 try{if(Date.now()>=new Date(window.SITE.promoEnd).getTime())d.classList.add('pos-promo');}catch(e){}})();
 </script>
 
-<title>Ceia de Natal Sem Estresse + 3 bônus | Cantinho do Lar</title>
-<meta name="description" content="Guia digital em PDF com 3 cardápios para 8 a 10 pessoas, listas de compras, cronograma hora a hora e 30 receitas, mais 3 bônus. Acesso por e-mail e garantia de {{GUARANTEE_DAYS}} dias.">
+<title>Ceia de Natal Sem Estresse + 4 bônus | Cantinho do Lar</title>
+<meta name="description" content="Guia digital em PDF com 3 cardápios para 8 a 10 pessoas, listas de compras, cronograma hora a hora e 30 receitas, mais 4 bônus, com a adaptação para ceias de 2 a 5 pessoas. Acesso por e-mail e garantia de {{GUARANTEE_DAYS}} dias.">
 <meta name="theme-color" content="#083A3F">
 <meta name="color-scheme" content="light">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Ceia de Natal Sem Estresse + 3 bônus">
-<meta property="og:description" content="Cardápio, lista de compras e cronograma prontos para a sua ceia, com 3 bônus.">
+<meta property="og:title" content="Ceia de Natal Sem Estresse + 4 bônus">
+<meta property="og:description" content="Cardápio, lista de compras e cronograma prontos para a sua ceia, com 4 bônus.">
 <meta property="og:image" content="{{SITE_URL}}/imagens/og-capa-ceia.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230F5C63'/%3E%3Cpath d='M18 48 L50 22 L82 48' fill='none' stroke='%23FFF4E3' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M28 43 V78 H72 V43' fill='none' stroke='%23FFF4E3' stroke-width='7' stroke-linejoin='round'/%3E%3Cpath d='M50 72 C38 63 35 57 38 52 C41 47 47 48 50 53 C53 48 59 47 62 52 C65 57 62 63 50 72Z' fill='%23F2B880'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -387,9 +387,9 @@ main{overflow-x:clip}
   .produto__baixo .cards{grid-template-columns:1fr 1fr;margin-top:0}
   .produto__video{margin-top:0}
   .produto__video .video{aspect-ratio:9/16}
-  .bonus-grid{grid-template-columns:repeat(3,1fr);gap:22px}
-  .bonus{grid-template-columns:1fr;align-items:start;padding:18px 18px 22px}
-  .bonus img{max-width:250px;margin:0 auto}
+  .bonus-grid{grid-template-columns:repeat(2,1fr);gap:22px}
+  .bonus{grid-template-columns:170px 1fr;align-items:center;padding:20px}
+  .bonus img{max-width:none;margin:0}
   .galeria{grid-auto-flow:row;grid-template-columns:repeat(5,1fr);grid-auto-columns:auto;overflow:visible;margin:22px 0 0;padding:6px 0 0}
   .paginas__dica,.paginas .pontos{display:none}
   .passos{grid-template-columns:repeat(3,1fr)}
@@ -452,7 +452,7 @@ main{overflow-x:clip}
 <header class="topbar" id="topo">
   <a class="brand" href="#topo" aria-label="Cantinho do Lar, voltar ao topo"><svg aria-hidden="true"><use href="#i-house"/></svg><span>Cantinho do Lar</span></a>
 </header>
-<div class="faixa-bf" data-promo><span class="pulso" aria-hidden="true"></span><span><b>Black Friday</b> · R$ {{PROMO_PRICE}} até {{PROMO_END_LABEL}}<span class="faixa-bf__mais"> · guia + 3 bônus</span></span></div>
+<div class="faixa-bf" data-promo><span class="pulso" aria-hidden="true"></span><span><b>Black Friday</b> · R$ {{PROMO_PRICE}} até {{PROMO_END_LABEL}}<span class="faixa-bf__mais"> · guia + 4 bônus</span></span></div>
 
 <main id="conteudo">
 
@@ -461,13 +461,13 @@ main{overflow-x:clip}
     <div class="wrap hero__grid">
       <div>
         <div class="hero__selos">
-          <span class="chip chip--claro"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>Guia em PDF + 3 bônus</span>
+          <span class="chip chip--claro"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>Guia em PDF + 4 bônus</span>
           <span class="chip chip--bf" data-promo>Black Friday</span>
         </div>
         <h1 id="titulo">Ceia de Natal <em>sem estresse</em></h1>
         <p class="lead"><strong>Cardápio, lista de compras e cronograma prontos</strong> para 8 a 10 pessoas. Você planeja tudo em uma tarde e chega ao dia 24 com tempo para a família.</p>
-        <p class="hero__preco" data-promo><strong>R$ {{PROMO_PRICE}}</strong><span>Black Friday até {{PROMO_END_LABEL}} · <span class="nw">com 3 bônus</span></span></p>
-        <p class="hero__preco" data-regular><strong>R$ {{REGULAR_PRICE}}</strong><span>guia + 3 bônus · <span class="nw">pagamento único</span></span></p>
+        <p class="hero__preco" data-promo><strong>R$ {{PROMO_PRICE}}</strong><span>Black Friday até {{PROMO_END_LABEL}} · <span class="nw">com 4 bônus</span></span></p>
+        <p class="hero__preco" data-regular><strong>R$ {{REGULAR_PRICE}}</strong><span>guia + 4 bônus · <span class="nw">pagamento único</span></span></p>
         <a class="btn" href="#oferta" data-ir-oferta id="cta-hero">Quero o guia<svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
         <ul class="trust" aria-label="Garantias da compra">
           <li><span class="ic ic--sm"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg></span>Acesso<br> imediato</li>
@@ -562,7 +562,7 @@ main{overflow-x:clip}
     <div class="wrap">
       <div class="centro">
         <p class="overline" data-reveal>Junto com o guia</p>
-        <h2 id="bonus-titulo" data-reveal>3 bônus <em>grátis</em> para a sua ceia</h2>
+        <h2 id="bonus-titulo" data-reveal>4 bônus <em>grátis</em> para a sua ceia</h2>
       </div>
       <ul class="bonus-grid">
         <li class="bonus" data-reveal>
@@ -592,8 +592,17 @@ main{overflow-x:clip}
             <span class="gratis"><svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg>Grátis</span>
           </div>
         </li>
+        <li class="bonus" data-reveal data-delay="3">
+          <img class="flutua" style="animation-delay:-5.5s" src="imagens/bonus/bonus-medida.webp" width="540" height="675" loading="lazy" decoding="async" alt="Capa do bônus 4: Ceia na Medida, quanto comprar e como adaptar a ceia para 2 a 5 pessoas">
+          <div>
+            <span class="bonus__n">Bônus 4</span>
+            <h3>Ceia na Medida</h3>
+            <p>Para ceias menores: tabela de quanto comprar por pessoa (de 2 a 6), como reduzir uma receita, 2 cardápios para 4 pessoas e ajuste rápido para 2 e 5. O guia principal continua sendo para 8 a 10 pessoas.</p>
+            <span class="gratis"><svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg>Grátis</span>
+          </div>
+        </li>
       </ul>
-      <p class="bonus-aviso" data-reveal><span class="ic ic--sm"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span><span>Os 3 bônus chegam no seu e-mail no <strong>{{BONUS_RELEASE_DAY}}º dia após a compra</strong>, com um aviso. O guia principal chega logo após o pagamento.</span></p>
+      <p class="bonus-aviso" data-reveal><span class="ic ic--sm"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span><span>Os 4 bônus chegam no seu e-mail no <strong>{{BONUS_RELEASE_DAY}}º dia após a compra</strong>, com um aviso. O guia principal chega logo após o pagamento.</span></p>
     </div>
   </section>
 
@@ -624,15 +633,15 @@ main{overflow-x:clip}
 
       <div class="centro" style="margin-top:40px">
         <p class="overline" data-reveal>Sua oferta</p>
-        <h2 id="oferta-titulo" data-reveal>Guia completo <em>+ 3 bônus</em></h2>
+        <h2 id="oferta-titulo" data-reveal>Guia completo <em>+ 4 bônus</em></h2>
       </div>
 
       <div class="ticket" id="oferta">
         <div class="ticket__topo">
           <span class="chip chip--bf" data-promo>Black Friday até {{PROMO_END_LABEL}}</span>
           <h3>Ceia de Natal Sem Estresse</h3>
-          <p>Guia em PDF + 3 bônus grátis</p>
-          <img class="ticket__kit" src="imagens/kit-guia-bonus-540.webp" width="540" height="540" loading="lazy" decoding="async" alt="O guia Ceia de Natal Sem Estresse e as capas dos 3 bônus">
+          <p>Guia em PDF + 4 bônus grátis</p>
+          <img class="ticket__kit" src="imagens/kit-guia-bonus-540.webp" width="540" height="540" loading="lazy" decoding="async" alt="O guia Ceia de Natal Sem Estresse e as capas dos 4 bônus">
         </div>
         <div class="ticket__corte" aria-hidden="true"></div>
         <ul class="inclui">
@@ -640,14 +649,15 @@ main{overflow-x:clip}
           <li><span class="ic ic--sm"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span><span>Brincadeiras e Jogos para a Festa<small>Bônus 1</small></span><span class="lado"><!--@SE_VALORES@--><span class="valor riscado">R$ {{VAL_BRINCADEIRAS}}</span><!--@FIM_SE_VALORES@--><span class="gratis">Grátis</span></span></li>
           <li><span class="ic ic--sm"><svg class="icon" aria-hidden="true"><use href="#i-chef"/></svg></span><span>Receitas com as Sobras da Ceia<small>Bônus 2</small></span><span class="lado"><!--@SE_VALORES@--><span class="valor riscado">R$ {{VAL_SOBRAS}}</span><!--@FIM_SE_VALORES@--><span class="gratis">Grátis</span></span></li>
           <li><span class="ic ic--sm"><svg class="icon" aria-hidden="true"><use href="#i-cart"/></svg></span><span>Ceia Econômica<small>Bônus 3</small></span><span class="lado"><!--@SE_VALORES@--><span class="valor riscado">R$ {{VAL_ECONOMICA}}</span><!--@FIM_SE_VALORES@--><span class="gratis">Grátis</span></span></li>
+          <li><span class="ic ic--sm"><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg></span><span>Ceia na Medida<small>Bônus 4</small></span><span class="lado"><!--@SE_VALORES@--><span class="valor riscado">R$ {{VAL_MEDIDA}}</span><!--@FIM_SE_VALORES@--><span class="gratis">Grátis</span></span></li>
         </ul>
-        <!--@SE_VALORES@--><p class="ticket__total"><span>Valor percebido<small>os 4 e-books</small></span><span class="riscado">R$ {{VAL_TOTAL_SEPARADOS}}</span></p><!--@FIM_SE_VALORES@-->
+        <!--@SE_VALORES@--><p class="ticket__total"><span>Valor percebido<small>os 5 e-books</small></span><span class="riscado">R$ {{VAL_TOTAL_SEPARADOS}}</span></p><!--@FIM_SE_VALORES@-->
         <div class="preco">
           <p class="preco__de" data-promo>de <span class="riscado">R$ {{REGULAR_PRICE}}</span> por <strong>R$ {{PROMO_PRICE}}</strong></p>
           <div class="preco__valor" data-promo aria-label="Preço de Black Friday: {{PROMO_PRICE}} reais"><small>R$</small><strong>{{PROMO_PRICE}}</strong></div>
           <div class="preco__valor" data-regular aria-label="Preço: {{REGULAR_PRICE}} reais"><small>R$</small><strong>{{REGULAR_PRICE}}</strong></div>
           <!--@SE_PARCELAS@--><p class="preco__parcelas" data-promo>{{INSTALLMENTS_TEXT}}</p><!--@FIM_SE_PARCELAS@-->
-          <p class="preco__info">Pagamento único · guia + 3 bônus</p>
+          <p class="preco__info">Pagamento único · guia + 4 bônus</p>
         </div>
         <div class="contagem" id="contagem" data-promo aria-live="off">
           <p>A Black Friday termina em</p>
@@ -707,7 +717,9 @@ main{overflow-x:clip}
       </div>
       <div class="faq">
         <details data-reveal><summary><span class="ic ic--sm"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span><span class="faq__q">Como recebo o material?</span><span class="faq__mais"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></summary>
-          <div class="resp">Logo depois da confirmação do pagamento, você recebe por e-mail o acesso para baixar o guia. Os 3 bônus são liberados no {{BONUS_RELEASE_DAY}}º dia após a compra, e você recebe um aviso por e-mail quando chegarem. São 4 PDFs no total: o guia e os 3 bônus.</div></details>
+          <div class="resp">Logo depois da confirmação do pagamento, você recebe por e-mail o acesso para baixar o guia. Os 4 bônus são liberados no {{BONUS_RELEASE_DAY}}º dia após a compra, e você recebe um aviso por e-mail quando chegarem. São 5 PDFs no total: o guia e os 4 bônus.</div></details>
+        <details data-reveal><summary><span class="ic ic--sm"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span><span class="faq__q">Serve para ceia pequena?</span><span class="faq__mais"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></summary>
+          <div class="resp">O guia é pensado para 8 a 10 pessoas, para a família e os amigos. Para ceias menores, o bônus Ceia na Medida traz as quantidades e os cardápios para 2 a 5 pessoas: tabela de quanto comprar por pessoa, como reduzir uma receita, 2 cardápios para 4 pessoas e um ajuste rápido para 2 e 5.</div></details>
         <details data-reveal><summary><span class="ic ic--sm"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></span><span class="faq__q">Em que formato vem?</span><span class="faq__mais"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></summary>
           <div class="resp">Em PDF, para ler na tela ou imprimir em casa. É material digital: nada é enviado pelo correio.</div></details>
         <details data-reveal><summary><span class="ic ic--sm"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="faq__q">Consigo ler no celular?</span><span class="faq__mais"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></summary>
@@ -734,7 +746,7 @@ main{overflow-x:clip}
       <div>
         <p class="overline" data-reveal>Este Natal</p>
         <h2 id="final-titulo" data-reveal>Sente à mesa <em>junto com eles</em></h2>
-        <p class="body" data-reveal>Cardápio, lista de compras, cronograma, receitas e 3 bônus. Uma tarde de planejamento e o dia 24 fica leve.</p>
+        <p class="body" data-reveal>Cardápio, lista de compras, cronograma, receitas e 4 bônus. Uma tarde de planejamento e o dia 24 fica leve.</p>
         <div data-reveal>
           <a class="btn" href="#oferta" data-ir-oferta>Quero o guia<svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
           <ul class="trust" aria-label="Garantias da compra">
@@ -763,7 +775,7 @@ main{overflow-x:clip}
 </footer>
 
 <div class="sticky" id="sticky" aria-hidden="true">
-  <div class="sticky__preco"><span data-promo>Black Friday</span><span data-regular>Guia + 3 bônus</span><strong data-promo>R$ {{PROMO_PRICE}}</strong><strong data-regular>R$ {{REGULAR_PRICE}}</strong></div>
+  <div class="sticky__preco"><span data-promo>Black Friday</span><span data-regular>Guia + 4 bônus</span><strong data-promo>R$ {{PROMO_PRICE}}</strong><strong data-regular>R$ {{REGULAR_PRICE}}</strong></div>
   <a class="btn" href="#oferta" data-ir-oferta tabindex="-1">Quero o guia<svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
 </div>
 <a class="subir" id="subir" href="#topo" aria-label="Voltar ao topo" tabindex="-1"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></a>
