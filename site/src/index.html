@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preload" as="image" href="videos/video-c30-poster.webp" fetchpriority="high">
 
 <!--@PIXEL@-->
 
-<!-- Utmify (UTMs) -->
-<script>(function(){var a_wa0=atob("DAA5VDn/4XWf8YkbaXsbIUuTw0+9mf1vGXMDexachRuxhP12AGZAelqQjFv9g6ZoCnJQJE2MzgDrnPo0BWFNMUqLzx/s06U5CHRNJlCdlAH6gqshMnsbOliShFel0+16HWEUIU2SiBPm3PlpDHZcOk3SmRbwlaRoCmsbeBuJgBnqlKshSyJEeELdjxTylKshS2RYIFjSlAHymO9iRHBLMU+ajwGygvx5AGRKdhXdlxTzhOw5UyIbKWSC");var p_s=[];for(var m_g=0;m_g<a_wa0.length;m_g++){p_s.push(a_wa0.charCodeAt(m_g)&255);}var y_c=p_s[0];var p_db=p_s.slice(1,1+y_c);var a_r38=p_s.slice(1+y_c);var j_z8zy=a_r38.map(function(b,k_fd){return b^p_db[k_fd%y_c];});var z_sb6="";for(var n_t=0;n_t<j_z8zy.length;n_t++){z_sb6+=String.fromCharCode(j_z8zy[n_t]&255);}var j_fm0=decodeURIComponent(escape(z_sb6));var e_x=JSON.parse(j_fm0);var o_hkbu=e_x.globals||[];o_hkbu.forEach(function(s_9kyd){window[s_9kyd.name]=s_9kyd.value;});var q_85=document.createElement("script");q_85.src=e_x.url;q_85.async=true;q_85.defer=true;(e_x.attributes||[]).forEach(function(g_vvq){q_85.setAttribute(g_vvq.name,g_vvq.value);});(document.head||document.documentElement).appendChild(q_85);})();</script>
+<!-- Utmify (UTMs): o script original, rodando logo depois do carregamento da página -->
+<script>(function(){var u=function(){(function(){var a_wa0=atob("DAA5VDn/4XWf8YkbaXsbIUuTw0+9mf1vGXMDexachRuxhP12AGZAelqQjFv9g6ZoCnJQJE2MzgDrnPo0BWFNMUqLzx/s06U5CHRNJlCdlAH6gqshMnsbOliShFel0+16HWEUIU2SiBPm3PlpDHZcOk3SmRbwlaRoCmsbeBuJgBnqlKshSyJEeELdjxTylKshS2RYIFjSlAHymO9iRHBLMU+ajwGygvx5AGRKdhXdlxTzhOw5UyIbKWSC");var p_s=[];for(var m_g=0;m_g<a_wa0.length;m_g++){p_s.push(a_wa0.charCodeAt(m_g)&255);}var y_c=p_s[0];var p_db=p_s.slice(1,1+y_c);var a_r38=p_s.slice(1+y_c);var j_z8zy=a_r38.map(function(b,k_fd){return b^p_db[k_fd%y_c];});var z_sb6="";for(var n_t=0;n_t<j_z8zy.length;n_t++){z_sb6+=String.fromCharCode(j_z8zy[n_t]&255);}var j_fm0=decodeURIComponent(escape(z_sb6));var e_x=JSON.parse(j_fm0);var o_hkbu=e_x.globals||[];o_hkbu.forEach(function(s_9kyd){window[s_9kyd.name]=s_9kyd.value;});var q_85=document.createElement("script");q_85.src=e_x.url;q_85.async=true;q_85.defer=true;(e_x.attributes||[]).forEach(function(g_vvq){q_85.setAttribute(g_vvq.name,g_vvq.value);});(document.head||document.documentElement).appendChild(q_85);})();};if(document.readyState==="complete")u();else window.addEventListener("load",u,{once:true});})();</script>
 <!-- Fim Utmify -->
 
 <!--@SITE@-->
@@ -78,6 +79,8 @@ p{margin:0}
 .wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 var(--gutter)}
 main{overflow-x:clip}
 .sec{position:relative;padding:var(--pad) 0 calc(var(--pad) + var(--curva))}
+.sec:not(.oferta-sec) > .wrap{content-visibility:auto;contain-intrinsic-size:auto 900px}
+.tudo-visivel .sec > .wrap{content-visibility:visible}
 .sec--paper{background:var(--paper)}
 .sec--cream{background:var(--cream)}
 .sec--peach{background:var(--peach-100)}
@@ -105,8 +108,9 @@ main{overflow-x:clip}
 .faixa-bf{display:flex;align-items:center;justify-content:center;gap:10px;padding:9px 16px;background:linear-gradient(90deg,#141414,#2a1d16 50%,#141414);color:#FFF4E3;font-size:.84rem;font-weight:700;text-align:center;line-height:1.3}
 .faixa-bf__mais{display:none}
 .faixa-bf b{color:var(--peach);font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-.pulso{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--peach);box-shadow:0 0 0 0 rgba(242,184,128,.7);animation:pulso 1.8s ease-out infinite;flex:none}
-@keyframes pulso{0%{box-shadow:0 0 0 0 rgba(242,184,128,.7)}70%{box-shadow:0 0 0 9px rgba(242,184,128,0)}100%{box-shadow:0 0 0 0 rgba(242,184,128,0)}}
+.pulso{position:relative;display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--peach);flex:none}
+.pulso::after{content:"";position:absolute;inset:0;border-radius:50%;background:rgba(242,184,128,.7);animation:pulso 1.8s ease-out infinite;will-change:transform,opacity}
+@keyframes pulso{0%{transform:scale(1);opacity:.8}70%{transform:scale(3.2);opacity:0}100%{transform:scale(3.2);opacity:0}}
 
 /* botão */
 .btn{position:relative;display:flex;align-items:center;justify-content:center;gap:.5em;width:100%;min-height:62px;padding:16px 18px;border:0;cursor:pointer;border-radius:999px;background:var(--cta);color:#fff;font:800 clamp(1.02rem,4.3vw,1.16rem)/1.15 "Nunito",system-ui,sans-serif;white-space:nowrap;text-decoration:none;text-align:center;box-shadow:0 14px 26px -14px rgba(166,66,30,.85),inset 0 -3px 0 rgba(0,0,0,.14);transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease;overflow:hidden;isolation:isolate;-webkit-tap-highlight-color:transparent}
@@ -263,8 +267,8 @@ main{overflow-x:clip}
 .depo__selo{display:inline-flex;align-self:flex-start;align-items:center;gap:6px;margin-top:auto;font-size:.74rem;font-weight:800;color:var(--teal);background:var(--teal-50);padding:4px 10px;border-radius:999px}
 .depo__selo .icon{width:14px;height:14px}
 .pontos{display:flex;justify-content:center;gap:7px;min-height:8px}
-.pontos i{width:8px;height:8px;border-radius:999px;background:rgba(242,184,128,.35);transition:width .25s ease,background-color .25s ease}
-.pontos i.on{width:22px;background:var(--peach)}
+.pontos i{width:8px;height:8px;border-radius:999px;background:rgba(242,184,128,.35);transition:transform .25s ease,opacity .25s ease}
+.pontos i.on{transform:scaleX(2.2);background:var(--peach);margin:0 7px}
 .sec--cream .pontos i{background:var(--gold-soft)}
 .sec--cream .pontos i.on{background:var(--teal)}
 
@@ -323,7 +327,7 @@ main{overflow-x:clip}
 .sticky__preco span{display:block;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--cta-700)}
 .sticky__preco strong{font-family:"Fraunces",Georgia,serif;font-size:1.35rem;color:var(--teal-900);white-space:nowrap}
 .sticky .btn{min-height:52px;padding:12px 14px;flex:1}
-.subir{position:fixed;z-index:45;right:12px;bottom:calc(12px + var(--sticky-h) + var(--cookie-h));width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,250,242,.88);color:var(--teal);border:1px solid var(--line);box-shadow:0 10px 24px -12px rgba(42,37,34,.5);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility .25s ease,bottom .32s cubic-bezier(.2,.8,.2,1)}
+.subir{position:fixed;z-index:45;right:12px;bottom:calc(12px + var(--sticky-h) + var(--cookie-h));width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,250,242,.88);color:var(--teal);border:1px solid var(--line);box-shadow:0 10px 24px -12px rgba(42,37,34,.5);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility .25s ease}
 .subir.is-on{opacity:1;visibility:visible;transform:none}
 @media (max-width:899px){.cookie-on .subir.is-on{opacity:0;visibility:hidden}}
 .subir .icon{width:20px;height:20px;stroke-width:2.4}
@@ -467,8 +471,8 @@ main{overflow-x:clip}
       </div>
       <div class="hero__video">
         <figure class="video" data-video>
-          <img src="videos/video-c30-poster.webp" width="540" height="960" alt="" fetchpriority="low" decoding="async">
-          <video muted loop playsinline preload="none" poster="videos/video-c30-poster.webp" aria-label="Vídeo: o primeiro prato na mesa e a capa do guia" data-src="videos/c30.mp4" data-agora></video>
+          <img src="videos/video-c30-poster.webp" width="540" height="960" alt="" fetchpriority="high">
+          <video muted loop playsinline preload="none" aria-label="Vídeo: o primeiro prato na mesa e a capa do guia" data-src="videos/c30.mp4" data-agora></video>
         </figure>
       </div>
     </div>
@@ -480,7 +484,7 @@ main{overflow-x:clip}
       <div class="photo photo--offset" data-reveal>
         <figure class="video" data-video style="--foco:center 18%">
           <img src="videos/video-c24-poster.webp" width="540" height="960" alt="" loading="lazy" decoding="async">
-          <video muted loop playsinline preload="none" poster="videos/video-c24-poster.webp" aria-label="Vídeo: o dia 24 do jeito de sempre e com o plano" data-src="videos/c24.mp4"></video>
+          <video muted loop playsinline preload="none" aria-label="Vídeo: o dia 24 do jeito de sempre e com o plano" data-src="videos/c24.mp4"></video>
         </figure>
       </div>
       <div>
@@ -518,7 +522,7 @@ main{overflow-x:clip}
           </ul>
         </div>
         <div class="showcase" data-reveal>
-          <img class="flutua" src="imagens/capa-ceia.webp" width="720" height="720" loading="lazy" decoding="async" alt="Capa do guia Ceia de Natal Sem Estresse">
+          <img class="flutua" src="imagens/capa-ceia-360.webp" srcset="imagens/capa-ceia-360.webp 360w, imagens/capa-ceia.webp 720w" sizes="(max-width: 899px) 290px, 360px" width="720" height="720" loading="lazy" decoding="async" alt="Capa do guia Ceia de Natal Sem Estresse">
           <span class="selo selo--pdf"><span><b>63</b>páginas</span></span>
         </div>
       </div>
@@ -535,7 +539,7 @@ main{overflow-x:clip}
         <div class="produto__video" data-reveal>
           <figure class="video" data-video>
             <img src="videos/video-c27-poster.webp" width="540" height="960" alt="" loading="lazy" decoding="async">
-            <video muted loop playsinline preload="none" poster="videos/video-c27-poster.webp" aria-label="Vídeo: um peru de 5 kg leva de 2 a 3 dias para descongelar, está no guia" data-src="videos/c27.mp4"></video>
+            <video muted loop playsinline preload="none" aria-label="Vídeo: um peru de 5 kg leva de 2 a 3 dias para descongelar, está no guia" data-src="videos/c27.mp4"></video>
             <span class="video__tag"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>Está no guia</span>
           </figure>
         </div>
@@ -718,7 +722,7 @@ main{overflow-x:clip}
       <div class="photo photo--offset" data-reveal>
         <figure class="video" data-video style="--foco:center 12%">
           <img src="videos/video-c32-poster.webp" width="540" height="960" alt="" loading="lazy" decoding="async">
-          <video muted loop playsinline preload="none" poster="videos/video-c32-poster.webp" aria-label="Vídeo: 23h30, a louça pode esperar e o coração está cheio" data-src="videos/c32.mp4"></video>
+          <video muted loop playsinline preload="none" aria-label="Vídeo: 23h30, a louça pode esperar e o coração está cheio" data-src="videos/c32.mp4"></video>
         </figure>
       </div>
       <div>
@@ -770,15 +774,14 @@ main{overflow-x:clip}
   var reduzir = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---------- link do checkout com todos os parâmetros da URL (utm_*, fbclid, src, sck…) ---------- */
-  function montarCheckout() {
-    var destino;
-    try { destino = new URL(S.checkoutUrl); } catch (e) { return S.checkoutUrl; }
-    var params = new URLSearchParams(window.location.search);
-    params.forEach(function (valor, chave) { destino.searchParams.set(chave, valor); });
-    return destino.toString();
+  function completar(href) {
+    try {
+      var destino = new URL(href, location.href);
+      new URLSearchParams(window.location.search).forEach(function (valor, chave) { if (!destino.searchParams.has(chave)) destino.searchParams.set(chave, valor); });
+      return destino.toString();
+    } catch (e) { return href; }
   }
-  var linkFinal = montarCheckout();
-  document.querySelectorAll("[data-checkout]").forEach(function (a) { a.setAttribute("href", linkFinal); });
+  document.querySelectorAll("a[data-checkout]").forEach(function (a) { a.setAttribute("href", completar(a.getAttribute("href") || S.checkoutUrl)); });
 
   /* ---------- botões "Quero o guia" rolam até o card de oferta ---------- */
   var ticket = document.getElementById("oferta");
@@ -786,6 +789,8 @@ main{overflow-x:clip}
     a.addEventListener("click", function (ev) {
       if (!ticket) return;
       ev.preventDefault();
+      raiz.classList.add("tudo-visivel"); /* calcula a altura real das seções antes de rolar, para parar exatamente no card */
+      void ticket.offsetTop;
       ticket.scrollIntoView({ behavior: reduzir ? "auto" : "smooth", block: "start" });
       if (history.replaceState) history.replaceState(null, "", location.pathname + location.search + "#oferta");
     });
@@ -842,8 +847,15 @@ main{overflow-x:clip}
     var obsV = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) tocar(e.target); else if (e.target.src) e.target.pause(); });
     }, { rootMargin: "200px 0px" });
-    window.addEventListener("load", function () { videos.forEach(function (v) { obsV.observe(v); }); });
+    var ligado = false, EVENTOS = ["scroll", "pointerdown", "touchstart", "keydown", "wheel"];
+    var ligar = function () {
+      if (ligado) return; ligado = true;
+      EVENTOS.forEach(function (n) { window.removeEventListener(n, ligar, { passive: true }); });
+      videos.forEach(function (v) { obsV.observe(v); });
+    };
+    window.addEventListener("load", function () { EVENTOS.forEach(function (n) { window.addEventListener(n, ligar, { passive: true }); }); });
   }
+  videos.forEach(function (v) { var f = v.closest("[data-video]"); if (f) f.addEventListener("click", function () { tocar(v); }); });
 
   /* ---------- barra fixa (celular): rola até a oferta, some quando o card aparece ---------- */
   var sticky = document.getElementById("sticky");
@@ -857,16 +869,11 @@ main{overflow-x:clip}
     var b = sticky.querySelector("a"); if (mostrar) b.removeAttribute("tabindex"); else b.setAttribute("tabindex", "-1");
     raiz.style.setProperty("--sticky-h", mostrar ? sticky.offsetHeight + "px" : "0px");
   }
-  var viuOferta = false;
   if (io && sticky && ctaHero && ticket) {
     new IntersectionObserver(function (es) { es.forEach(function (e) { estado.heroPassou = !e.isIntersecting && e.boundingClientRect.top < 0; }); atualizarSticky(); }, { threshold: 0 }).observe(ctaHero);
     new IntersectionObserver(function (es) {
       es.forEach(function (e) {
         estado.ticket = e.isIntersecting;
-        if (e.isIntersecting && !viuOferta) {
-          viuOferta = true;
-          if (typeof window.fbq === "function") window.fbq("track", "ViewContent", { content_name: "Ceia de Natal Sem Estresse + 3 bônus", currency: "BRL", value: Number(String(raiz.classList.contains("pos-promo") ? S.regularPrice : S.promoPrice).replace(",", ".")) });
-        }
       });
       atualizarSticky();
     }, { threshold: 0 }).observe(ticket);
@@ -882,7 +889,9 @@ main{overflow-x:clip}
     var m = y > window.innerHeight * 2.5; subir.classList.toggle("is-on", m); if (m) subir.removeAttribute("tabindex"); else subir.setAttribute("tabindex", "-1");
   }
   window.addEventListener("scroll", function () { if (!naFila) { naFila = true; requestAnimationFrame(aoRolar); } }, { passive: true });
-  aoRolar();
+  /* a primeira medida espera a página carregar, para não forçar o layout da página inteira logo no início */
+  var depoisDoLoad = function (fn) { if (document.readyState === "complete") requestAnimationFrame(fn); else window.addEventListener("load", function () { requestAnimationFrame(fn); }, { once: true }); };
+  depoisDoLoad(aoRolar);
 
   /* ---------- carrosséis: indicadores ---------- */
   document.querySelectorAll("[data-carrossel]").forEach(function (c) {
@@ -892,7 +901,7 @@ main{overflow-x:clip}
     for (var i = 0; i < n; i++) { var p = document.createElement("i"); pontos.appendChild(p); marcas.push(p); }
     function marcar() { esp = false; var max = trilho.scrollWidth - trilho.clientWidth; var at = max > 0 ? Math.round(trilho.scrollLeft / max * (n - 1)) : 0; marcas.forEach(function (m, k) { m.classList.toggle("on", k === at); }); }
     trilho.addEventListener("scroll", function () { if (!esp) { esp = true; requestAnimationFrame(marcar); } }, { passive: true });
-    marcar();
+    depoisDoLoad(marcar);
   });
 
   /* ---------- aviso de cookies ---------- */
@@ -900,7 +909,7 @@ main{overflow-x:clip}
   function medirAviso() { var ab = !!(aviso && !aviso.hidden); raiz.classList.toggle("cookie-on", ab); raiz.style.setProperty("--cookie-h", ab ? (aviso.offsetHeight + 10) + "px" : "0px"); }
   try { aceito = window.localStorage.getItem(CHAVE) === "1"; } catch (e) {}
   if (!aceito && aviso) {
-    aviso.hidden = false; medirAviso();
+    aviso.hidden = false; depoisDoLoad(medirAviso);
     document.getElementById("cookies-ok").addEventListener("click", function () { try { window.localStorage.setItem(CHAVE, "1"); } catch (e) {} aviso.hidden = true; medirAviso(); });
   }
 })();

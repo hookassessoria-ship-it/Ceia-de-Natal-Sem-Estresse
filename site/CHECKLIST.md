@@ -60,3 +60,21 @@ A Vercel roda o mesmo comando (`vercel.json`). Se um campo obrigatório estiver 
 - [ ] **Bônus:** confirmar que os 3 PDFs (13 brincadeiras, 11 receitas + guia de conservação, cardápio para 8 pessoas) existem e que a Kirvano libera no 8º dia. As frases da página vêm das capas.
 - [ ] **Pixel novo:** conferir no Gerenciador de Eventos se o PageView do `1205067451580311` chega depois de publicar.
 - [ ] **Produção:** quando aprovar o preview, publicar com `npx vercel --prod` dentro de `site/` (projeto `cantinho-ceia`).
+
+## Velocidade e rastreio (22/11)
+
+- [x] Fontes servidas pelo próprio site (`src/fontes/`, só o alfabeto latino), com `font-display: swap` e preload da Nunito e da Fraunces. O CSS do Google Fonts, que bloqueava a renderização por ~750 ms, saiu.
+- [x] Imagem do LCP (pôster do vídeo do topo) com preload e `fetchpriority="high"`.
+- [x] Vídeos só baixam depois da primeira interação (rolar, tocar ou teclar) ou ao tocar no vídeo. Até lá aparece a imagem do pôster.
+- [x] Capa do guia com versões de 360 e 720 px (`srcset`).
+- [x] Seções abaixo da primeira dobra usam `content-visibility: auto`. Os botões que levam ao card renderizam tudo antes de rolar, para parar exatamente no `#oferta`.
+- [x] Animações só com `transform`/`opacity` (pulso da faixa, pontos dos carrosséis, botão voltar ao topo).
+- [x] Medidas de layout do script (barra de progresso, carrossel, aviso de cookies) só depois do carregamento, sem forçar layout no início.
+- [x] Pixel do Meta: a fila `fbq` (init + PageView) é criada no `<head>`; o arquivo do Meta baixa logo depois do carregamento da página. Utmify: o mesmo script de antes, rodando logo depois do carregamento.
+- [x] Cache de 1 ano (`immutable`) para `imagens/`, `videos/` e `fontes/`; o build acrescenta `?v=` com o hash de cada arquivo, então trocar um arquivo muda o endereço.
+- [x] ViewContent removido: o site dispara só PageView. O build falha se aparecer ViewContent, InitiateCheckout, Purchase ou AddToCart.
+- [x] Botão de compra é um `<a href>` com o link da Kirvano já no HTML; o script só completa os parâmetros da visita que faltarem, sem apagar o que a Utmify acrescenta.
+
+### Pendente (seu)
+- [ ] **Utmify "Finalização de compra iniciada":** quem envia esse evento é o **Pixel da Utmify**, um script diferente do de UTMs que está no site (o de UTMs não envia nada no clique). Copie o código do pixel no painel da Utmify e me mande para instalar.
+- [ ] **Deploy:** o projeto `cantinho-ceia` na Vercel não está ligado ao GitHub. O push na `main` não publica sozinho; publicar com `npx vercel --prod` dentro de `site/`, ou ligar o repositório na Vercel (Settings → Git, Root Directory `site`).

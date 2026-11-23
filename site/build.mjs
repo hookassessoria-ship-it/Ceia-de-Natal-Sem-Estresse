@@ -1,6 +1,7 @@
 // Build do site Cantinho do Lar: lê site.config.json, valida, injeta valores e gera dist/.
 // Uso: node build.mjs   (sem dependências)
 import fs from 'node:fs';
+import crypto from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -47,9 +48,13 @@ const pixel = `<!-- Meta Pixel Code -->
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
+n.queue=[];
+/* fila do fbq criada já no início (PageView entra na fila agora); o arquivo do Meta baixa
+   logo depois do carregamento da página, para não disputar com a primeira dobra */
+var carregar=function(){t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
+s.parentNode.insertBefore(t,s)};
+if(b.readyState==='complete')carregar();else f.addEventListener('load',carregar,{once:true})}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '${cfg.PIXEL_ID}');
 fbq('track', 'PageView');
@@ -85,6 +90,32 @@ const tokens = {
 
 // ---------- 3. gera dist/ ----------
 fs.rmSync(DIST, { recursive: true, force: true });
+// ---------- fontes próprias (sem CSS externo bloqueando a renderização) + versão nos arquivos estáticos ----------
+const versoes = new Map();
+const versao = (rel) => {
+  if (!versoes.has(rel)) {
+    const f = path.join(SRC, rel);
+    versoes.set(rel, fs.existsSync(f) ? crypto.createHash('md5').update(fs.readFileSync(f)).digest('hex').slice(0, 8) : null);
+  }
+  return versoes.get(rel);
+};
+const comVersao = (rel) => { const v = versao(rel); return v ? `${rel}?v=${v}` : rel; };
+const FONTES = `<link rel="preload" href="fontes/nunito.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fontes/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:500 700;font-display:swap;src:url(fontes/fraunces.woff2) format("woff2")}
+@font-face{font-family:"Fraunces";font-style:italic;font-weight:500 600;font-display:swap;src:url(fontes/fraunces-italico.woff2) format("woff2")}
+@font-face{font-family:"Nunito";font-style:normal;font-weight:400 800;font-display:swap;src:url(fontes/nunito.woff2) format("woff2")}
+</style>`;
+const otimizar = (h) => {
+  h = h.replace(/<link rel="preconnect" href="https:\/\/fonts\.(googleapis|gstatic)\.com"[^>]*>\s*/g, '');
+  h = h.replace(/<link href="https:\/\/fonts\.googleapis\.com\/css2[^"]*" rel="stylesheet">/g, FONTES);
+  h = h.replace(/((?:src|href|poster|data-src)=")((?:imagens|videos|fontes)\/[^"?#]+)"/g, (_, at, rel) => `${at}${comVersao(rel)}"`);
+  h = h.replace(/(srcset=")([^"]+)"/g, (_, at, lista) => at + lista.replace(/((?:imagens|videos)\/[^\s,?]+)/g, (r) => comVersao(r)) + '"');
+  h = h.replace(/url\(((?:imagens|videos|fontes)\/[^)?]+)\)/g, (_, rel) => `url(${comVersao(rel)})`);
+  return h;
+};
+
 const copiar = (de, para) => {
   for (const nome of fs.readdirSync(de)) {
     const a = path.join(de, nome), b = path.join(para, nome);
@@ -97,6 +128,7 @@ const copiar = (de, para) => {
     // parcelamento só aparece se houver texto
     h = h.replace(/<!--@SE_PARCELAS@-->([\s\S]*?)<!--@FIM_SE_PARCELAS@-->/g, (_, bloco) => (cfg.INSTALLMENTS_TEXT ? bloco : ''));
     h = h.replace(/\{\{([A-Z_]+)\}\}/g, (m, k) => (k in tokens ? tokens[k] : m));
+    h = otimizar(h);
     fs.writeFileSync(b, h);
   }
 };
@@ -104,7 +136,7 @@ fs.mkdirSync(DIST, { recursive: true });
 copiar(SRC, DIST);
 
 // ---------- 4. controle de qualidade do que foi publicado ----------
-const PROIBIDOS = [/PREENCHER/i, /lorem/i, /XXX/, /TODO/, /1152510153974851/, /álcool/i, /alcool/i, /alcoólica/i, /\{\{[A-Z_]+\}\}/, /<!--@[A-Z_]+@-->/];
+const PROIBIDOS = [/PREENCHER/i, /lorem/i, /XXX/, /TODO/, /1152510153974851/, /álcool/i, /alcool/i, /alcoólica/i, /\{\{[A-Z_]+\}\}/, /<!--@[A-Z_]+@-->/, /fonts\.googleapis\.com/, /ViewContent|InitiateCheckout|'Purchase'|AddToCart/];
 const achados = [];
 const varrer = (dir) => {
   for (const nome of fs.readdirSync(dir)) {
