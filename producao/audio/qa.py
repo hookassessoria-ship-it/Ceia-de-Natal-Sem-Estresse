@@ -10,7 +10,7 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parents[2]
 PASTAS = [RAIZ / 'criativos/videos/com-audio', RAIZ / 'criativos/videos/vsl']
 PROIBIDOS = [r'álcool', r'alcool', r'bebida', r'cerveja', r'vinho', r'estrela', r'só hoje', r'e-mail', r'email', r'cnpj',
-             r'\bpresa\b', r'sozinha', r'\bmãe\b', r'50 ?%', r'desconto']
+             r'\bpresa\b', r'sozinha', r'\bmãe\b', r'50 ?% ?(de )?desc', r'desconto']
 
 
 def probe(f):
@@ -55,7 +55,8 @@ for t in textos:
     if not t.exists():
         continue
     for n, l in enumerate(t.read_text(encoding='utf-8').splitlines(), 1):
-        for p in PROIBIDOS:
+        # no CSV (textos dos anúncios, fora dos vídeos) "e-mail" é permitido: a regra vale para dentro dos vídeos
+        for p in (PROIBIDOS if t.suffix != '.csv' else [x for x in PROIBIDOS if 'mail' not in x]):
             if re.search(p, l, re.I):
                 achados.append(f'{t.relative_to(RAIZ)}:{n} [{p}] {l.strip()[:110]}')
 out = '\n'.join(linhas)

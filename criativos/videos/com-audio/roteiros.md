@@ -13,7 +13,7 @@ Os vídeos originais (mudos) continuam em `criativos/videos/`. As versões com v
 | Tratamento | Corte abaixo de 80 Hz, de-esser, compressão suave (2,5:1), sem reverb |
 | Efeitos | ElevenLabs `eleven_text_to_sound_v2`: mercado, bipe do caixa, página, forno, relógio, panela, faca, cadeira, sala. Whoosh, pop, encaixe e confirmação são sintetizados no `mixar.py`. |
 | Música | Original, sintetizada no `producao/audio/trilha.py`: violão dedilhado, pad, sino e escovinha, em Fá maior, 84 BPM, sem melodia conhecida e sem samples de terceiros. |
-| Mixagem | Voz em −16 LUFS antes da mix. Música 15,5 dB abaixo da voz, mais *ducking* de 6 dB durante a fala (cerca de 21 dB abaixo quando há voz). Resultado: −14 LUFS integrados, pico ≤ −1 dBTP (loudnorm em 2 passos). MP4 H.264 + AAC 48 kHz estéreo, 1080x1920. |
+| Mixagem | Voz em −16 LUFS antes da mix. Música de 20 a 22 dB abaixo da voz (medida integrada), com *ducking* de 6 dB durante a fala; no C33 e no C33b ela cresce na parte do guia. Resultado: −14 LUFS integrados, pico ≤ −1 dBTP (loudnorm em 2 passos). MP4 H.264 + AAC 48 kHz estéreo, 1080x1920. |
 | Legenda | Queimada, palavra por palavra (a palavra falada acende em pêssego), em blocos curtos, na faixa entre y≈1510 e 1600 |
 
 Para refazer: `python3 producao/audio/mixar.py C15 C33 ...`. Os tempos, efeitos e legendas de cada vídeo estão em `producao/audio/roteiro.py`.

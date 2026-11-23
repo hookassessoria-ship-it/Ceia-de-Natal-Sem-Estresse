@@ -8,7 +8,7 @@ mkdir -p $OUT
 # 2 passos com taxa-alvo: ~220 kb/s de vídeo + 64 kb/s de áudio -> ~2,9 MB em 85 s
 ffmpeg -y -v error -i $IN -vf "scale=720:1280:flags=lanczos,fps=24" -c:v libx264 -preset slow -b:v 205k -pass 1 -passlogfile /tmp/vslpass -an -f mp4 /dev/null
 ffmpeg -y -v error -i $IN -vf "scale=720:1280:flags=lanczos,fps=24" -c:v libx264 -preset slow -b:v 205k -pass 2 -passlogfile /tmp/vslpass \
-  -profile:v high -pix_fmt yuv420p -c:a aac -b:a 64k -ar 48000 -ac 2 -movflags +faststart $OUT/vsl-ceia-720p.mp4
+  -profile:v high -pix_fmt yuv420p -af alimiter=limit=0.75:level=false:attack=2:release=50 -c:a aac -b:a 64k -ar 48000 -ac 2 -movflags +faststart $OUT/vsl-ceia-720p.mp4
 # poster: quadro da oferta (capa + preço), leve
 ffmpeg -y -v error -ss 82 -i $IN -frames:v 1 -vf "scale=720:1280" -q:v 5 $OUT/vsl-poster.jpg
 ls -la $OUT
