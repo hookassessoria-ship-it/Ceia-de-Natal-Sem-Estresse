@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<!-- C33 · "Você hoje x você no dia 23" (36 s). Tempos casados com a locução (producao/audio/roteiro_novos.py). -->
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="video.css"><link rel="stylesheet" href="../objecoes.css">
+</head>
+<body>
+<script src="../luz.js"></script><script src="motor.js"></script><script src="historia.js"></script>
+<script>
+  window.DURACAO = 35.9; window.SEM_AUDIO = true;
+  document.body.insertAdjacentHTML('beforeend',
+    cenaSala('sala', boneco('bS', COR.cta, 540, 822, 1)) +
+    cenaMercado('merc', boneco('bM', COR.cta, 450, 1010, 0.95)) +
+    cenaLista('lista', COR.creme, boneco('bL', COR.cta, 250, 820, 0.95)) +
+    cenaCalendario('cal') +
+    cenaPDF('pdf') +
+    cenaCelular('cel') +
+    cenaOferta('of', 'Comprar agora') +
+    titulo('tA', 'Hoje ✕ dia vinte e três', { top: 300, tam: 96 }) +
+    titulo('tB', 'Quanto comprar?', { top: 300, tam: 110 }) +
+    chip('qB1', 'O que preparar?', 0, 0, { tam: 50, fundo: COR.verde }) + chip('qB2', 'Quando fazer?', 0, 0, { tam: 50, fundo: COR.cta }) +
+    titulo('tC', 'E se já estivesse pronto?', { top: 290, tam: 96 }) +
+    titulo('tD', 'A ceia organizada', { top: 300, tam: 104 }) +
+    titulo('tE', 'Guarda no celular', { top: 300, tam: 104 }));
+  // títulos acima das cenas
+  document.querySelectorAll('.titulo-h').forEach(e => e.style.zIndex = 30);
+  ['qB1', 'qB2'].forEach(i => { const e = document.getElementById(i); e.style.zIndex = 30; e.style.left = '50%'; e.style.top = '1330px'; });
+  const A = 1.75, B = 5.0, C = 10.45, D = 12.6, F = 24.8, G = 28.6;
+
+  window.render = function (t) {
+    // 1) sofá (hoje)
+    cena('#sala', t, 0, A, 0.01); camera('sala', t, 0, A, 1.0, 1.06, 0, -10);
+    animaBoneco('bS', t, { bD: 38, bE: 6, cel: 1, olhar: 0.3, inclina: 4 });
+    // 2) mercado lotado (dia 23)
+    cena('#merc', t, A, B, 0.01); camera('merc', t, A, B, 1.08, 1.0, -30, 0);
+    animaBoneco('bM', t, { andar: t > 3.0 && t < 3.6 ? t : null, bE: 12, bD: 12, olhar: -0.6, fase: 1.3 });
+    const fila = document.getElementById('merc-fila');
+    fila.style.transform = `translateX(${Math.sin(t * 1.3) * 6 + prog(t, 3.0, 3.6) * 20}px)`;
+    entra('#merc-tag', t, 2.9, 1e9, { dy: 0, s0: 0.3, dur: 0.4, ease: E.back });
+    animaTitulo('tA', t, 0.2, B - 0.35);
+    // o "✕ dia vinte e três" só entra no corte
+    [...document.querySelectorAll('#tA .w')].forEach((w, i) => { if (i > 0) entra(w, t, A + 0.05 + (i - 1) * 0.08, 1e9, { dy: 50, s0: 0.6, dur: 0.38, ease: E.back, base: '' }); });
+    faixa(t, A, COR.cta, 'f1');
+    // 3) dúvidas: lista enorme
+    cena('#lista', t, B, C, 0.01); camera('lista', t, B, C, 1.0, 1.08, 0, 20);
+    const papel = document.getElementById('lista-papel');
+    papel.style.height = (E.out(prog(t, B + 0.2, B + 2.0)) * 760) + 'px';
+    papel.scrollTop = 0;
+    papel.firstElementChild && (papel.style.paddingTop = (30 - prog(t, B + 2.0, C) * 120) + 'px');
+    entra('#lista-q1', t, 6.75, 1e9, { dy: 0, s0: 0.2, dur: 0.35, ease: E.back, rot: -10 });
+    entra('#lista-q2', t, 8.4, 1e9, { dy: 0, s0: 0.2, dur: 0.35, ease: E.back, rot: 8 });
+    entra('#lista-q3', t, 9.4, 1e9, { dy: 0, s0: 0.2, dur: 0.35, ease: E.back, rot: 12 });
+    entra('#lista-rel', t, B + 0.4, 1e9, { dy: 30, s0: 0.6, dur: 0.4, ease: E.back });
+    relogioPonteiros('lista', 6 + Math.max(0, t - B) * 1.6);
+    animaBoneco('bL', t, { bD: 60 + Math.sin(t * 3) * 8, bE: 10, olhar: 0.8, inclina: -6 + Math.sin(t * 2) * 3, fase: 0.7 });
+    animaTitulo('tB', t, B + 0.15, C - 0.3);
+    entra('#qB1', t, 8.39, 9.35, { dy: 40, s0: 0.6, dur: 0.35, ease: E.back, base: 'translateX(-50%)', outDur: 0.15, dyOut: 0 });
+    entra('#qB2', t, 9.41, C - 0.3, { dy: 40, s0: 0.6, dur: 0.35, ease: E.back, base: 'translateX(-50%)', outDur: 0.2, dyOut: 0 });
+    faixa(t, B, COR.pessego, 'f2');
+    // 4) e se já estivesse pronto: calendário organizado
+    cena('#cal', t, C, D, 0.01); camera('cal', t, C, D, 0.96, 1.04);
+    animaCalendario('cal', t, C + 0.1, 0.11);
+    animaTitulo('tC', t, C + 0.1, D - 0.3);
+    faixa(t, C, COR.verde, 'f3');
+    // 5) a ceia organizada: PDF em camadas
+    cena('#pdf', t, D, F, 0.01); camera('pdf', t, D, F, 1.0, 1.1, 0, -20);
+    animaPDF('pdf', t, [13.0, 14.14, 16.87, 18.88, 22.42], D + 0.15);
+    animaTitulo('tD', t, D + 0.1, F - 0.3);
+    faixa(t, D, COR.pessego, 'f4');
+    // 6) guarda no celular e abre dia 17
+    cena('#cel', t, F, G, 0.01); camera('cel', t, F, G, 1.04, 1.0);
+    entra('#cel-tel', t, F + 0.05, 1e9, { dy: 200, s0: 0.9, dur: 0.5, ease: E.back });
+    entra('#cel-pdf', t, 25.89, 1e9, { dy: -300, s0: 1.6, dur: 0.5, ease: E.back });
+    entra('#cel-toast', t, 26.5, 1e9, { dy: 40, s0: 0.8, dur: 0.35, ease: E.back });
+    entra('#cel-dia', t, 27.15, 1e9, { dy: 0, s0: 0.3, dur: 0.4, ease: E.back, rot: -6 });
+    animaTitulo('tE', t, F + 0.1, G - 0.3);
+    faixa(t, F, COR.cta, 'f5');
+    // 7) oferta
+    animaOferta('of', t, G, 28.72, 29.93, 31.55, 33.47);
+    faixa(t, G, COR.verde, 'f6');
+  };
+  window.render(0);
+</script>
+</body></html>

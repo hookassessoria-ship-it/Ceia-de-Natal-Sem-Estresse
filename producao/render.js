@@ -14,7 +14,7 @@ async function renderImagens(browser, ids) {
   const dir = path.join(__dirname, 'imagens');
   const out = path.join(ROOT, 'criativos', 'imagens');
   fs.mkdirSync(out, { recursive: true });
-  const files = fs.readdirSync(dir).filter(f => f.endsWith('.html') && (!ids.length || ids.includes(f.slice(0, 3))));
+  const files = fs.readdirSync(dir).filter(f => f.endsWith('.html') && (!ids.length || ids.includes(f.replace('.html', ''))));
   // <meta name="formatos" content="45,916"> gera também a versão vertical (Cxx_9x16.png). Sem a meta, só 4:5.
   const TAM = { '45': [1080, 1350, ''], '916': [1080, 1920, '_9x16'] };
   for (const f of files.sort()) {
@@ -77,13 +77,37 @@ async function renderVideo(browser, file) {
   if (kind === 'imagens') await renderImagens(browser, ids);
   else if (kind === 'videos') {
     const dir = path.join(__dirname, 'videos');
-    const files = fs.readdirSync(dir).filter(f => /^C\d\d.*\.html$/.test(f) && (!ids.length || ids.includes(f.slice(0, 3)))).sort();
+    const files = fs.readdirSync(dir).filter(f => /^C\d\d.*\.html$/.test(f) && (!ids.length || ids.includes(f.replace('.html', '')))).sort();
     for (const f of files) await renderVideo(browser, f);
+  } else if (kind === 'warp') {
+    // node producao/render.js warp C24 '[[tSaida,tOriginal],...]' saida.mp4
+    // Re-renderiza o vídeo esticando as cenas para acompanhar a voz (mapa linear por trechos). Sem áudio.
+    const [id, mapaJson, outFile] = ids;
+    const mapa = JSON.parse(mapaJson);
+    const orig = t => { for (let i = 1; i < mapa.length; i++) { const [a0, b0] = mapa[i - 1], [a1, b1] = mapa[i]; if (t <= a1) return b0 + (b1 - b0) * (t - a0) / Math.max(1e-6, a1 - a0); } return mapa[mapa.length - 1][1]; };
+    const dir = path.join(__dirname, 'videos');
+    const f = fs.readdirSync(dir).find(x => x === id + '.html');
+    const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
+    await page.goto('file://' + path.join(dir, f));
+    await page.evaluate(() => document.fonts.ready);
+    await page.waitForTimeout(400);
+    const dur = mapa[mapa.length - 1][0];
+    const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-i', '-', '-an',
+      '-c:v', 'libx264', '-profile:v', 'high', '-pix_fmt', 'yuv420p', '-preset', 'medium', '-crf', '17', '-r', String(FPS), outFile]);
+    const done = new Promise((res, rej) => ff.on('close', c => c === 0 ? res() : rej(new Error('ffmpeg ' + c))));
+    for (let i = 0; i < Math.round(dur * FPS); i++) {
+      await page.evaluate(t => window.render(t), orig(i / FPS));
+      const buf = await page.screenshot({ type: 'jpeg', quality: 93 });
+      if (!ff.stdin.write(buf)) await new Promise(r => ff.stdin.once('drain', r));
+    }
+    ff.stdin.end();
+    await done;
+    console.log('ok warp', id, dur.toFixed(2) + 's');
   } else if (kind === 'quadro') {
     // node producao/render.js quadro C13 4.5 saida.jpg  -> um quadro para conferência
     const [id, t, outFile] = ids;
     const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
-    const f = fs.readdirSync(path.join(__dirname, 'videos')).find(x => x.startsWith(id));
+    const f = fs.readdirSync(path.join(__dirname, 'videos')).find(x => x === id + '.html');
     await page.goto('file://' + path.join(__dirname, 'videos', f));
     await page.evaluate(() => document.fonts.ready);
     await page.waitForTimeout(300);

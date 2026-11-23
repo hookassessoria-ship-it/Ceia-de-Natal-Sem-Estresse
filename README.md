@@ -11,6 +11,10 @@ Pacote de criativos do guia **Ceia de Natal Sem Estresse** (Cantinho do Lar, R$ 
 | [`estrategia.md`](estrategia.md) | Fase 1: posicionamento, matriz de 11 ângulos, 30 ganchos, princípios de copy, mudanças no briefing, ondas e bloqueios antes de subir |
 | [`criativos/imagens/`](criativos/imagens/) | C01 a C12 e C21, C22, C23, C25, C26, C28, C29, C31 · PNG 1080x1350 (4:5); da série de objeções também `_9x16.png` (1080x1920) |
 | [`criativos/videos/`](criativos/videos/) | C13 a C20 · MP4 1080x1920 (9:16), H.264, 30 fps, 17 a 22 s, com faixa de áudio silenciosa · C24, C27, C30, C32 · 12,5 a 14,5 s, sem faixa de áudio |
+| [`criativos/videos/com-audio/`](criativos/videos/com-audio/) | Versões **com voz, efeitos, música e legenda** (`_voz`): C15, C16, C19, C24, C27, C30, C32 e os novos C33, C34, C33b. Roteiros em `roteiros.md`, QA em `qa.md` |
+| `criativos/videos/C33.mp4` · `C34.mp4` · `C33b.mp4` | Vídeos novos de storytelling em motion graphics (bonequinho em SVG), versões mudas de reserva |
+| [`criativos/videos/vsl/`](criativos/videos/vsl/) | VSL de 85 s para a página (720p, < 3 MB, com poster), não aplicada no site |
+| [`anuncios-novos-videos.md`](anuncios-novos-videos.md) | Textos, títulos e botões dos anúncios C33, C34 e C33b e dos vídeos com voz |
 | [`textos-anuncios.csv`](textos-anuncios.csv) | Fase 3: 3 textos, 2 títulos, descrição, CTA e `utm_content` de cada criativo |
 | [`assets/site/`](assets/site/) | Capa, 6 páginas do PDF e 4 fotos, baixadas da página de vendas (os originais não estavam no repositório) |
 | [`FATOS.md`](FATOS.md) · [`DECISOES.md`](DECISOES.md) · [`RELATORIO.md`](RELATORIO.md) | Série de objeções C21 a C32: o que o guia realmente traz, as escolhas feitas e o QA com a ordem de entrada |
@@ -23,7 +27,7 @@ Pacote de criativos do guia **Ceia de Natal Sem Estresse** (Cantinho do Lar, R$ 
 3. Em **Título**, cole `titulo_1` e `titulo_2` como opções; em **Descrição**, `descricao`.
 4. Botão: a coluna `cta`.
 5. URL do site: `https://cantinho-ceia.vercel.app/?utm_source=meta&utm_medium=paid&utm_campaign=ceia2026&utm_content=C01` (troque `C01` pelo ID).
-6. Vídeos: são mudos e foram feitos para ser entendidos sem som. Vale adicionar uma música da biblioteca de sons da Meta no próprio Gerenciador.
+6. Vídeos: prefira as versões com voz em `criativos/videos/com-audio/` (coluna `arquivo_com_audio`). As versões mudas continuam em `criativos/videos/`.
 7. Comece pela **onda 1** (12 criativos). A onda 2 entra a partir de 01/12 ou quando a onda 1 cansar (ver `estrategia.md`).
 
 ## Como regerar
@@ -32,6 +36,8 @@ Pacote de criativos do guia **Ceia de Natal Sem Estresse** (Cantinho do Lar, R$ 
 node producao/render.js imagens          # todas as imagens (ou: imagens C01 C05)
 node producao/render.js videos           # todos os vídeos (ou: videos C14)
 python3 producao/textos.py               # CSV, com validação de limites e termos proibidos
+python3 producao/audio/mixar.py C15 C33  # voz + efeitos + trilha + legenda -> criativos/videos/com-audio/
+python3 producao/audio/qa.py             # QA de áudio (faixas, LUFS, pico, tamanho, termos)
 ```
 
 Precisa de Node com Playwright (Chromium) e ffmpeg. As fontes (DM Serif Display, Nunito e Caveat, licença OFL) estão em `producao/fonts`.

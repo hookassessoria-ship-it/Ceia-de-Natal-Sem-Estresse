@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<!-- C34 · "O calendário de 7 dias" (30 s). Locução a 1,15x (briefing: acelerar levemente se passar de 30 s). -->
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="video.css"><link rel="stylesheet" href="../objecoes.css">
+</head>
+<body>
+<script src="../luz.js"></script><script src="motor.js"></script><script src="historia.js"></script>
+<script>
+  window.DURACAO = 30.3; window.SEM_AUDIO = true;
+  document.body.insertAdjacentHTML('beforeend',
+    cenaParede('par', COR.creme, boneco('bP', COR.cta, 900, 1000, 0.75)) +
+    cenaGeladeira('gel', COR.creme, boneco('bG', COR.cta, 850, 830, 0.95)) +
+    cenaBancada('ban', [['sobremesa', 'Sobremesa'], ['farofa', 'Farofa'], ['salpicao', 'Salpicão']]) +
+    cenaBancada('sac', [['pao', 'Pão'], ['gelo', 'Gelo'], ['frutas', 'Frutas']], COR.p100) +
+    cenaCozinha('coz', COR.creme, boneco('bK', COR.cta, 560, 830, 0.95)) +
+    cenaCelular('cel', COR.creme, boneco('bC', COR.cta, 200, 960, 0.8)) +
+    cenaOferta('of', 'Saiba mais') +
+    titulo('t1', 'Cada coisa no seu dia', { top: 300, tam: 100 }) +
+    titulo('t2', 'Dia 17 · dia 21', { top: 300, tam: 110 }) +
+    titulo('t3', 'Dia 23: tudo adiantado', { top: 300, tam: 104 }) +
+    titulo('t4', 'Dia 24: às 18h30', { top: 300, tam: 110 }));
+  document.querySelectorAll('.titulo-h').forEach(e => e.style.zIndex = 30);
+  // tempos das falas (s): 0,15 olha · 1,67 dia 17 · 3,90 dia 21 · 7,60 dia 23 · 11,51 dia 24 · 15,49 hora a hora · 20,88 garante · 24,30 preço
+  const S2 = 1.6, S3 = 3.85, S4 = 7.5, S5 = 11.4, S6 = 15.4, S7 = 20.8, S8 = 24.2;
+
+  window.render = function (t) {
+    // 1-2) calendário gigante: a folha de novembro vira e a câmera vai até o dia 17
+    cena('#par', t, 0, S3, 0.01);
+    animaParede('par', t, 0.45);
+    const cam = document.getElementById('par-cam');
+    const z = E.inOut(prog(t, S2, S2 + 0.6));
+    // dia 17 fica na coluna 4, linha 2 do calendário (centro aprox. x=150+28+400+44, y=640+190+200+44)
+    cam.style.transformOrigin = '622px 1074px';
+    cam.style.transform = `translateY(${z * 240}px) scale(${1 + z * 0.7})`;
+    entra('#par-n17', t, S2 + 0.1, 1e9, { dy: 0, s0: 0.4, dur: 0.4, ease: E.back });
+    animaBoneco('bP', t, { olhar: -0.8, bD: 0, bE: 30 + 10 * Math.sin(t * 2), inclina: -5 });
+    animaTitulo('t1', t, 0.2, S2 - 0.25);
+    animaTitulo('t2', t, S2 + 0.05, S4 - 0.3);
+    [...document.querySelectorAll('#t2 .w')].forEach((w, i) => { if (i > 1) entra(w, t, 3.95 + (i - 2) * 0.09, 1e9, { dy: 50, s0: 0.6, dur: 0.38, ease: E.back, base: '' }); });
+    // 3) dia 21: peru do congelador para a geladeira
+    cena('#gel', t, S3, S4, 0.01); camera('gel', t, S3, S4, 1.0, 1.06, 0, -10);
+    const p = E.inOut(prog(t, 5.6, 6.6));
+    const peru = document.getElementById('gel-peru');
+    peru.style.transform = `translate(${Math.sin(p * Math.PI) * -60}px, ${p * 330}px) rotate(${Math.sin(p * Math.PI) * -12}deg)`;
+    peru.style.filter = `saturate(${0.5 + p * 0.5}) brightness(${1.12 - p * 0.12})`;
+    animaBoneco('bG', t, { olhar: -1, bE: 70 + p * 20, bD: 0, fase: 0.4 });
+    faixa(t, S3, COR.pessego, 'f1');
+    // 4) dia 23: três pratos prontos na bancada
+    cena('#ban', t, S4, S5, 0.01); camera('ban', t, S4, S5, 1.06, 1.0, 0, 0);
+    [8.87, 9.56, 10.12].forEach((ti, i) => entra(`#ban-i${i}`, t, ti, 1e9, { dy: -160, s0: 0.6, dur: 0.45, ease: E.back }));
+    animaTitulo('t3', t, S4 + 0.1, S5 - 0.3);
+    faixa(t, S4, COR.cta, 'f2');
+    // 5) dia 24: só pão, gelo e frutas
+    cena('#sac', t, S5, S6, 0.01); camera('sac', t, S5, S6, 1.0, 1.06);
+    [13.69, 14.10, 14.61].forEach((ti, i) => entra(`#sac-i${i}`, t, ti, 1e9, { dy: 120, s0: 0.5, dur: 0.4, ease: E.back }));
+    animaTitulo('t4', t, S5 + 0.1, S7 - 0.3);
+    // ": às 18h30" entra quando a fala chega lá
+    [...document.querySelectorAll('#t4 .w')].forEach((w, i) => { if (i > 1) entra(w, t, 17.83 + (i - 2) * 0.1, 1e9, { dy: 50, s0: 0.6, dur: 0.38, ease: E.back, base: '' }); });
+    faixa(t, S5, COR.verde, 'f3');
+    // 6) 18h30: peru assando, relógio, a pessoa senta
+    cena('#coz', t, S6, S7, 0.01); camera('coz', t, S6, S7, 1.0, 1.1, -20, 0);
+    relogioPonteiros('coz', 6 + 0.5 - 0.06 + prog(t, S6, 17.83) * 0.06);
+    document.getElementById('coz-brilho').style.opacity = 0.65 + 0.35 * Math.sin(t * 5);
+    const anda = prog(t, 18.6, 19.6);
+    document.getElementById('bK').style.transform = `translateX(${anda * 260}px)`;
+    animaBoneco('bK', t, { andar: anda > 0 && anda < 1 ? t : null, bE: anda >= 1 ? 40 : 6, bD: anda >= 1 ? 40 : 6, olhar: anda > 0 ? 0.6 : -0.6, fase: 2.1 });
+    faixa(t, S6, COR.pessego, 'f4');
+    // 7) guarda no celular, abre dia 17
+    cena('#cel', t, S7, S8, 0.01); camera('cel', t, S7, S8, 1.04, 1.0);
+    entra('#cel-tel', t, S7 + 0.05, 1e9, { dy: 200, s0: 0.9, dur: 0.5, ease: E.back });
+    entra('#cel-pdf', t, 21.75, 1e9, { dy: -300, s0: 1.6, dur: 0.5, ease: E.back });
+    entra('#cel-toast', t, 22.3, 1e9, { dy: 40, s0: 0.8, dur: 0.35, ease: E.back });
+    entra('#cel-dia', t, 22.86, 1e9, { dy: 0, s0: 0.3, dur: 0.4, ease: E.back, rot: -6 });
+    animaBoneco('bC', t, { bD: 70, bE: 8, cel: 1, olhar: 0.6, fase: 0.9 });
+    faixa(t, S7, COR.cta, 'f5');
+    // 8) oferta
+    animaOferta('of', t, S8, 24.3, 25.46, 27.01, 28.58);
+    faixa(t, S8, COR.verde, 'f6');
+  };
+  window.render(0);
+</script>
+</body></html>

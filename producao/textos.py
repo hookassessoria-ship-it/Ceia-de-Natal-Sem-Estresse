@@ -109,7 +109,7 @@ A = [
          lista='Dia 24, hora a hora. Trecho real do guia:\n✔ 09h café da manhã tranquilo\n✔ 12h almoço leve (cozinhar com fome não dá certo!)\n✔ 17h30 peru no forno, coberto com papel-alumínio\n✔ 18h30 seu momento: banho e arrumação\n✔ 22h ceia servida\n+ 3 cardápios, lista de compras e 30 receitas. R$ 19,90.',
          t1='Dia 24, hora a hora', t2='18h30: o seu momento', desc='Ceia servida às 22h',
          ref='Oportunidade 1 (cronograma como protagonista); P8 vídeo vertical'),
-    dict(id='C15', onda=1, formato='vídeo', angulo='A9 clareza em vez de volume', nivel='c', cta='Comprar agora',
+    dict(id='C15', onda=1, formato='vídeo', angulo='A9 clareza em vez de volume', nivel='c', cta='Saiba mais',
          gancho='Você não precisa de 300 receitas.',
          curto='Você não precisa de 300 receitas. Precisa de um cardápio fechado, com lista e cronograma. São 3, por R$ 19,90.',
          medio='Você não precisa de 300 receitas. Precisa de um cardápio fechado.\nNo guia são 3: Econômico (cerca de 3 horas de cozinha no dia 24), Tradicional (cerca de 5) e Fartura (cerca de 7), todos para 8 a 10 pessoas.\nCada um com lista de compras e cronograma. São 30 receitas no total.\nR$ 19,90: menos de R$ 1 por receita.',
@@ -137,7 +137,7 @@ A = [
          lista='O que vem dentro do guia: 🎄\n✔ 3 cardápios: Econômico, Tradicional e Fartura\n✔ Listas de compras por seção do mercado\n✔ Cronograma do dia 17 ao 25, com o dia 24 hora a hora\n✔ 30 receitas com ingredientes, preparo, tempo, rendimento e dica\n✔ Checklist de última hora\n✔ Bônus: receitas com as sobras\n63 páginas · R$ 19,90 · garantia de 7 dias',
          t1='Veja o guia da ceia por dentro', t2='63 páginas por R$ 19,90', desc='Acesso imediato por e-mail',
          ref='P1 lista do que vem (R11); P6 páginas por dentro (R05, R06)'),
-    dict(id='C19', onda=2, formato='vídeo', angulo='A3 dia 25 / sobras', nivel='a', cta='Saiba mais',
+    dict(id='C19', onda=2, formato='vídeo', angulo='A3 dia 25 / sobras', nivel='a', cta='Comprar agora',
          gancho='3 ideias com as sobras da ceia.',
          curto='3 ideias com as sobras da ceia: sanduíche de peru (15 min), risoto (25 min) e rabanada de panetone (25 min).',
          medio='3 ideias com as sobras da ceia:\n1. Sanduíche de peru ou chester, em 15 minutos.\n2. Risoto de aproveitamento, em 25.\n3. Rabanada de panetone, em 25.\nImportante: sobras na geladeira em até 2 horas depois da ceia.\nAs receitas estão no bônus do guia, junto com os 3 cardápios. R$ 19,90.',
@@ -335,6 +335,38 @@ for a in A:
     if a['cta'] not in ('Comprar agora', 'Saiba mais'):
         erros.append(f"{a['id']}: CTA inválido")
 
+# Vídeos de storytelling com voz (C33, C34, C33b): textos exatamente como definidos no briefing.
+C = [
+    dict(id='C33', nome='C33', angulo='S1 você hoje x você no dia 23', nivel='a', cta='Comprar agora', titulo='Sua ceia sem correria',
+         gancho='Hoje você tá no sofá. Dia 23, pode estar numa fila de mercado.',
+         texto='Organize a ceia com antecedência. Guia por R$ 19,90 até 30/11, com 3 bônus e garantia de 7 dias.'),
+    dict(id='C34', nome='C34', angulo='S2 o calendário de 7 dias', nivel='b', cta='Saiba mais', titulo='Cada coisa no seu dia',
+         gancho='Olha esse calendário...',
+         texto='Um cronograma para organizar a ceia do dia 17 ao 25. R$ 19,90 até 30/11.'),
+    dict(id='C33b', nome='C33b', angulo='S1b falta pouco mais de um mês', nivel='a', cta='Comprar agora', titulo='Planeje sua ceia',
+         gancho='Falta pouco mais de um mês pro Natal. Você já sabe o que vai servir?',
+         texto='Já pensou no cardápio da ceia? Guia por R$ 19,90 até 30/11, com garantia de 7 dias.'),
+]
+for c in C:
+    if len(c['titulo']) > 40:
+        erros.append(f"{c['id']} título com {len(c['titulo'])} caracteres (máx. 40)")
+    if c['cta'] not in ('Comprar agora', 'Saiba mais'):
+        erros.append(f"{c['id']}: CTA inválido")
+    for p in PROIBIDO:
+        if re.search(p, c['texto'], re.I):
+            erros.append(f"{c['id']} texto: termo proibido '{p}'")
+    for preco in re.findall(r'R\$ ?\d+(?:,\d{2})?', c['texto']):
+        if preco.replace(' ', '') != 'R$19,90':
+            erros.append(f"{c['id']}: valor não permitido {preco}")
+
+COM_AUDIO = RAIZ / 'criativos/videos/com-audio'
+
+
+def com_audio(id_):
+    f = COM_AUDIO / f'{id_}_voz.mp4'
+    return str(f.relative_to(RAIZ)) if f.exists() else ''
+
+
 if erros:
     print('\n'.join(erros))
     sys.exit(1)
@@ -349,14 +381,22 @@ with open(saida, 'w', newline='', encoding='utf-8') as f:
     # As 16 primeiras colunas são as originais; as seguintes foram acrescentadas na série de objeções (C21+).
     w.writerow(['id', 'onda', 'formato', 'angulo', 'nivel_consciencia', 'gancho', 'texto_curto', 'texto_medio', 'texto_lista',
                 'titulo_1', 'titulo_2', 'descricao', 'cta', 'arquivo', 'utm_content', 'referencia_da_pesquisa',
-                'nome', 'url', 'titulo_3', 'objecao', 'gatilho', 'gancho_alt_1', 'gancho_alt_2', 'gancho_alt_3', 'arquivo_9x16'])
+                'nome', 'url', 'titulo_3', 'objecao', 'gatilho', 'gancho_alt_1', 'gancho_alt_2', 'gancho_alt_3', 'arquivo_9x16',
+                'arquivo_com_audio'])
     for a in A:
         w.writerow([a['id'], a['onda'], a['formato'], a['angulo'], NIVEL[a['nivel']], a['gancho'], a['curto'], a['medio'], a['lista'],
                     a['t1'], a['t2'], a['desc'], a['cta'], arquivo(a['id'], a['formato']), a['id'], a['ref'],
-                    nome_anuncio(a['id'], NOMES_ANTIGOS[a['id']], a['formato']), URL.format(a['id']), '', '', '', '', '', '', ''])
+                    nome_anuncio(a['id'], NOMES_ANTIGOS[a['id']], a['formato']), URL.format(a['id']), '', '', '', '', '', '', '',
+                    com_audio(a['id']) if a['formato'] == 'vídeo' else ''])
     for b in B:
         w.writerow([b['id'], 3, b['formato'], b['angulo'], NIVEL[b['nivel']], b['gancho'], b['curto'], b['medio'], b['lista'],
                     b['t1'], b['t2'], b['desc'], 'Saiba mais', arquivo(b['id'], b['formato']), b['id'], b['ref'],
                     nome_anuncio(b['id'], b['nome'], b['formato']), URL.format(b['id']), b['t3'], b['objecao'], b['gatilho'],
-                    *b['alt'], f"criativos/imagens/{b['id']}_9x16.png" if b['formato'] == 'imagem' else ''])
-print(f'ok: {len(A) + len(B)} anúncios em {saida.relative_to(RAIZ)}')
+                    *b['alt'], f"criativos/imagens/{b['id']}_9x16.png" if b['formato'] == 'imagem' else '',
+                    com_audio(b['id']) if b['formato'] == 'vídeo' else ''])
+    for c in C:
+        # texto principal = texto_curto = texto_medio; sem lista, 2º título nem descrição (não definidos no briefing)
+        w.writerow([c['id'], 4, 'vídeo', c['angulo'], NIVEL[c['nivel']], c['gancho'], c['texto'], c['texto'], '',
+                    c['titulo'], '', '', c['cta'], f"criativos/videos/{c['id']}.mp4", c['id'], 'roteiro do briefing (storytelling)',
+                    c['nome'], URL.format(c['id']), '', '', '', '', '', '', '', f"criativos/videos/com-audio/{c['id']}_voz.mp4"])
+print(f'ok: {len(A) + len(B) + len(C)} anúncios em {saida.relative_to(RAIZ)}')
