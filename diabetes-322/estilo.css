@@ -1,0 +1,22 @@
+/* 322 Receitas para Quem Tem Diabetes · Cantinho do Lar · criativos 4:5 (1080x1350) */
+@font-face { font-family: 'Serif'; src: url('../producao/fonts/dm-serif-display-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Serif'; font-style: italic; src: url('../producao/fonts/dm-serif-display-latin-400-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Sans'; font-weight: 700; src: url('../producao/fonts/nunito-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Sans'; font-weight: 800; src: url('../producao/fonts/nunito-latin-800-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Sans'; font-weight: 900; src: url('../producao/fonts/nunito-latin-900-normal.woff2') format('woff2'); }
+:root { --verde: #1E3B2A; --verde-2: #2C5238; --verde-nat: #5E8C4A; --creme: #F5EEDF; --off: #FBF8F1; --marrom: #8A5A35; --marrom-claro: #C99A6B; --tinta: #23211D; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 1350px; overflow: hidden; }
+body { position: relative; font-family: 'Sans', sans-serif; color: var(--tinta); background: var(--creme); -webkit-font-smoothing: antialiased; }
+.abs { position: absolute; }
+.foto { position: absolute; overflow: hidden; border-radius: 26px; box-shadow: 0 18px 40px rgba(30,59,42,.18); }
+.foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.serif { font-family: 'Serif'; font-weight: 400; letter-spacing: -0.02em; line-height: 1.0; }
+.marca { font-family: 'Sans'; font-weight: 900; font-size: 24px; letter-spacing: .22em; text-transform: uppercase; }
+.apoio { font-family: 'Sans'; font-weight: 800; font-size: 38px; line-height: 1.28; text-wrap: pretty; }
+.cta { position: absolute; display: inline-flex; align-items: center; gap: 18px; padding: 26px 46px; border-radius: 999px;
+  font-family: 'Sans'; font-weight: 900; font-size: 34px; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap;
+  background: var(--verde); color: var(--creme); box-shadow: 0 14px 30px rgba(30,59,42,.28); }
+.cta::after { content: '→'; font-size: 38px; letter-spacing: 0; }
+.capa { position: absolute; border-radius: 6px; box-shadow: 0 30px 60px rgba(0,0,0,.35), 0 6px 14px rgba(0,0,0,.18); }
+.pill { display: inline-block; padding: 12px 24px; border-radius: 999px; font-family: 'Sans'; font-weight: 900; font-size: 28px; letter-spacing: .04em; }
