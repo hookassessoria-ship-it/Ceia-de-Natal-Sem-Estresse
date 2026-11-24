@@ -20,7 +20,7 @@ const D = __dirname;
   const original = path.join(D, 'capa', 'capa-original.png');
   const usaOriginal = fs.existsSync(original);
   fs.copyFileSync(usaOriginal ? original : path.join(D, 'capa', 'capa-provisoria.png'), path.join(D, 'capa', 'capa-atual.png'));
-  for (const id of ['D01', 'D02', 'D03', 'D04', 'D05']) {
+  for (const id of ['D01', 'D02', 'D03', 'D04', 'D05', 'D06']) {
     const out = path.join(D, 'criativos', id + (usaOriginal ? '' : '_capa-provisoria') + '.png');
     await shot(id + '.html', 1080, 1350, out);
     console.log('ok', path.relative(D, out));

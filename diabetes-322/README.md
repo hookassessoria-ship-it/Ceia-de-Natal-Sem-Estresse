@@ -13,11 +13,14 @@ Produto: ebook **322 Receitas para Quem Tem Diabetes**, da marca **Cantinho do L
 | `D03` | Diferencial: carboidratos por porção | Receitas com carboidratos por porção. | DESCUBRA O MATERIAL |
 | `D04` | Oferta / 3 bônus (mockup em tablet) | 322 RECEITAS + 3 BÔNUS GRATUITOS | QUERO CONHECER |
 | `D05` | Praticidade (cozinha real, ebook no tablet) | Mais ideias para o seu dia a dia. | CONHEÇA AS 322 RECEITAS |
+| `D06` | Preço por receita | R$ 0,09 por receita | CONHEÇA O EBOOK |
 
 ## Campos editáveis
 
 - **Bônus (D04):** em `html/D04.html`, troque `const BONUS = ['[BÔNUS 1]', '[BÔNUS 2]', '[BÔNUS 3]']` pelos nomes reais e rode o render de novo. Nada sobre os bônus foi inventado.
 - **Carboidratos (D03):** a página é um **exemplo ilustrativo**, com selo na imagem e nota no rodapé. O campo mostra "__ g", sem número inventado. Para usar uma receita real do ebook, troque "Nome da receita" e o `__ g` em `html/D03.html` (`id="carbo"`).
+
+**D06 só é verdadeiro se o preço do ebook ficar entre R$ 27,37 e R$ 30,58** (preço ÷ 322 = R$ 0,09 depois de arredondar; R$ 27,90 e R$ 29,90 servem). Se o preço for outro, troque o valor em `html/D06.html`. A nota da arte diz "Valor do ebook dividido pelas 322 receitas.", sem citar o preço.
 
 ## Regras seguidas
 
