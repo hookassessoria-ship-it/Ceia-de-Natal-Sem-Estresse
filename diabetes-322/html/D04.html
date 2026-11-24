@@ -10,25 +10,26 @@
   .tab { position:absolute; left:70px; top:350px; width:520px; height:700px; border-radius: 44px; background:#141414; padding: 22px;
     box-shadow: 0 40px 80px rgba(0,0,0,.55), inset 0 0 0 3px #3a3a3a; transform: rotate(-3deg); }
   .tab img { width:100%; height:100%; object-fit:cover; border-radius: 24px; display:block; }
-  .bonus { position:absolute; left:640px; width: 380px; height: 196px; border-radius: 24px; background: var(--creme); padding: 26px 28px;
+  .bonus { position:absolute; left:620px; width: 400px; height: 196px; border-radius: 24px; background: var(--creme); padding: 26px 22px 26px 150px;
     box-shadow: 0 20px 44px rgba(0,0,0,.4); }
   .bonus .n { font-family:'Sans'; font-weight:900; font-size:24px; letter-spacing:.16em; color: var(--marrom); }
-  .bonus .t { font-family:'Serif'; font-size:44px; color: var(--verde); line-height:1.05; margin-top:12px; }
-  .bonus .g { position:absolute; right:22px; top:22px; font-family:'Sans'; font-weight:900; font-size:20px; padding:6px 14px; border-radius:999px; background: var(--verde-nat); color:#fff; letter-spacing:.06em; }
+  .bonus .t { font-family:'Serif'; font-size:38px; color: var(--verde); line-height:1.02; margin-top:12px; white-space:nowrap; }
+  .bonus img { position:absolute; left:20px; top:18px; width:112px; height:160px; object-fit:cover; border-radius:6px; box-shadow: 0 8px 18px rgba(0,0,0,.25); }
+  .bonus .g { position:absolute; left:150px; bottom:22px; font-family:'Sans'; font-weight:900; font-size:20px; padding:6px 14px; border-radius:999px; background: var(--verde-nat); color:#fff; letter-spacing:.06em; }
   .apoio { left:70px; top:1098px; width: 940px; font-size: 36px; color: var(--creme); }
   .cta { left:70px; top:1222px; padding: 22px 40px; font-size: 32px; background: var(--creme); color: var(--verde); }
 </style></head><body>
   <div class="bg"></div><div class="veu"></div>
   <div class="abs marca m">Cantinho do Lar</div>
-  <div class="abs h">322 receitas <span>+ 3 bônus gratuitos</span></div>
+  <div class="abs h">322 receitas <span>+ 3 bônus incluídos</span></div>
   <div class="tab"><img src="../capa/capa-atual.png"></div>
   <div id="bonus"></div>
   <div class="abs apoio">Tudo reunido em um material digital para consultar quando quiser.</div>
   <div class="cta">Quero conhecer</div>
 <script>
-  // CAMPOS EDITÁVEIS: troque pelos nomes verdadeiros dos bônus e rode de novo o render.
-  const BONUS = ['[BÔNUS 1]', '[BÔNUS 2]', '[BÔNUS 3]'];
-  document.getElementById('bonus').innerHTML = BONUS.map((b, i) =>
-    `<div class="bonus" style="top:${360 + i * 224}px"><div class="n">BÔNUS ${i + 1}</div><div class="t">${b}</div><div class="g">GRÁTIS</div></div>`).join('');
+  // Bônus incluídos na compra (nomes e capas enviados pela marca, em ../bonus/).
+  const BONUS = [['Sobremesas', 'sobremesas'], ['Airfryer', 'airfryer'], ['Ceia de Natal', 'ceia-de-natal']];
+  document.getElementById('bonus').innerHTML = BONUS.map(([b, img], i) =>
+    `<div class="bonus" style="top:${360 + i * 224}px"><img src="../bonus/${img}.webp"><div class="n">BÔNUS ${i + 1}</div><div class="t">${b}</div><div class="g">INCLUÍDO</div></div>`).join('');
 </script>
 </body></html>
